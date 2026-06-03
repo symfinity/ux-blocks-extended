@@ -1,0 +1,88 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Symfinity\UxBlocksExtended\Tests\Unit;
+
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
+use Symfinity\UxBlocks\Registry\ExtendedRoleCatalog;
+use Symfony\Component\Yaml\Yaml;
+
+final class RegistryConsistencyTest extends TestCase
+{
+    /** @return array<string, array{0: string}> */
+    public static function extendedRoleProvider(): array
+    {
+        $provider = [];
+        foreach (ExtendedRoleCatalog::roles() as $role) {
+            $provider[$role] = [$role];
+        }
+
+        return $provider;
+    }
+
+    #[Test]
+    public function yamlSchemaVersionMatchesContract(): void
+    {
+        $registry = $this->loadRegistry();
+
+        self::assertSame('1.1', $registry['ux_role_registry']);
+        self::assertSame('blocks.ext', $registry['registry_prefix']);
+    }
+
+    #[Test]
+    public function yamlContainsAllExtendedRoles(): void
+    {
+        $registry = $this->loadRegistry();
+        $roles = array_column($registry['roles'], 'role');
+
+        self::assertSame(ExtendedRoleCatalog::roles(), $roles);
+    }
+
+    #[Test]
+    #[DataProvider('extendedRoleProvider')]
+    public function eachRowHasRequiredFields(string $role): void
+    {
+        $row = $this->findRole($role);
+
+        self::assertSame($role, $row['role']);
+        self::assertMatchesRegularExpression('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $row['role']);
+        self::assertNotEmpty($row['twig_component']);
+        self::assertNotEmpty($row['php_class']);
+        self::assertSame('blocks.ext.' . $role, $row['fragment_id']);
+        self::assertSame('blocks.ext.' . $role . '.{n}', $row['fragment_pattern']);
+        self::assertSame('stl', $row['interaction']);
+        self::assertSame('A', $row['stage']);
+        self::assertContains($row['status'], ['planned', 'shipped'], sprintf('Role "%s" status', $role));
+    }
+
+    #[Test]
+    public function allRolesAreShippedInYaml(): void
+    {
+        foreach (ExtendedRoleCatalog::roles() as $role) {
+            self::assertSame('shipped', $this->findRole($role)['status'], $role);
+        }
+    }
+
+    /** @return array<string, mixed> */
+    private function loadRegistry(): array
+    {
+        $path = \dirname(__DIR__, 2) . '/config/ux_roles.yaml';
+
+        return Yaml::parseFile($path);
+    }
+
+    /** @return array<string, mixed> */
+    private function findRole(string $role): array
+    {
+        foreach ($this->loadRegistry()['roles'] as $row) {
+            if (($row['role'] ?? null) === $role) {
+                return $row;
+            }
+        }
+
+        self::fail(sprintf('Role "%s" not found in ux_roles.yaml', $role));
+    }
+}

@@ -1,0 +1,13 @@
+<div
+    data-ui-role="rating"
+    data-ui-fragment="blocks.ext.rating"
+    data-controller="symfony--ux-blocks-extended--rating"
+    data-symfony--ux-blocks-extended--rating-max-value="5"
+    data-symfony--ux-blocks-extended--rating-value-value="0"
+    role="group"
+    aria-label="Rating"
+    {{ attributes }}
+>
+    <input type="hidden" name="rating" value="0" data-symfony--ux-blocks-extended--rating-target="input" />
+    {% block content %}{% endblock %}
+</div>

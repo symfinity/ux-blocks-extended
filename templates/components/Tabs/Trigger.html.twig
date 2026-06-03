@@ -1,0 +1,11 @@
+<button
+    type="button"
+    role="tab"
+    data-ui-role="tabs-trigger"
+    data-value="{{ value }}"
+    {% if disabled %}disabled aria-disabled="true"{% endif %}
+    data-symfony--ux-blocks-extended--tabs-target="trigger"
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</button>
