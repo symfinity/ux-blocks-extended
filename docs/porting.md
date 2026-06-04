@@ -1,7 +1,7 @@
 # Porting reference — extended REF sources
 
 **Planning:** symfinity **025** `DONE`  
-**Contract:** [port-semantics-extended](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/port-semantics-extended.md)
+**Contract:** port-semantics-extended
 
 ## REF checkout (read-only)
 
@@ -22,8 +22,8 @@ git clone --depth 1 --branch 3.x https://github.com/symfony/ux-toolkit.git var/r
 4. Port REF Stimulus into `assets/controllers/{role}_controller.js` — strip `@symfony/ux-toolkit` imports.
 5. Add `#[AsTwigComponent]` PHP class under `Symfinity\UxBlocksExtended\Twig\Components\`.
 
-See [port-semantics-ref](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/port-semantics-ref.md) for shared rules.
+See port-semantics-ref for shared rules.
 
 ## Primary REF map
 
-Documented in [port-semantics-extended](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/port-semantics-extended.md#primary-ref-map-extended-v0).
+Documented in port-semantics-extended.

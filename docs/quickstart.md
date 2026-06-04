@@ -2,8 +2,6 @@
 
 **Status:** shipped 2026-06-03 — 24 `stl` roles, `blocks.ext.*` fragments.
 
-**Planning:** symfinity **025** `DONE` · **Contracts:** [extended-role-registry](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/extended-role-registry.md)
-
 ## Prerequisites
 
 - Product monorepo `src/symfinity/` with Docker (`docker compose`, `make test`)
@@ -53,11 +51,5 @@ Flex: `recipes/symfinity/ux-blocks-extended/0.1/`
 |-------|---------|
 | Package tests | `docker compose run php vendor/bin/phpunit -c packages/ux-blocks-extended/phpunit.xml.dist` |
 | Monorepo gate | `make test` |
-| Registry parity | `config/ux_roles.yaml` vs [extended-role-registry](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/extended-role-registry.md) |
 
 ## Related
-
-- [extended-role-registry](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/extended-role-registry.md)
-- [stimulus-controllers-registry](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/stimulus-controllers-registry.md)
-- [command-palette-blocks-integration](../../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/command-palette-blocks-integration.md)
-- [PRODUCT-ux-blocks-family](../../../../classified/explore/PRODUCT-ux-blocks-family.md)

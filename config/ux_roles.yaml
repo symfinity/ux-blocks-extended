@@ -201,3 +201,11 @@ roles:
     interaction: stl
     stage: A
     status: shipped
+  - role: table-of-contents
+    twig_component: TableOfContents
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\TableOfContents
+    fragment_id: blocks.ext.table-of-contents
+    fragment_pattern: "blocks.ext.table-of-contents.{n}"
+    interaction: stl
+    stage: A
+    status: shipped

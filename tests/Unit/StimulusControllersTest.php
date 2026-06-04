@@ -62,4 +62,15 @@ final class StimulusControllersTest extends TestCase
             self::assertFileExists($path);
         }
     }
+
+    #[Test]
+    public function tableOfContentsControllerExists(): void
+    {
+        $path = \dirname(__DIR__, 2) . '/assets/controllers/table-of-contents_controller.js';
+
+        self::assertFileExists($path);
+        $contents = (string) file_get_contents($path);
+        self::assertStringContainsString('IntersectionObserver', $contents);
+        self::assertStringNotContainsString('connect() {}', $contents);
+    }
 }

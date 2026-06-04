@@ -1,76 +1,79 @@
-# symfinity/ux-blocks-extended
+<div align="center">
 
-Chameleon UX Blocks Extended — **stl** micro-UX catalog with `blocks.ext.*` fragment prefix.
+# Ux Blocks Extended
 
-**Family:** [PRODUCT-ux-blocks-family](../../../classified/explore/PRODUCT-ux-blocks-family.md)
+### Symfinity UX Blocks Extended — stl micro-UX catalog with blocks.ext fragments
 
-**Planning:** symfinity **025** `DONE` 2026-06-03 · **Registry:** [extended-role-registry](../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/extended-role-registry.md)
+[![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
+[![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
+
+<br/>
+[![PHPUnit](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml)
+[![Coverage](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml)
+[![PHPStan](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml)
+<br/>
+[![Psalm](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml)
+[![Infection](https://github.com/symfinity/symfinity/actions/workflows/infection.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/infection.yml)
+[![Code Style](https://img.shields.io/badge/code%20style-CS%20Fixer-5c4dbc?style=flat)](https://github.com/symfinity/symfinity/actions/workflows/php-cs-fixer.yml)
+<br/>
+[![Release](https://img.shields.io/packagist/v/symfinity/ux-blocks-extended.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-extended)
+[![Downloads](https://img.shields.io/packagist/dt/symfinity/ux-blocks-extended.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-extended)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
+</div>
+
+---
+
+## Documentation
+
+| Topic | Page |
+|-------|------|
+| Components | [docs/components.md](docs/components.md) |
+| Configuration | [docs/configuration.md](docs/configuration.md) |
+| Index | [docs/index.md](docs/index.md) |
+| Installation | [docs/installation.md](docs/installation.md) |
+| Porting | [docs/porting.md](docs/porting.md) |
+| Quickstart | [docs/quickstart.md](docs/quickstart.md) |
+| Reference | [docs/reference.md](docs/reference.md) |
+| Troubleshooting | [docs/troubleshooting.md](docs/troubleshooting.md) |
+| Upgrade | [docs/upgrade.md](docs/upgrade.md) |
+| Usage | [docs/usage.md](docs/usage.md) |
+| Component: Alert Dialog Enhanced | [docs/components/alert-dialog-enhanced.md](docs/components/alert-dialog-enhanced.md) |
+| Component: Calendar | [docs/components/calendar.md](docs/components/calendar.md) |
+| Component: Carousel Interactive | [docs/components/carousel-interactive.md](docs/components/carousel-interactive.md) |
+| Component: Combobox | [docs/components/combobox.md](docs/components/combobox.md) |
+| Component: Command Palette | [docs/components/command-palette.md](docs/components/command-palette.md) |
+| Component: Context Menu | [docs/components/context-menu.md](docs/components/context-menu.md) |
+| Component: Data Table Chrome | [docs/components/data-table-chrome.md](docs/components/data-table-chrome.md) |
+| Component: Date Picker | [docs/components/date-picker.md](docs/components/date-picker.md) |
+| Component: Drawer | [docs/components/drawer.md](docs/components/drawer.md) |
+| Component: Dropdown Menu | [docs/components/dropdown-menu.md](docs/components/dropdown-menu.md) |
+| Component: Filter Chips | [docs/components/filter-chips.md](docs/components/filter-chips.md) |
+| Component: Hover Card | [docs/components/hover-card.md](docs/components/hover-card.md) |
+| Component: Input Otp | [docs/components/input-otp.md](docs/components/input-otp.md) |
+| Component: Menubar | [docs/components/menubar.md](docs/components/menubar.md) |
+| Component: Navigation Menu | [docs/components/navigation-menu.md](docs/components/navigation-menu.md) |
+| Component: Rating | [docs/components/rating.md](docs/components/rating.md) |
+| Component: Resizable | [docs/components/resizable.md](docs/components/resizable.md) |
+| Component: Sheet | [docs/components/sheet.md](docs/components/sheet.md) |
+| Component: Sidebar | [docs/components/sidebar.md](docs/components/sidebar.md) |
+| Component: Slider | [docs/components/slider.md](docs/components/slider.md) |
+| Component: Stacked Layout Interactive | [docs/components/stacked-layout-interactive.md](docs/components/stacked-layout-interactive.md) |
+| Component: Tabs | [docs/components/tabs.md](docs/components/tabs.md) |
+| Component: Toast | [docs/components/toast.md](docs/components/toast.md) |
+| Component: Toggle Group | [docs/components/toggle-group.md](docs/components/toggle-group.md) |
+| Component: Toggle | [docs/components/toggle.md](docs/components/toggle.md) |
+
+## Requirements
+
+- PHP 8.2+
+- Symfony 7.4+ (Flex recipe when available)
 
 ## Install
 
 ```bash
 composer require symfinity/ux-blocks-extended
 ```
-
-Requires Symfony **7.4+**, `symfinity/ux-blocks-core`, `symfony/ux-twig-component` ^2, `symfony/stimulus-bundle` ^2. Does **not** require `symfony/ux-toolkit` or `symfinity/ui-kernel`.
-
-Optional command palette backend:
-
-```bash
-composer require symfinity/ux-runtime  # suggest only — not bundled
-```
-
-Register the bundle:
-
-```php
-// config/bundles.php
-Symfinity\UxBlocksExtended\SymfinityUxBlocksExtendedBundle::class => ['all' => true],
-```
-
-## Interaction profile
-
-This package owns **stl** (Stimulus) roles only. Every listed role ships a package Stimulus controller for open state, keyboard navigation, and ARIA updates. Core **nat** primitives from `ux-blocks-core` may be composed inside extended components.
-
-Command palette UI lives here; command registry JSON is optional via **`suggest symfinity/ux-runtime`**.
-
-## Component inventory
-
-| Role | Twig | Category | Interaction | Fragment | Status | REF |
-|------|------|----------|-------------|----------|--------|-----|
-| `tabs` | `Tabs` | Navigation | stl | `blocks.ext.tabs` | shipped | shadcn |
-| `dropdown-menu` | `DropdownMenu` | Overlays | stl | `blocks.ext.dropdown-menu` | shipped | shadcn |
-| `alert-dialog-enhanced` | `AlertDialog` | Overlays | stl | `blocks.ext.alert-dialog-enhanced` | shipped | shadcn |
-| `drawer` | `Drawer` | Overlays | stl | `blocks.ext.drawer` | shipped | shadcn |
-| `sheet` | `Sheet` | Overlays | stl | `blocks.ext.sheet` | shipped | shadcn |
-| `context-menu` | `ContextMenu` | Overlays | stl | `blocks.ext.context-menu` | shipped | shadcn |
-| `hover-card` | `HoverCard` | Overlays | stl | `blocks.ext.hover-card` | shipped | shadcn |
-| `menubar` | `Menubar` | Navigation | stl | `blocks.ext.menubar` | shipped | shadcn |
-| `navigation-menu` | `NavigationMenu` | Navigation | stl | `blocks.ext.navigation-menu` | shipped | shadcn |
-| `sidebar` | `Sidebar` | App shell | stl | `blocks.ext.sidebar` | shipped | shadcn blocks |
-| `stacked-layout-interactive` | `StackedLayoutInteractive` | App shell | stl | `blocks.ext.stacked-layout-interactive` | shipped | Catalyst |
-| `combobox` | `Combobox` | Forms | stl | `blocks.ext.combobox` | shipped | shadcn |
-| `slider` | `Slider` | Forms | stl | `blocks.ext.slider` | shipped | shadcn |
-| `toggle` | `Toggle` | Forms | stl | `blocks.ext.toggle` | shipped | shadcn |
-| `toggle-group` | `ToggleGroup` | Forms | stl | `blocks.ext.toggle-group` | shipped | shadcn |
-| `calendar` | `Calendar` | Forms | stl | `blocks.ext.calendar` | shipped | shadcn |
-| `date-picker` | `DatePicker` | Forms | stl | `blocks.ext.date-picker` | shipped | shadcn |
-| `input-otp` | `InputOtp` | Forms | stl | `blocks.ext.input-otp` | shipped | shadcn |
-| `rating` | `Rating` | Forms | stl | `blocks.ext.rating` | shipped | DaisyUI |
-| `filter-chips` | `FilterChips` | Forms | stl | `blocks.ext.filter-chips` | shipped | DaisyUI |
-| `data-table-chrome` | `DataTableChrome` | Data | stl, act | `blocks.ext.data-table-chrome` | shipped | shadcn |
-| `carousel-interactive` | `CarouselInteractive` | Data | stl | `blocks.ext.carousel-interactive` | shipped | shadcn |
-| `resizable` | `Resizable` | Layout | stl | `blocks.ext.resizable` | shipped | shadcn |
-| `toast` | `Toast` | Feedback | stl | `blocks.ext.toast` | shipped | shadcn |
-| `command-palette` | `CommandPalette` | Commands | stl, runtime | `blocks.ext.command-palette` | shipped | shadcn |
-
-## Catalog (dev/test)
-
-`GET /ux-blocks-extended/catalog` — MVP roles. Demo hub: `ux-blocks-demo` routes under `/extended/*`.
-
-## Docs
-
-- [porting.md](docs/porting.md) — REF checkout and port transform for extended roles
-- [docs/components/](docs/components/) — per-role stubs (implement phase)
 
 ## Test
 
@@ -82,18 +85,3 @@ make test
 # or package-scoped:
 ./sbin/php vendor/bin/phpunit packages/ux-blocks-extended/tests
 ```
-
-## Extension
-
-Add a row to [extended-role-registry](../../../specs/symfinity/symfinity/3-ux-component-catalog/contracts/extended-role-registry.md) and mirror it in `config/ux_roles.yaml` before shipping a new component.
-
-## Primal lab reference (WoWi)
-
-Source: [`var/primal/td-cc-wowi`](../../../../var/primal/td-cc-wowi) (reference only).
-
-| WoWi pattern | Notes for ux-blocks-extended |
-|--------------|------------------------------|
-| Glossary/FAQ `answerDialog` modal | `alert-dialog-enhanced`, `sheet`, `drawer` + `ux-runtime` Turbo fetch |
-| Q&A accordion + filter slider (Slick) | `tabs` + carousel patterns; FAQ filter → tabs or command palette |
-| `history.pushState` on FAQ item open | Host + Turbo; not a blocks CSS concern |
-| Event calendar nav slider | Extended carousel/tab roles + JSON feed in host app |
