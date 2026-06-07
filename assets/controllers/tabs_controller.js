@@ -1,5 +1,5 @@
 import { Controller } from '@hotwired/stimulus';
-import { applyRovingTabindex, rovingKeydown } from '../shared/menu-roving.js';
+import { applyRovingTabindex, rovingKeydown } from './shared/menu-roving.js';
 
 export default class extends Controller {
     static targets = ['list', 'trigger', 'panel'];
@@ -11,8 +11,7 @@ export default class extends Controller {
 
     connect() {
         this._activeIndex = 0;
-        this._triggers = this.triggerTargets;
-        this._panels = this.panelTargets;
+        this._triggers = this._enabledTriggers();
 
         const initial = this.defaultValueValue
             || this._triggers[0]?.dataset.value
@@ -33,7 +32,13 @@ export default class extends Controller {
     }
 
     select(event) {
-        const value = event.currentTarget.dataset.value;
+        const trigger = event.currentTarget;
+
+        if (this._isDisabled(trigger) || trigger.dataset.uiState === 'linked') {
+            return;
+        }
+
+        const value = trigger.dataset.value;
         if (value) {
             this._activateByValue(value, true);
         }
@@ -44,39 +49,63 @@ export default class extends Controller {
             return;
         }
 
-        const items = this._triggers;
-        const next = rovingKeydown(event, items, this._activeIndex, this.orientationValue);
-        if (next !== this._activeIndex) {
-            this._activateIndex(next, true);
+        const items = this._enabledTriggers();
+        if (items.length === 0) {
+            return;
+        }
+
+        const current = items.indexOf(this.triggerTargets[this._activeIndex]);
+        const activeInEnabled = current >= 0 ? current : 0;
+        const next = rovingKeydown(event, items, activeInEnabled, this.orientationValue);
+
+        if (next !== activeInEnabled) {
+            const value = items[next]?.dataset.value;
+            if (value) {
+                this._activateByValue(value, true);
+            }
         }
     }
 
     _activateByValue(value, focus) {
-        const index = this._triggers.findIndex((el) => el.dataset.value === value);
+        const index = this.triggerTargets.findIndex((el) => el.dataset.value === value);
         if (index >= 0) {
             this._activateIndex(index, focus);
         }
     }
 
     _activateIndex(index, focus) {
-        this._activeIndex = index;
-        applyRovingTabindex(this._triggers, index);
+        const trigger = this.triggerTargets[index];
+        if (!trigger || this._isDisabled(trigger) || trigger.dataset.uiState === 'linked') {
+            return;
+        }
 
-        const activeValue = this._triggers[index]?.dataset.value;
+        this._activeIndex = index;
+        this._triggers = this._enabledTriggers();
+        applyRovingTabindex(this.triggerTargets, index);
+
+        const activeValue = trigger.dataset.value;
         this._panels.forEach((panel) => {
             const match = panel.dataset.value === activeValue;
             panel.hidden = !match;
             panel.setAttribute('aria-hidden', match ? 'false' : 'true');
         });
 
-        this._triggers.forEach((trigger, i) => {
+        this.triggerTargets.forEach((item, i) => {
             const selected = i === index;
-            trigger.setAttribute('aria-selected', selected ? 'true' : 'false');
-            trigger.tabIndex = selected ? 0 : -1;
+            item.setAttribute('aria-selected', selected ? 'true' : 'false');
+            item.tabIndex = selected ? 0 : -1;
         });
 
         if (focus) {
-            this._triggers[index]?.focus();
+            trigger.focus();
         }
+    }
+
+    _enabledTriggers() {
+        return this.triggerTargets.filter((trigger) => !this._isDisabled(trigger) && trigger.dataset.uiState !== 'linked');
+    }
+
+    _isDisabled(trigger) {
+        return trigger.disabled === true || trigger.getAttribute('aria-disabled') === 'true';
     }
 }

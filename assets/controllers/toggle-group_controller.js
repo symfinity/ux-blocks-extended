@@ -1,5 +1,5 @@
 import { Controller } from '@hotwired/stimulus';
-import { applyRovingTabindex, rovingKeydown } from '../shared/menu-roving.js';
+import { applyRovingTabindex, rovingKeydown } from './shared/menu-roving.js';
 
 export default class extends Controller {
     static targets = ['item'];

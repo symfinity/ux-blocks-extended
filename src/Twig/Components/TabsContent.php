@@ -10,4 +10,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 final class TabsContent
 {
     public string $value = '';
+
+    /** Matches Tabs defaultValue for SSR visibility before Stimulus connects. */
+    public bool $active = false;
 }

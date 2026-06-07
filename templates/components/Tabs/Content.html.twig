@@ -2,7 +2,8 @@
     role="tabpanel"
     data-ui-role="tabs-content"
     data-value="{{ value }}"
-    hidden
+    {% if not active %}hidden{% endif %}
+    aria-hidden="{{ active ? 'false' : 'true' }}"
     data-symfony--ux-blocks-extended--tabs-target="panel"
     {{ attributes }}
 >

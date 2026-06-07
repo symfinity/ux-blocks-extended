@@ -1,5 +1,5 @@
 import { Controller } from '@hotwired/stimulus';
-import { restoreFocus, trapFocus } from '../shared/overlay-base.js';
+import { restoreFocus, trapFocus } from './shared/overlay-base.js';
 
 export default class extends Controller {
     static targets = ['trigger', 'content', 'close'];

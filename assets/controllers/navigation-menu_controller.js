@@ -10,7 +10,7 @@ import {
     rovingKeydown,
     unbindDocumentClose,
     handleSubmenuKeydown,
-} from '../shared/multi-menu.js';
+} from './shared/multi-menu.js';
 
 export default class extends Controller {
     static targets = ['trigger', 'content', 'item', 'viewport'];

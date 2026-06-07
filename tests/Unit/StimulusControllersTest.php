@@ -64,6 +64,35 @@ final class StimulusControllersTest extends TestCase
     }
 
     #[Test]
+    public function packageJsonRegistersTabsController(): void
+    {
+        $path = \dirname(__DIR__, 2) . '/assets/package.json';
+        self::assertFileExists($path);
+
+        $package = json_decode((string) file_get_contents($path), true);
+        self::assertIsArray($package);
+        self::assertSame('@symfinity/ux-blocks-extended', $package['name'] ?? null);
+        self::assertSame(
+            'controllers/tabs_controller.js',
+            $package['symfony']['controllers']['tabs']['main'] ?? null,
+        );
+    }
+
+    #[Test]
+    public function sharedImportsUseRelativePaths(): void
+    {
+        $dir = \dirname(__DIR__, 2) . '/assets/controllers';
+        foreach (glob($dir . '/*_controller.js') ?: [] as $file) {
+            $source = (string) file_get_contents($file);
+            self::assertDoesNotMatchRegularExpression(
+                "/from ['\"]ux-blocks-extended\\/controllers\\//",
+                $source,
+                basename($file) . ' must import shared helpers via ./shared/ (AssetMapper resolves relative paths only)',
+            );
+        }
+    }
+
+    #[Test]
     public function tableOfContentsControllerExists(): void
     {
         $path = \dirname(__DIR__, 2) . '/assets/controllers/table-of-contents_controller.js';

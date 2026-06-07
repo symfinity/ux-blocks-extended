@@ -9,4 +9,5 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 #[AsTwigComponent('Tabs:List', template: '@UxBlocksExtended/components/Tabs/List.html.twig')]
 final class TabsList
 {
+    public string $orientation = 'horizontal';
 }
