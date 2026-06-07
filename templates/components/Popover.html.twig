@@ -1,0 +1,14 @@
+<div
+    id="{{ popover_id }}"
+    popover
+    data-ui-role="popover"
+    data-ui-fragment="blocks.ext.popover"
+    class="ui-popover"
+    data-controller="ux-blocks-core--popover"
+    role="dialog"
+    {% if label %}aria-label="{{ label }}"{% endif %}
+    {% if open %}data-ui-state="open"{% else %}data-ui-state="closed"{% endif %}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>

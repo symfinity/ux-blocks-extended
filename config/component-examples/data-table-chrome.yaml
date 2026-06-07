@@ -1,13 +1,8 @@
 schema: showcase-examples/1.0
 role: data-table-chrome
 twig_name: DataTableChrome
-requires_stimulus: true
+requires_stimulus: false
 sections:
   - id: demo
     title: Demo
-    layout: stack
-    items:
-      - variant: default
-        label: Data Table Chrome
-        props: {}
-        render_partial: showcase/_compounds/by_twig.html.twig
+    layout: custom

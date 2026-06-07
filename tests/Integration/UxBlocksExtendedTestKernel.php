@@ -54,5 +54,14 @@ final class UxBlocksExtendedTestKernel extends Kernel
             'router' => ['utf8' => true],
             'php_errors' => ['log' => false],
         ]);
+
+        $container->extension('twig', [
+            'form_themes' => [],
+        ]);
+
+        $container->services()
+            ->set('twig.extension.form', StubFormTwigExtension::class)
+            ->tag('twig.extension')
+            ->public();
     }
 }

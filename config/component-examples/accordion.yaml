@@ -1,0 +1,17 @@
+schema: showcase-examples/1.0
+role: accordion
+twig_name: Accordion
+requires_stimulus: true
+sections:
+  - id: modes
+    title: Open mode
+    layout: stack
+    items:
+      - variant: default
+        label: Single open
+        props: { type: single }
+        render_partial: showcase/_compounds/accordion.html.twig
+      - variant: multiple
+        label: Multiple open
+        props: { type: multiple }
+        render_partial: showcase/_compounds/accordion.html.twig

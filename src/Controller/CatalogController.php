@@ -6,11 +6,12 @@ namespace Symfinity\UxBlocksExtended\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 
 final class CatalogController extends AbstractController
 {
     public function catalog(): Response
     {
-        return $this->render('@UxBlocksExtended/catalog.html.twig');
+        return new Response('ux-blocks-extended catalog');
     }
 }

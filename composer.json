@@ -1,6 +1,6 @@
 {
     "name": "symfinity/ux-blocks-extended",
-    "description": "Symfinity UX Blocks Extended — stl micro-UX catalog with blocks.ext fragments",
+    "description": "Symfinity UX Blocks Extended — nat/act compound catalog with blocks.ext fragments",
     "license": "MIT",
     "type": "symfony-bundle",
     "require": {

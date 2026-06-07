@@ -30,12 +30,12 @@ final class BundleRegistrationTest extends KernelTestCase
     }
 
     #[Test]
-    public function commandPaletteTwigComponentRenders(): void
+    public function cardTwigComponentRenders(): void
     {
         self::bootKernel();
-        $html = (string) $this->renderTwigComponent('CommandPalette');
+        $html = (string) $this->renderTwigComponent('Card');
 
-        self::assertStringContainsString('data-ui-fragment="blocks.ext.command-palette"', $html);
-        self::assertStringContainsString('data-ui-role="command-palette"', $html);
+        self::assertStringContainsString('data-ui-fragment="blocks.ext.card"', $html);
+        self::assertStringContainsString('data-ui-role="card"', $html);
     }
 }

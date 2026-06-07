@@ -1,0 +1,24 @@
+{% set trail = this.resolvedItems %}
+{% if trail is not empty %}
+<nav
+    data-ui-role="breadcrumb"
+    data-ui-fragment="blocks.ext.breadcrumb"
+    aria-label="Breadcrumb"
+    {% if divider != '/' %}data-ui-divider="{{ divider }}"{% endif %}
+    {{ attributes }}
+>
+    <ol>
+        {% block content %}
+            {% for item in trail %}
+                <li{% if item.current %} aria-current="page"{% endif %}>
+                    {% if item.url %}
+                        <twig:Link href="{{ item.url }}">{{ item.label }}</twig:Link>
+                    {% else %}
+                        <span>{{ item.label }}</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        {% endblock %}
+    </ol>
+</nav>
+{% endif %}

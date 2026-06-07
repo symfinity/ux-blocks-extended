@@ -2,7 +2,7 @@
 
 # Ux Blocks Extended
 
-### Symfinity UX Blocks Extended — stl micro-UX catalog with blocks.ext fragments
+### Symfinity UX Blocks Extended — nat/act compound catalog with blocks.ext fragments
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
 [![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
@@ -63,6 +63,20 @@
 | Component: Toast | [docs/components/toast.md](docs/components/toast.md) |
 | Component: Toggle Group | [docs/components/toggle-group.md](docs/components/toggle-group.md) |
 | Component: Toggle | [docs/components/toggle.md](docs/components/toggle.md) |
+| Component: Date Range Picker | [docs/components/date-range-picker.md](docs/components/date-range-picker.md) |
+| Component: Tags Input | [docs/components/tags-input.md](docs/components/tags-input.md) |
+| Component: Tree View | [docs/components/tree-view.md](docs/components/tree-view.md) |
+
+## Component inventory (054 three-tier)
+
+**Application tier** — **28** compound `nat`/`act` roles in `config/ux_roles.yaml` (prefix `blocks.ext`). Interactive `stl` roles moved to `symfinity/ux-blocks-live` in **054**.
+
+| Role | Twig | Interaction | Fragment |
+|------|------|-------------|----------|
+| `field` … `dashboard-shell` | compounds | `nat` | `blocks.ext.*` |
+| `data-table-chrome` | `DataTableChrome` | `nat` | `blocks.ext.data-table-chrome` |
+
+Deprecated one-cycle aliases: `blocks.{role}` → `blocks.ext.{role}` for compounds migrated from core.
 
 ## Requirements
 

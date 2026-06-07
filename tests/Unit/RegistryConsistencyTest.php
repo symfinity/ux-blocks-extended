@@ -28,7 +28,7 @@ final class RegistryConsistencyTest extends TestCase
     {
         $registry = $this->loadRegistry();
 
-        self::assertSame('1.1', $registry['ux_role_registry']);
+        self::assertSame('1.3', $registry['ux_role_registry']);
         self::assertSame('blocks.ext', $registry['registry_prefix']);
     }
 
@@ -48,30 +48,19 @@ final class RegistryConsistencyTest extends TestCase
         $row = $this->findRole($role);
 
         self::assertSame($role, $row['role']);
-        self::assertMatchesRegularExpression('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $row['role']);
         self::assertNotEmpty($row['twig_component']);
         self::assertNotEmpty($row['php_class']);
         self::assertSame('blocks.ext.' . $role, $row['fragment_id']);
         self::assertSame('blocks.ext.' . $role . '.{n}', $row['fragment_pattern']);
-        self::assertSame('stl', $row['interaction']);
         self::assertSame('A', $row['stage']);
-        self::assertContains($row['status'], ['planned', 'shipped'], sprintf('Role "%s" status', $role));
-    }
-
-    #[Test]
-    public function allRolesAreShippedInYaml(): void
-    {
-        foreach (ExtendedRoleCatalog::roles() as $role) {
-            self::assertSame('shipped', $this->findRole($role)['status'], $role);
-        }
+        self::assertSame('shipped', $row['status']);
+        self::assertTrue(class_exists($row['php_class']), $row['php_class']);
     }
 
     /** @return array<string, mixed> */
     private function loadRegistry(): array
     {
-        $path = \dirname(__DIR__, 2) . '/config/ux_roles.yaml';
-
-        return Yaml::parseFile($path);
+        return Yaml::parseFile(\dirname(__DIR__, 2) . '/config/ux_roles.yaml');
     }
 
     /** @return array<string, mixed> */

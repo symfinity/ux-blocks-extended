@@ -6,6 +6,16 @@ All changes to **symfinity/ux-blocks-extended** are currently on `main` (unrelea
 
 ### Added
 
+- **046 R2:** `DateRangePicker`, `TagsInput`, and `TreeView` roles (`blocks.ext.*` fragments + Stimulus)
+- Opt-in **creatable** mode on `Combobox` (`creatable`, `preventDuplicates` props)
+- Kernel CSS role-rules for three new extended roles
+
+### Changed
+
+- A11y hardening on `Combobox`, `DatePicker`, and core `Select` per 046 contract (`aria-controls`, `aria-activedescendant`, labeled select wrapper)
+
+### Added (025 baseline)
+
 - Symfony bundle `SymfinityUxBlocksExtendedBundle` for integration
 - Module `Controller`
 - Module `Twig`

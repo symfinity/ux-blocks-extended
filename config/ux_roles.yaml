@@ -1,172 +1,220 @@
-ux_role_registry: "1.1"
+ux_role_registry: "1.3"
 registry_prefix: blocks.ext
 roles:
-  - role: tabs
-    twig_component: Tabs
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Tabs
-    fragment_id: blocks.ext.tabs
-    fragment_pattern: "blocks.ext.tabs.{n}"
-    interaction: stl
+  - role: field
+    twig_component: Field
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Field
+    fragment_id: blocks.ext.field
+    fragment_pattern: "blocks.ext.field.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: alert-dialog-enhanced
-    twig_component: AlertDialog
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\AlertDialog
-    fragment_id: blocks.ext.alert-dialog-enhanced
-    fragment_pattern: "blocks.ext.alert-dialog-enhanced.{n}"
-    interaction: stl
+  - role: fieldset
+    twig_component: Fieldset
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Fieldset
+    fragment_id: blocks.ext.fieldset
+    fragment_pattern: "blocks.ext.fieldset.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: drawer
-    twig_component: Drawer
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Drawer
-    fragment_id: blocks.ext.drawer
-    fragment_pattern: "blocks.ext.drawer.{n}"
-    interaction: stl
+  - role: radio-group
+    twig_component: RadioGroup
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\RadioGroup
+    fragment_id: blocks.ext.radio-group
+    fragment_pattern: "blocks.ext.radio-group.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: sheet
-    twig_component: Sheet
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Sheet
-    fragment_id: blocks.ext.sheet
-    fragment_pattern: "blocks.ext.sheet.{n}"
-    interaction: stl
+  - role: input-group
+    twig_component: InputGroup
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\InputGroup
+    fragment_id: blocks.ext.input-group
+    fragment_pattern: "blocks.ext.input-group.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: dropdown-menu
-    twig_component: DropdownMenu
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\DropdownMenu
-    fragment_id: blocks.ext.dropdown-menu
-    fragment_pattern: "blocks.ext.dropdown-menu.{n}"
-    interaction: stl
+  - role: button-group
+    twig_component: ButtonGroup
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\ButtonGroup
+    fragment_id: blocks.ext.button-group
+    fragment_pattern: "blocks.ext.button-group.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: combobox
-    twig_component: Combobox
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Combobox
-    fragment_id: blocks.ext.combobox
-    fragment_pattern: "blocks.ext.combobox.{n}"
-    interaction: stl
+  - role: card
+    twig_component: Card
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Card
+    fragment_id: blocks.ext.card
+    fragment_pattern: "blocks.ext.card.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: slider
-    twig_component: Slider
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Slider
-    fragment_id: blocks.ext.slider
-    fragment_pattern: "blocks.ext.slider.{n}"
-    interaction: stl
+  - role: table
+    twig_component: Table
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Table
+    fragment_id: blocks.ext.table
+    fragment_pattern: "blocks.ext.table.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: toggle
-    twig_component: Toggle
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Toggle
-    fragment_id: blocks.ext.toggle
-    fragment_pattern: "blocks.ext.toggle.{n}"
-    interaction: stl
+  - role: alert
+    twig_component: Alert
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Alert
+    fragment_id: blocks.ext.alert
+    fragment_pattern: "blocks.ext.alert.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: toggle-group
-    twig_component: ToggleGroup
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\ToggleGroup
-    fragment_id: blocks.ext.toggle-group
-    fragment_pattern: "blocks.ext.toggle-group.{n}"
-    interaction: stl
+  - role: grid
+    twig_component: Grid
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Grid
+    fragment_id: blocks.ext.grid
+    fragment_pattern: "blocks.ext.grid.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: calendar
-    twig_component: Calendar
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Calendar
-    fragment_id: blocks.ext.calendar
-    fragment_pattern: "blocks.ext.calendar.{n}"
-    interaction: stl
+  - role: stack
+    twig_component: Stack
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Stack
+    fragment_id: blocks.ext.stack
+    fragment_pattern: "blocks.ext.stack.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: date-picker
-    twig_component: DatePicker
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\DatePicker
-    fragment_id: blocks.ext.date-picker
-    fragment_pattern: "blocks.ext.date-picker.{n}"
-    interaction: stl
+  - role: list
+    twig_component: List
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\ListBox
+    fragment_id: blocks.ext.list
+    fragment_pattern: "blocks.ext.list.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: input-otp
-    twig_component: InputOtp
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\InputOtp
-    fragment_id: blocks.ext.input-otp
-    fragment_pattern: "blocks.ext.input-otp.{n}"
-    interaction: stl
+  - role: description-list
+    twig_component: DescriptionList
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\DescriptionList
+    fragment_id: blocks.ext.description-list
+    fragment_pattern: "blocks.ext.description-list.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: sidebar
-    twig_component: Sidebar
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Sidebar
-    fragment_id: blocks.ext.sidebar
-    fragment_pattern: "blocks.ext.sidebar.{n}"
-    interaction: stl
+  - role: stat
+    twig_component: Stat
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Stat
+    fragment_id: blocks.ext.stat
+    fragment_pattern: "blocks.ext.stat.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: stacked-layout-interactive
-    twig_component: StackedLayoutInteractive
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\StackedLayoutInteractive
-    fragment_id: blocks.ext.stacked-layout-interactive
-    fragment_pattern: "blocks.ext.stacked-layout-interactive.{n}"
-    interaction: stl
+  - role: timeline
+    twig_component: Timeline
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Timeline
+    fragment_id: blocks.ext.timeline
+    fragment_pattern: "blocks.ext.timeline.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: command-palette
-    twig_component: CommandPalette
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\CommandPalette
-    fragment_id: blocks.ext.command-palette
-    fragment_pattern: "blocks.ext.command-palette.{n}"
-    interaction: stl
+  - role: accordion
+    twig_component: Accordion
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Accordion
+    fragment_id: blocks.ext.accordion
+    fragment_pattern: "blocks.ext.accordion.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: toast
-    twig_component: Toast
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Toast
-    fragment_id: blocks.ext.toast
-    fragment_pattern: "blocks.ext.toast.{n}"
-    interaction: stl
+  - role: carousel
+    twig_component: Carousel
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Carousel
+    fragment_id: blocks.ext.carousel
+    fragment_pattern: "blocks.ext.carousel.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: context-menu
-    twig_component: ContextMenu
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\ContextMenu
-    fragment_id: blocks.ext.context-menu
-    fragment_pattern: "blocks.ext.context-menu.{n}"
-    interaction: stl
+  - role: dialog
+    twig_component: Dialog
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Dialog
+    fragment_id: blocks.ext.dialog
+    fragment_pattern: "blocks.ext.dialog.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: hover-card
-    twig_component: HoverCard
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\HoverCard
-    fragment_id: blocks.ext.hover-card
-    fragment_pattern: "blocks.ext.hover-card.{n}"
-    interaction: stl
+  - role: popover
+    twig_component: Popover
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Popover
+    fragment_id: blocks.ext.popover
+    fragment_pattern: "blocks.ext.popover.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: resizable
-    twig_component: Resizable
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Resizable
-    fragment_id: blocks.ext.resizable
-    fragment_pattern: "blocks.ext.resizable.{n}"
-    interaction: stl
+  - role: tooltip
+    twig_component: Tooltip
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Tooltip
+    fragment_id: blocks.ext.tooltip
+    fragment_pattern: "blocks.ext.tooltip.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: menubar
-    twig_component: Menubar
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Menubar
-    fragment_id: blocks.ext.menubar
-    fragment_pattern: "blocks.ext.menubar.{n}"
-    interaction: stl
+  - role: navbar
+    twig_component: Navbar
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Navbar
+    fragment_id: blocks.ext.navbar
+    fragment_pattern: "blocks.ext.navbar.{n}"
+    interaction: nat
     stage: A
     status: shipped
-  - role: navigation-menu
-    twig_component: NavigationMenu
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\NavigationMenu
-    fragment_id: blocks.ext.navigation-menu
-    fragment_pattern: "blocks.ext.navigation-menu.{n}"
-    interaction: stl
+  - role: breadcrumb
+    twig_component: Breadcrumb
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Breadcrumb
+    fragment_id: blocks.ext.breadcrumb
+    fragment_pattern: "blocks.ext.breadcrumb.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: steps
+    twig_component: Steps
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Steps
+    fragment_id: blocks.ext.steps
+    fragment_pattern: "blocks.ext.steps.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: pagination
+    twig_component: Pagination
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Pagination
+    fragment_id: blocks.ext.pagination
+    fragment_pattern: "blocks.ext.pagination.{n}"
+    interaction: nat, act
+    stage: A
+    status: shipped
+  - role: page-heading
+    twig_component: PageHeading
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\PageHeading
+    fragment_id: blocks.ext.page-heading
+    fragment_pattern: "blocks.ext.page-heading.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: section-heading
+    twig_component: SectionHeading
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\SectionHeading
+    fragment_id: blocks.ext.section-heading
+    fragment_pattern: "blocks.ext.section-heading.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: auth-layout
+    twig_component: AuthLayout
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\AuthLayout
+    fragment_id: blocks.ext.auth-layout
+    fragment_pattern: "blocks.ext.auth-layout.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: dashboard-shell
+    twig_component: DashboardShell
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\DashboardShell
+    fragment_id: blocks.ext.dashboard-shell
+    fragment_pattern: "blocks.ext.dashboard-shell.{n}"
+    interaction: nat, act
     stage: A
     status: shipped
   - role: data-table-chrome
@@ -174,38 +222,91 @@ roles:
     php_class: Symfinity\UxBlocksExtended\Twig\Components\DataTableChrome
     fragment_id: blocks.ext.data-table-chrome
     fragment_pattern: "blocks.ext.data-table-chrome.{n}"
-    interaction: stl
+    interaction: nat
     stage: A
     status: shipped
-  - role: carousel-interactive
-    twig_component: CarouselInteractive
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\CarouselInteractive
-    fragment_id: blocks.ext.carousel-interactive
-    fragment_pattern: "blocks.ext.carousel-interactive.{n}"
-    interaction: stl
-    stage: A
-    status: shipped
-  - role: rating
-    twig_component: Rating
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Rating
-    fragment_id: blocks.ext.rating
-    fragment_pattern: "blocks.ext.rating.{n}"
-    interaction: stl
-    stage: A
-    status: shipped
-  - role: filter-chips
-    twig_component: FilterChips
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\FilterChips
-    fragment_id: blocks.ext.filter-chips
-    fragment_pattern: "blocks.ext.filter-chips.{n}"
-    interaction: stl
-    stage: A
-    status: shipped
-  - role: table-of-contents
-    twig_component: TableOfContents
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\TableOfContents
-    fragment_id: blocks.ext.table-of-contents
-    fragment_pattern: "blocks.ext.table-of-contents.{n}"
-    interaction: stl
-    stage: A
-    status: shipped
+deprecated_fragment_aliases:
+  - from: blocks.field
+    to: blocks.ext.field
+    sunset: next-minor
+  - from: blocks.fieldset
+    to: blocks.ext.fieldset
+    sunset: next-minor
+  - from: blocks.radio-group
+    to: blocks.ext.radio-group
+    sunset: next-minor
+  - from: blocks.input-group
+    to: blocks.ext.input-group
+    sunset: next-minor
+  - from: blocks.button-group
+    to: blocks.ext.button-group
+    sunset: next-minor
+  - from: blocks.card
+    to: blocks.ext.card
+    sunset: next-minor
+  - from: blocks.table
+    to: blocks.ext.table
+    sunset: next-minor
+  - from: blocks.alert
+    to: blocks.ext.alert
+    sunset: next-minor
+  - from: blocks.grid
+    to: blocks.ext.grid
+    sunset: next-minor
+  - from: blocks.stack
+    to: blocks.ext.stack
+    sunset: next-minor
+  - from: blocks.list
+    to: blocks.ext.list
+    sunset: next-minor
+  - from: blocks.description-list
+    to: blocks.ext.description-list
+    sunset: next-minor
+  - from: blocks.stat
+    to: blocks.ext.stat
+    sunset: next-minor
+  - from: blocks.timeline
+    to: blocks.ext.timeline
+    sunset: next-minor
+  - from: blocks.accordion
+    to: blocks.ext.accordion
+    sunset: next-minor
+  - from: blocks.carousel
+    to: blocks.ext.carousel
+    sunset: next-minor
+  - from: blocks.dialog
+    to: blocks.ext.dialog
+    sunset: next-minor
+  - from: blocks.popover
+    to: blocks.ext.popover
+    sunset: next-minor
+  - from: blocks.tooltip
+    to: blocks.ext.tooltip
+    sunset: next-minor
+  - from: blocks.navbar
+    to: blocks.ext.navbar
+    sunset: next-minor
+  - from: blocks.breadcrumb
+    to: blocks.ext.breadcrumb
+    sunset: next-minor
+  - from: blocks.steps
+    to: blocks.ext.steps
+    sunset: next-minor
+  - from: blocks.pagination
+    to: blocks.ext.pagination
+    sunset: next-minor
+  - from: blocks.page-heading
+    to: blocks.ext.page-heading
+    sunset: next-minor
+  - from: blocks.section-heading
+    to: blocks.ext.section-heading
+    sunset: next-minor
+  - from: blocks.auth-layout
+    to: blocks.ext.auth-layout
+    sunset: next-minor
+  - from: blocks.dashboard-shell
+    to: blocks.ext.dashboard-shell
+    sunset: next-minor
+  - from: blocks.data-table-chrome
+    to: blocks.ext.data-table-chrome
+    sunset: next-minor

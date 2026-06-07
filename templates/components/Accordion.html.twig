@@ -1,0 +1,13 @@
+<div
+    data-ui-role="accordion"
+    data-ui-fragment="blocks.ext.accordion"
+    data-ui-accordion-type="{{ accordion_type }}"
+    {% if accordion_is_single %}
+        data-controller="ux-blocks-core--accordion"
+        data-ux-blocks-core--accordion-type-value="single"
+        data-ux-blocks-core--accordion-group-name-value="{{ accordion_group_name }}"
+    {% endif %}
+    {{ attributes }}
+>
+    {% block content %}{% endblock %}
+</div>

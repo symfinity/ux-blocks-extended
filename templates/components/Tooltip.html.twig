@@ -1,0 +1,24 @@
+<span
+    data-ui-role="tooltip"
+    data-ui-fragment="blocks.ext.tooltip"
+    data-controller="ux-blocks-core--tooltip"
+    {{ attributes }}
+>
+    <span
+        class="ui-tooltip-trigger"
+        tabindex="0"
+        aria-describedby="{{ tooltip_text ? tooltip_id : '' }}"
+        data-ux-blocks-core--tooltip-target="trigger"
+    >
+        {% block content %}{% endblock %}
+    </span>
+    {% if tooltip_text %}
+        <span
+            id="{{ tooltip_id }}"
+            role="tooltip"
+            class="ui-tooltip-content"
+            data-ux-blocks-core--tooltip-target="content"
+            hidden
+        >{{ tooltip_text }}</span>
+    {% endif %}
+</span>
