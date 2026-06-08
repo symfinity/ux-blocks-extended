@@ -3,15 +3,19 @@ role: accordion
 twig_name: Accordion
 requires_stimulus: true
 sections:
-  - id: modes
-    title: Open mode
+  - id: colours
+    title: Semantic colours
     layout: stack
     items:
-      - variant: default
-        label: Single open
-        props: { type: single }
-        render_partial: showcase/_compounds/accordion.html.twig
-      - variant: multiple
-        label: Multiple open
-        props: { type: multiple }
-        render_partial: showcase/_compounds/accordion.html.twig
+      - variant: info
+        label: Information
+        props: { variant: info, type: single }
+      - variant: success
+        label: Success
+        props: { variant: success, type: single }
+      - variant: warning
+        label: Warning
+        props: { variant: warning, type: single }
+      - variant: danger
+        label: Error
+        props: { variant: danger, type: single }

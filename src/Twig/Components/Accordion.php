@@ -4,12 +4,17 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksExtended\Twig\Components;
 
+use Symfinity\UxBlocksCore\Twig\ExposesSemanticVariant;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsTwigComponent('Accordion', template: '@UxBlocksExtended/components/Accordion.html.twig')]
 final class Accordion
 {
+    use ExposesSemanticVariant;
+
+    public string $variant = 'primary';
+
     /** @var 'single'|'multiple'|string */
     public string $type = 'single';
 

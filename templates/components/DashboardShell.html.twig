@@ -3,5 +3,10 @@
     data-ui-fragment="blocks.ext.dashboard-shell"
     {{ attributes }}
 >
-    {% block content %}{% endblock %}
+    <aside data-ui-slot="sidebar">
+        {% block sidebar %}{% endblock %}
+    </aside>
+    <main data-ui-slot="main">
+        {% block content %}{% endblock %}
+    </main>
 </div>

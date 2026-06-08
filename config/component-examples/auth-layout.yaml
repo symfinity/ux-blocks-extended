@@ -3,11 +3,25 @@ role: auth-layout
 twig_name: AuthLayout
 requires_stimulus: false
 sections:
-  - id: demo
-    title: Demo
+  - id: submit-colours
+    title: Submit button colours
     layout: stack
     items:
-      - variant: default
-        label: Auth Layout
-        props: {}
-        render_partial: showcase/_compounds/by_twig.html.twig
+      - variant: primary
+        label: Primary sign in
+        props: { submitVariant: default }
+      - variant: secondary
+        label: Secondary submit
+        props: { submitVariant: secondary }
+      - variant: success
+        label: Success submit
+        props: { submitVariant: success }
+      - variant: info
+        label: Info submit
+        props: { submitVariant: info }
+      - variant: warning
+        label: Warning submit
+        props: { submitVariant: warning }
+      - variant: destructive
+        label: Destructive submit
+        props: { submitVariant: destructive }

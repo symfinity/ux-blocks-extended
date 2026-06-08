@@ -3,5 +3,13 @@
     data-ui-fragment="blocks.ext.data-table-chrome"
     {{ attributes }}
 >
-    {% block content %}{% endblock %}
+    <div data-ui-role="data-table-chrome-toolbar" data-ui-slot="toolbar">
+        {% block toolbar %}{% endblock %}
+    </div>
+    <div data-ui-slot="table">
+        {% block content %}{% endblock %}
+    </div>
+    <div data-ui-role="pagination" data-ui-slot="pagination">
+        {% block pagination %}{% endblock %}
+    </div>
 </div>
