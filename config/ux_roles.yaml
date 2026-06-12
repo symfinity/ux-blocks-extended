@@ -17,14 +17,6 @@ roles:
     interaction: nat
     stage: A
     status: shipped
-  - role: radio-group
-    twig_component: RadioGroup
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\RadioGroup
-    fragment_id: blocks.ext.radio-group
-    fragment_pattern: "blocks.ext.radio-group.{n}"
-    interaction: nat
-    stage: A
-    status: shipped
   - role: input-group
     twig_component: InputGroup
     php_class: Symfinity\UxBlocksExtended\Twig\Components\InputGroup
@@ -231,9 +223,6 @@ deprecated_fragment_aliases:
     sunset: next-minor
   - from: blocks.fieldset
     to: blocks.ext.fieldset
-    sunset: next-minor
-  - from: blocks.radio-group
-    to: blocks.ext.radio-group
     sunset: next-minor
   - from: blocks.input-group
     to: blocks.ext.input-group

@@ -14,18 +14,21 @@ final class Popover
 
     public ?string $label = null;
 
-    private string $generatedPopoverId = '';
+    public ?string $popoverId = null;
 
-    public function mount(): void
-    {
-        if ($this->generatedPopoverId === '') {
-            $this->generatedPopoverId = 'popover-' . bin2hex(random_bytes(4));
-        }
-    }
+    public ?string $anchorTarget = null;
+
+    private string $generatedPopoverId = '';
 
     #[ExposeInTemplate('popover_id')]
     public function popoverId(): string
     {
+        if ($this->generatedPopoverId === '') {
+            $this->generatedPopoverId = null !== $this->popoverId && '' !== $this->popoverId
+                ? $this->popoverId
+                : 'popover-' . bin2hex(random_bytes(4));
+        }
+
         return $this->generatedPopoverId;
     }
 }

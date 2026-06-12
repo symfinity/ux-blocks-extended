@@ -1,7 +1,7 @@
 # tooltip
 
 **Role:** `tooltip`  
-**Fragment id:** `blocks.tooltip`  
+**Fragment id:** `blocks.ext.tooltip`  
 **Twig:** `Tooltip`
 
-CSS / native hint pattern — pass `label` for `title` and `aria-label`. Kernel positions the host when `symfinity/ui-kernel` is present. No mandatory JS controller in core V1.
+Wrap a focusable trigger in the `content` slot; pass hint copy via `label` (`aria-describedby` + `.ui-tooltip-content`). Hint visibility is CSS-driven (`:hover` / `:focus-within`); optional Stimulus controller upgrades placement to `position: fixed` inside clipped hosts. Package CSS owns `.ui-tooltip-content` surface rules.

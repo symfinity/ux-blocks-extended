@@ -13,12 +13,10 @@ Multi-item disclosure stack — compose native `<details>` / `<summary>` items i
 | `type` | `single` | `single`, `multiple` | **single:** at most one panel open (Stimulus + `<details name>` grouping). **multiple:** independent panels. |
 
 ```twig
-{# Default — single open #}
+{# Default — single open; flush stacked items (Bootstrap-style) #}
 <twig:Accordion>
-    <div data-ui-role="stack" data-ui-gap="sm">
-        <details><summary>One</summary><p>…</p></details>
-        <details><summary>Two</summary><p>…</p></details>
-    </div>
+    <details><summary>One</summary><p>…</p></details>
+    <details><summary>Two</summary><p>…</p></details>
 </twig:Accordion>
 
 {# FAQ-style — several sections may stay open #}

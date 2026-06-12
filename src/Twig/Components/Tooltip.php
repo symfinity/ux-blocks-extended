@@ -12,15 +12,12 @@ final class Tooltip
 {
     public string $label = '';
 
-    /** Alias used by showcase manifests (`content` prop). */
-    public string $content = '';
-
     private string $generatedTooltipId = '';
 
     #[ExposeInTemplate('tooltip_text')]
     public function text(): string
     {
-        return $this->content !== '' ? $this->content : $this->label;
+        return $this->label;
     }
 
     public function mount(): void

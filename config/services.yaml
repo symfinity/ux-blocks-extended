@@ -14,3 +14,7 @@ services:
 
   Symfinity\UxBlocksExtended\Breadcrumb\BreadcrumbTrailResolverInterface:
     alias: Symfinity\UxBlocksExtended\Breadcrumb\PathSegmentBreadcrumbTrailResolver
+
+  Symfinity\UxBlocksExtended\Css\BlocksExtendedCssProvider:
+    arguments:
+      $packageDir: '%ux_blocks_extended.package_dir%'
