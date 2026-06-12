@@ -68,6 +68,16 @@ final class BlocksExtendedCssTest extends TestCase
     }
 
     #[Test]
+    public function alertDismissibleCloseUsesBootstrapStyleDismissControl(): void
+    {
+        $css = self::bundleCss();
+
+        self::assertStringContainsString('[data-ui-role="alert"]:has([data-ui-role="alert-dismiss"])', $css);
+        self::assertStringContainsString('[data-ui-role="alert-dismiss"]', $css);
+        self::assertStringContainsString('[data-ui-role="alert-dismiss"]::before', $css);
+    }
+
+    #[Test]
     public function overlayRulesCoverDialogPopoverAndTooltip(): void
     {
         $css = self::bundleCss();

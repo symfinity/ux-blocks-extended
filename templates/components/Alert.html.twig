@@ -7,4 +7,13 @@
     {{ attributes }}
 >
     {% block content %}{% endblock %}
+    {% if dismissible %}
+        <button
+            type="button"
+            data-ui-role="alert-dismiss"
+            data-alert-dismiss
+            data-action="click->symfinity--ux-blocks-core--alert#dismiss"
+            aria-label="Close"
+        ></button>
+    {% endif %}
 </div>

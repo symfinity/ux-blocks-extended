@@ -13,4 +13,6 @@ final class Alert
     use ExposesSemanticVariant;
 
     public string $variant = 'info';
+
+    public bool $dismissible = false;
 }
