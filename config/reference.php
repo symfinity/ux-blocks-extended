@@ -752,6 +752,9 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         breakpoints?: list<int|Param>,
  *         container_max_widths?: list<int|Param>,
  *     },
+ *     dtcg?: array{
+ *         profile_globals_layer?: scalar|Param|null, // Default: "profile-globals.dtcg.yaml"
+ *     },
  * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
