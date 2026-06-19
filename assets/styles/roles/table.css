@@ -1,0 +1,61 @@
+/* 101 B2 — table subgrid alignment */
+[data-ui-role="table"] {
+  container-type: inline-size;
+  container-name: blocks-table;
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  font-family: var(--ui-font-family-sans);
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-color-text);
+}
+
+@container blocks-table (max-width: 22rem) {
+  [data-ui-role="table"] {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@supports (grid-template-columns: subgrid) {
+  [data-ui-role="table"] {
+    display: grid;
+    grid-template-columns: repeat(var(--blocks-table-columns, 4), minmax(0, 1fr));
+  }
+
+  [data-ui-role="table"] thead,
+  [data-ui-role="table"] tbody,
+  [data-ui-role="table"] tr {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+  }
+
+  [data-ui-role="table"] th,
+  [data-ui-role="table"] td {
+    min-width: 0;
+    padding: var(--ui-space-sm);
+    text-align: start;
+    vertical-align: top;
+  }
+
+  [data-ui-role="table"] tbody tr:hover {
+    background: color-mix(in srgb, var(--ui-color-text) 4%, transparent);
+  }
+}
+
+@supports not (grid-template-columns: subgrid) {
+  [data-ui-role="table"] {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  [data-ui-role="table"] th,
+  [data-ui-role="table"] td {
+    padding: var(--ui-space-sm);
+    text-align: start;
+    vertical-align: top;
+  }
+}

@@ -12,6 +12,7 @@ All changes to **symfinity/ux-blocks-extended** are currently on `main` (unrelea
 
 ### Changed
 
+- **098 compound elevation** — `card` role uses `var(--ui-shadow-md|lg)` on hover with reduced-motion transform gate
 - A11y hardening on `Combobox`, `DatePicker`, and core `Select` per 046 contract (`aria-controls`, `aria-activedescendant`, labeled select wrapper)
 
 ### Added (025 baseline)

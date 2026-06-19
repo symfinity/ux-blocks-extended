@@ -3,5 +3,13 @@
     data-ui-fragment="blocks.ext.stat"
     {{ attributes }}
 >
-    {% block content %}{% endblock %}
+    <div data-ui-part="stat-body">
+        {% block content %}{% endblock %}
+    </div>
+    {% if resolved_stat_icon %}
+        {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+            iconName: resolved_stat_icon,
+            iconDecorative: iconDecorative,
+        } only %}
+    {% endif %}
 </div>

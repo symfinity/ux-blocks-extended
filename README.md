@@ -65,18 +65,20 @@
 | Component: Toggle | [docs/components/toggle.md](docs/components/toggle.md) |
 | Component: Date Range Picker | [docs/components/date-range-picker.md](docs/components/date-range-picker.md) |
 | Component: Tags Input | [docs/components/tags-input.md](docs/components/tags-input.md) |
-| Component: Tree View | [docs/components/tree-view.md](docs/components/tree-view.md) |
+| Component: Bento Box Panel | [docs/components/bento-box-panel.md](docs/components/bento-box-panel.md) |
 
 ## Component inventory (054 three-tier)
 
-**Application tier** — **28** compound `nat`/`act` roles in `config/ux_roles.yaml` (prefix `blocks.ext`). Interactive `stl` roles moved to `symfinity/ux-blocks-live` in **054**.
+**Application tier** — **19** compound `nat`/`act` roles in `config/ux_roles.yaml` (prefix `blocks.ext`). Eight layout/form atoms promoted to `symfinity/ux-blocks-core` in **094**; `empty` compound demoted here from core.
 
 | Role | Twig | Interaction | Fragment |
 |------|------|-------------|----------|
 | `field` … `dashboard-shell` | compounds | `nat` | `blocks.ext.*` |
+| `empty` | `Empty` | `nat` | `blocks.ext.empty` |
+| `bento-box-panel` | `BentoBoxPanel` | `nat` | `blocks.ext.bento-box-panel` |
 | `data-table-chrome` | `DataTableChrome` | `nat` | `blocks.ext.data-table-chrome` |
 
-Deprecated one-cycle aliases: `blocks.{role}` → `blocks.ext.{role}` for compounds migrated from core.
+Deprecated one-cycle aliases: `blocks.{role}` → `blocks.ext.{role}` for compounds on this tier; `blocks.empty` → `blocks.ext.empty` after **094** demote.
 
 ## Requirements
 

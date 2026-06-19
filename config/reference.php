@@ -743,6 +743,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     default_theme?: scalar|Param|null, // Default: "default"
  *     default_variant?: scalar|Param|null, // Default: "default"
  *     schema_version?: scalar|Param|null, // Default: "1.0"
+ *     themes_directory?: scalar|Param|null, // Consumer app DTCG themes root; default %kernel.project_dir%/config/themes when null in extension // Default: null
  *     user_tokens?: list<scalar|Param|null>,
  *     contract?: array<mixed>,
  *     generator?: array<mixed>,

@@ -6,7 +6,13 @@
     data-controller="symfinity--ux-blocks-core--alert"
     {{ attributes }}
 >
-    {% block content %}{% endblock %}
+    <div data-ui-part="alert-body">
+        {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+            iconName: resolved_alert_icon,
+            iconDecorative: iconDecorative,
+        } only %}
+        <div data-ui-part="content">{% block content %}{% endblock %}</div>
+    </div>
     {% if dismissible %}
         <button
             type="button"

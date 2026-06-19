@@ -1,2 +1,11 @@
 /* symfinity/ux-blocks-extended — role CSS (065 W2) */
 @import url('roles/_bundle.css');
+@import url('roles/field.css');
+@import url('roles/input-group.css');
+@import url('roles/fieldset.css');
+@import url('roles/card.css');
+@import url('roles/table.css');
+@import url('roles/bento-box-panel.css');
+@import url('roles/dialog.css');
+@import url('roles/popover.css');
+@import url('roles/icon-slot.css');

@@ -6,6 +6,7 @@ namespace Symfinity\UxBlocksExtended\Tests\Unit\Css;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Symfinity\UxBlocksExtended\Css\BlocksExtendedCssProvider;
 use Symfinity\UxBlocks\Registry\ExtendedRoleCatalog;
 
 final class BlocksExtendedCssTest extends TestCase
@@ -21,7 +22,8 @@ final class BlocksExtendedCssTest extends TestCase
     #[Test]
     public function bundleIncludesShippedExtendedRootRoles(): void
     {
-        $css = self::bundleCss();
+        $provider = new BlocksExtendedCssProvider(dirname(__DIR__, 3));
+        $css = $provider->stylesheet();
 
         foreach (ExtendedRoleCatalog::roles() as $role) {
             self::assertStringContainsString('[data-ui-role="' . $role . '"]', $css, $role);
@@ -34,7 +36,7 @@ final class BlocksExtendedCssTest extends TestCase
         $css = self::bundleCss();
 
         foreach ([
-            'field-group', 'grid-cell', 'list-item', 'list-item-title', 'list-item-description',
+            'field-group',
             'alert-dialog-trigger', 'alert-dialog-content', 'data-table-chrome-toolbar', 'filter-chip',
         ] as $role) {
             self::assertStringContainsString('[data-ui-role="' . $role . '"]', $css, $role);
@@ -50,21 +52,35 @@ final class BlocksExtendedCssTest extends TestCase
         self::assertStringContainsString('[data-ui-role="accordion"] summary::-webkit-details-marker', $css);
         self::assertStringContainsString('details[open] > summary::after', $css);
         self::assertStringContainsString('details[open] > summary', $css);
-        self::assertStringContainsString('color-mix(in srgb, var(--ui-accordion-accent)', $css);
-        self::assertStringContainsString('--ui-accordion-border-color: var(--ui-color-border)', $css);
-        self::assertStringContainsString('border-color: var(--ui-accordion-border-color)', $css);
+        self::assertStringContainsString('color-mix(in srgb, var(--ux-accordion-accent)', $css);
+        self::assertStringContainsString('--ux-accordion-border-color: var(--ui-color-border)', $css);
+        self::assertStringContainsString('border-color: var(--ux-accordion-border-color)', $css);
         self::assertStringContainsString('details:not([open]) > summary', $css);
-        self::assertStringContainsString('color: var(--ui-accordion-border-color)', $css);
+        self::assertStringContainsString('color: var(--ui-color-text-muted)', $css);
         self::assertStringContainsString('[data-ui-role="accordion"] > [data-ui-role="stack"]', $css);
     }
 
     #[Test]
-    public function layoutGridAndStackRulesArePresent(): void
+    public function bundleIncludesDemotedEmptyCompoundRole(): void
     {
         $css = self::bundleCss();
 
-        self::assertStringContainsString('[data-ui-role="grid"]', $css);
-        self::assertStringContainsString('[data-ui-role="stack"]', $css);
+        self::assertStringContainsString('[data-ui-role="empty"]', $css);
+        self::assertStringContainsString('[data-ui-role="empty-media"]', $css);
+    }
+
+    #[Test]
+    public function bundleDoesNotOwnPromotedFoundationLayoutRoles(): void
+    {
+        $css = self::bundleCss();
+
+        foreach (['grid', 'stack', 'list', 'breadcrumb', 'pagination', 'grid-cell'] as $role) {
+            self::assertDoesNotMatchRegularExpression(
+                '/^\[data-ui-role="' . preg_quote($role, '/') . '"\]/m',
+                $css,
+                $role,
+            );
+        }
     }
 
     #[Test]
@@ -80,10 +96,12 @@ final class BlocksExtendedCssTest extends TestCase
     #[Test]
     public function overlayRulesCoverDialogPopoverAndTooltip(): void
     {
-        $css = self::bundleCss();
+        $provider = new BlocksExtendedCssProvider(dirname(__DIR__, 3));
+        $css = $provider->stylesheet();
 
         self::assertStringContainsString('[data-ui-role="dialog"]', $css);
         self::assertStringContainsString('z-index: var(--ui-z-modal)', $css);
+        self::assertStringContainsString('@starting-style', $css);
         self::assertStringContainsString('[data-ui-role="popover"]', $css);
         self::assertStringContainsString('[data-ui-role="popover"][anchor]:popover-open', $css);
         self::assertStringContainsString('[data-ui-role="tooltip"] .ui-tooltip-content', $css);

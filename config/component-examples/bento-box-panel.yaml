@@ -1,0 +1,22 @@
+schema: showcase-examples/1.0
+role: bento-box-panel
+twig_name: BentoBoxPanel
+requires_stimulus: false
+sections:
+  - id: demo
+    title: Electronics category panel
+    layout: stack
+    items:
+      - variant: electronics-six-box
+        label: Six-box electronics nav
+        props: {}
+        render_partial: showcase/_compounds/bento_box_panel_electronics.html.twig
+  - id: drill-down
+    title: Nested drill-down stack
+    layout: stack
+    items:
+      - variant: electronics-drill-down
+        label: Components + Televisions drill-down
+        props: {}
+        render_partial: showcase/_compounds/bento_box_panel_electronics_drill_down.html.twig
+        requires_stimulus: true

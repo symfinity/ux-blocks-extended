@@ -1,0 +1,7 @@
+{% component 'Empty' %}
+    {% block content %}
+        {% component 'Empty:Media' with { icon: 'lucide:inbox' } %}{% endcomponent %}
+        {% component 'Empty:Title' %}No messages{% endcomponent %}
+        {% component 'Empty:Description' %}Your inbox is empty.{% endcomponent %}
+    {% endblock %}
+{% endcomponent %}

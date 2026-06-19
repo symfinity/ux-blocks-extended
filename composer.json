@@ -12,6 +12,8 @@
         "symfony/ux-twig-component": "^2.0|^3.0"
     },
     "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^10.5 || ^11.0",
         "symfinity/ux-blocks": "@dev",
         "symfony/browser-kit": "^7.4||^8.0",
@@ -45,7 +47,8 @@
         }
     },
     "scripts": {
-        "test": "phpunit -c phpunit.xml.dist"
+        "test": "phpunit -c phpunit.xml.dist",
+        "phpstan": "phpstan analyse --memory-limit=512M"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

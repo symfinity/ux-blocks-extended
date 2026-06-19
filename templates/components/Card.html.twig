@@ -1,8 +1,12 @@
+{% import '@UxBlocksCore/components/_component_style.html.twig' as componentStyle %}
 <div
     data-ui-role="card"
     data-ui-fragment="blocks.ext.card"
     data-ui-variant="{{ size }}"
-    {{ attributes }}
+    data-ui-density="{{ density }}"
+    data-ui-theme-variant="{{ themeVariant }}"
+    style="{{ componentStyle.rootStyle(attributes, '--ui-density: ' ~ density ~ '; --ui-theme-variant: ' ~ themeVariant ~ ';') }}"
+    {{ attributes.without('style') }}
 >
     {% block content %}{% endblock %}
 </div>

@@ -16,13 +16,29 @@ final class Dialog
 
     public ?string $labelledBy = null;
 
+    public ?string $dialogId = null;
+
     private string $generatedTitleId = '';
+
+    private string $generatedDialogId = '';
 
     public function mount(): void
     {
         if ($this->generatedTitleId === '') {
             $this->generatedTitleId = 'dialog-title-' . bin2hex(random_bytes(4));
         }
+
+        if ($this->generatedDialogId === '') {
+            $this->generatedDialogId = null !== $this->dialogId && '' !== $this->dialogId
+                ? $this->dialogId
+                : 'dialog-' . bin2hex(random_bytes(4));
+        }
+    }
+
+    #[ExposeInTemplate('dialog_id')]
+    public function id(): string
+    {
+        return $this->generatedDialogId;
     }
 
     #[ExposeInTemplate('dialog_title_id')]

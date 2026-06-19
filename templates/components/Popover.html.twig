@@ -4,11 +4,8 @@
     data-ui-role="popover"
     data-ui-fragment="blocks.ext.popover"
     class="ui-popover"
-    data-controller="symfinity--ux-blocks-core--popover"
-    role="dialog"
     {% if anchorTarget %}anchor="{{ anchorTarget }}"{% endif %}
     {% if label %}aria-label="{{ label }}"{% endif %}
-    {% if open %}data-ui-state="open"{% else %}data-ui-state="closed"{% endif %}
     {{ attributes }}
 >
     {% block content %}{% endblock %}
