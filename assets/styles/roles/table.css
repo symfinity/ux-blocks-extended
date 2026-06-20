@@ -1,3 +1,23 @@
+/* 067 — base table chrome (relocated from _bundle.css, 107 T025) */
+[data-ui-role="table"] {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ui-font-family-sans);
+  font-size: var(--ui-font-size-sm);
+}
+
+[data-ui-role="table"] th,
+[data-ui-role="table"] td {
+  border: 1px solid var(--ui-color-border);
+  padding: var(--ui-space-sm) var(--ui-space-md);
+  text-align: left;
+}
+
+[data-ui-role="table"] th {
+  background: var(--ui-color-surface-elevated);
+  font-weight: 600;
+}
+
 /* 101 B2 — table subgrid alignment */
 [data-ui-role="table"] {
   container-type: inline-size;

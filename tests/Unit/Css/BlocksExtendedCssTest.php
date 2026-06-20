@@ -37,10 +37,15 @@ final class BlocksExtendedCssTest extends TestCase
 
         foreach ([
             'field-group',
-            'alert-dialog-trigger', 'alert-dialog-content', 'data-table-chrome-toolbar', 'filter-chip',
+            'alert-dialog-trigger', 'data-table-chrome-toolbar', 'filter-chip',
         ] as $role) {
             self::assertStringContainsString('[data-ui-role="' . $role . '"]', $css, $role);
         }
+
+        // 107: alert-dialog-content surface is single-path in roles/dialog.css
+        // (grouped with modal/dialog overlay chrome), not the residual aggregate.
+        $full = (new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet();
+        self::assertStringContainsString('[data-ui-role="alert-dialog-content"]', $full);
     }
 
     #[Test]

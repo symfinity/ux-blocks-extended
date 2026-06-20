@@ -1,3 +1,13 @@
+/* 067 — base card surface (relocated from _bundle.css, 107 T025) */
+[data-ui-role="card"] {
+  background: var(--ui-color-surface-elevated);
+  color: var(--ui-color-text);
+  border: 1px solid var(--ui-color-border);
+  border-radius: var(--ui-radius-lg);
+  padding: var(--ui-space-lg);
+  font-family: var(--ui-font-family-sans);
+}
+
 /* 099 S2 — card container style queries + 100 A2 selected surface */
 [data-ui-role="card"] {
   --ui-density: comfortable;

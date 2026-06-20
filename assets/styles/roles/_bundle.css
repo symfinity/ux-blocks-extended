@@ -25,8 +25,6 @@ display: flex;
 [data-ui-role="alert-dialog-cancel"] {
 cursor: pointer;
   font-family: var(--ui-font-family-sans);
-}[data-ui-role="alert-dialog-content"] {
-max-width: min(28rem, calc(100vw - 2 * var(--ui-space-lg)));
 }[data-ui-role="data-table-chrome"] {
 display: flex;
   flex-direction: column;
@@ -54,14 +52,7 @@ border: 0;
   padding: 0;
   line-height: 1;
 }/* 067 W-ext-core — extended registry CSS from core/interactive */
-[data-ui-role="card"] {
-background: var(--ui-color-surface-elevated);
-  color: var(--ui-color-text);
-  border: 1px solid var(--ui-color-border);
-  border-radius: var(--ui-radius-lg);
-  padding: var(--ui-space-lg);
-  font-family: var(--ui-font-family-sans);
-}[data-ui-role="alert"] {
+[data-ui-role="alert"] {
 border-radius: var(--ui-radius-md);
   padding: var(--ui-space-md);
   font-family: var(--ui-font-family-sans);
@@ -129,58 +120,6 @@ background: color-mix(in srgb, var(--ui-color-tertiary) 15%, var(--ui-color-surf
 background: color-mix(in srgb, var(--ui-color-text-muted) 10%, var(--ui-color-surface));
   color: var(--ui-color-text-muted);
   border: 1px solid var(--ui-color-border);
-}[data-ui-role="field"] {
-display: flex;
-  flex-direction: column;
-  gap: var(--ui-space-xs);
-  font-family: var(--ui-font-family-sans);
-}[data-ui-role="field"] label {
-display: block;
-  margin-block-end: var(--ui-space-xs);
-  font-size: var(--ui-font-size-sm);
-  color: var(--ui-color-text-muted);
-  font-family: var(--ui-font-family-sans);
-}[data-ui-role="field"] input {
-border: 1px solid var(--ui-color-text-muted);
-  border-radius: var(--ui-radius-sm);
-  padding: var(--ui-space-sm);
-  font-family: var(--ui-font-family-sans);
-  width: 100%;
-  box-sizing: border-box;
-  transition:
-    border-color var(--ui-motion-duration-fast) var(--ui-motion-easing-standard),
-    box-shadow var(--ui-motion-duration-fast) var(--ui-motion-easing-standard);
-}[data-ui-role="field"] input {
-font-size: var(--ui-font-size-sm);
-  background-color: var(--ui-color-surface);
-}[data-ui-role="field"] input::placeholder {
-color: var(--ui-color-text-muted);
-  -webkit-text-fill-color: var(--ui-color-text-muted);
-  opacity: 1;
-}[data-ui-role="field"] input:not(:placeholder-shown) {
-color: var(--ui-color-text);
-  -webkit-text-fill-color: var(--ui-color-text);
-}[data-ui-role="field"] input:disabled {
-cursor: not-allowed;
-  color: var(--ui-color-text-muted);
-  -webkit-text-fill-color: var(--ui-color-text-muted);
-  border-color: color-mix(in srgb, var(--ui-color-border) 55%, transparent);
-  box-shadow: none;
-}[data-ui-role="field"] input:disabled {
-background-color: color-mix(in srgb, var(--ui-color-text-muted) 14%, var(--ui-color-surface));
-}[data-ui-role="table"] {
-width: 100%;
-  border-collapse: collapse;
-  font-family: var(--ui-font-family-sans);
-  font-size: var(--ui-font-size-sm);
-}[data-ui-role="table"] th,
-[data-ui-role="table"] td {
-border: 1px solid var(--ui-color-border);
-  padding: var(--ui-space-sm) var(--ui-space-md);
-  text-align: left;
-}[data-ui-role="table"] th {
-background: var(--ui-color-surface-elevated);
-  font-weight: 600;
 }[data-ui-role="accordion"] {
 --ux-accordion-border-width: 1px;
   --ux-accordion-border-color: var(--ui-color-border);
@@ -448,9 +387,6 @@ border-color: var(--ui-color-danger);
 }[data-ui-role="field-group"]:has(:focus-visible) {
 outline: 0;
   box-shadow: 0 0 var(--ui-focus-ring-blur) var(--ui-focus-ring-width) color-mix(in srgb, var(--ui-color-focus) calc(var(--ui-focus-ring-opacity) * 100%), transparent);
-}[data-ui-role="card"]:has(input:checked) {
-background: var(--ui-color-surface-elevated);
-  border-color: var(--ui-color-primary);
 }[data-ui-role="accordion"][data-ui-variant="primary"] {
 --ux-accordion-accent: var(--ui-color-primary);
 }[data-ui-role="accordion"][data-ui-variant="secondary"] {
