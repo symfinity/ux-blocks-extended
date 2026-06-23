@@ -1,20 +1,13 @@
 <div align="center">
 
-# Ux Blocks Extended
+# UX Blocks Extended
 
-### Symfinity UX Blocks Extended — nat/act compound catalog with blocks.ext fragments
+### Compound UX Twig components with blocks.ext fragments and composition-language regions
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
 [![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
-
 <br/>
-[![PHPUnit](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpunit.yml)
-[![Coverage](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/coverage.yml)
-[![PHPStan](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/phpstan.yml)
-<br/>
-[![Psalm](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/psalm.yml)
-[![Infection](https://github.com/symfinity/symfinity/actions/workflows/infection.yml/badge.svg)](https://github.com/symfinity/symfinity/actions/workflows/infection.yml)
-[![Code Style](https://img.shields.io/badge/code%20style-CS%20Fixer-5c4dbc?style=flat)](https://github.com/symfinity/symfinity/actions/workflows/php-cs-fixer.yml)
+[![CI](https://github.com/symfinity/ux-blocks-extended/actions/workflows/ci.yml/badge.svg)](https://github.com/symfinity/ux-blocks-extended/actions/workflows/ci.yml)
 <br/>
 [![Release](https://img.shields.io/packagist/v/symfinity/ux-blocks-extended.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-extended)
 [![Downloads](https://img.shields.io/packagist/dt/symfinity/ux-blocks-extended.svg?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/symfinity/ux-blocks-extended)
@@ -22,98 +15,30 @@
 
 </div>
 
----
+> [!NOTE]
+> **Read-only mirror.**
+> See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
-## Documentation
+## Features
 
-| Topic | Page |
-|-------|------|
-| Components | [docs/components.md](docs/components.md) |
-| Configuration | [docs/configuration.md](docs/configuration.md) |
-| Index | [docs/index.md](docs/index.md) |
-| Installation | [docs/installation.md](docs/installation.md) |
-| Porting | [docs/porting.md](docs/porting.md) |
-| Quickstart | [docs/quickstart.md](docs/quickstart.md) |
-| Reference | [docs/reference.md](docs/reference.md) |
-| Troubleshooting | [docs/troubleshooting.md](docs/troubleshooting.md) |
-| Upgrade | [docs/upgrade.md](docs/upgrade.md) |
-| Usage | [docs/usage.md](docs/usage.md) |
-| Component: Alert Dialog Enhanced | [docs/components/alert-dialog-enhanced.md](docs/components/alert-dialog-enhanced.md) |
-| Component: Calendar | [docs/components/calendar.md](docs/components/calendar.md) |
-| Component: Carousel Interactive | [docs/components/carousel-interactive.md](docs/components/carousel-interactive.md) |
-| Component: Combobox | [docs/components/combobox.md](docs/components/combobox.md) |
-| Component: Command Palette | [docs/components/command-palette.md](docs/components/command-palette.md) |
-| Component: Context Menu | [docs/components/context-menu.md](docs/components/context-menu.md) |
-| Component: Data Table Chrome | [docs/components/data-table-chrome.md](docs/components/data-table-chrome.md) |
-| Component: Date Picker | [docs/components/date-picker.md](docs/components/date-picker.md) |
-| Component: Drawer | [docs/components/drawer.md](docs/components/drawer.md) |
-| Component: Dropdown Menu | [docs/components/dropdown-menu.md](docs/components/dropdown-menu.md) |
-| Component: Filter Chips | [docs/components/filter-chips.md](docs/components/filter-chips.md) |
-| Component: Hover Card | [docs/components/hover-card.md](docs/components/hover-card.md) |
-| Component: Input Otp | [docs/components/input-otp.md](docs/components/input-otp.md) |
-| Component: Menubar | [docs/components/menubar.md](docs/components/menubar.md) |
-| Component: Navigation Menu | [docs/components/navigation-menu.md](docs/components/navigation-menu.md) |
-| Component: Rating | [docs/components/rating.md](docs/components/rating.md) |
-| Component: Resizable | [docs/components/resizable.md](docs/components/resizable.md) |
-| Component: Sheet | [docs/components/sheet.md](docs/components/sheet.md) |
-| Component: Sidebar | [docs/components/sidebar.md](docs/components/sidebar.md) |
-| Component: Slider | [docs/components/slider.md](docs/components/slider.md) |
-| Component: Stacked Layout Interactive | [docs/components/stacked-layout-interactive.md](docs/components/stacked-layout-interactive.md) |
-| Component: Tabs | [docs/components/tabs.md](docs/components/tabs.md) |
-| Component: Toast | [docs/components/toast.md](docs/components/toast.md) |
-| Component: Toggle Group | [docs/components/toggle-group.md](docs/components/toggle-group.md) |
-| Component: Toggle | [docs/components/toggle.md](docs/components/toggle.md) |
-| Component: Date Range Picker | [docs/components/date-range-picker.md](docs/components/date-range-picker.md) |
-| Component: Tags Input | [docs/components/tags-input.md](docs/components/tags-input.md) |
-| Component: Bento Box Panel | [docs/components/bento-box-panel.md](docs/components/bento-box-panel.md) |
+- **20 compound roles** — cards, alerts, layout shells, navigation, and data chrome
+- **Native-first (`nat`)** — styled with ui-kernel tokens; optional `act` on dashboard shell
+- **Composition language** — scalar attrs plus universal region components from core
+- **Registry-aligned** — `blocks.ext.*` fragment ids in `config/ux_roles.yaml`
+- **Symfony UX Twig components** — `<twig:Card>`, `<twig:Alert>`, `<twig:AppShell>`, and siblings
+- **Package role CSS** — tier-owned styles under `assets/styles/roles/`
+- **Flex recipe** — bundle and AssetMapper paths wired on install
 
-## Component inventory (054 three-tier)
+## Interaction profile
 
-**Application tier** — **19** compound `nat`/`act` roles in `config/ux_roles.yaml` (prefix `blocks.ext`, schema **1.4**). Eight layout/form atoms promoted to `symfinity/ux-blocks-core` in **094**; `empty` compound demoted here from core. Container roles (`card`, `alert`, `empty`, `field`) use the **108** composition language: scalar attrs + universal region components from core; per-concept `Card*` / `Alert*` sub-components removed.
+| Token | In this package |
+|-------|-----------------|
+| `nat` | Default for compounds — native HTML + ui-kernel / package CSS |
+| `act` | Optional on `DashboardShell` via ui-action protocol |
+| `stl` | **Not included** — interactive overlays ship in `symfinity/ux-blocks-interactive` |
+| `live` | **Not included** — LiveComponents ship in `symfinity/ux-blocks-live` |
 
-| Role | Twig | Interaction | Fragment |
-|------|------|-------------|----------|
-| `field` … `dashboard-shell` | compounds | `nat` | `blocks.ext.*` |
-| `empty` | `Empty` | `nat` | `blocks.ext.empty` |
-| `bento-box-panel` | `BentoBoxPanel` | `nat` | `blocks.ext.bento-box-panel` |
-| `data-table-chrome` | `DataTableChrome` | `nat` | `blocks.ext.data-table-chrome` |
-
-Deprecated one-cycle aliases: `blocks.{role}` → `blocks.ext.{role}` for compounds on this tier; `blocks.empty` → `blocks.ext.empty` after **094** demote.
-
-## Requirements
-
-- PHP 8.2+
-- Symfony 7.4+ (Flex recipe when available)
-
-## Install
-
-```bash
-composer require symfinity/ux-blocks-extended
-```
-
-## Test
-
-From product monorepo root:
-
-```bash
-cd src/symfinity
-make test
-# or package-scoped:
-./sbin/php vendor/bin/phpunit packages/ux-blocks-extended/tests
-```
-
-## Maintainer Sass pipeline (120)
-
-Author role CSS in `assets/scss/`; ship compiled CSS under `assets/styles/`. Shared partials copied from `ux-blocks-core` (`_shared/`). From product monorepo root:
-
-```bash
-cd src/symfinity
-bin/blocks-css-compile --package=ux-blocks-extended
-bin/blocks-css-compile --check --package=ux-blocks-extended
-bin/ux-blocks-scss-audit --package=ux-blocks-extended --check
-```
-
-**MUST NOT** hand-edit compiled `assets/styles/**/*.css` for migrated roles. See [ux-blocks maintainer Sass pipeline](../ux-blocks/README.md#maintainer--sass-author-pipeline-120).
+## Component inventory
 
 
 <!-- ux-blocks:registry:start -->
@@ -140,3 +65,60 @@ bin/ux-blocks-scss-audit --package=ux-blocks-extended --check
 | empty | Empty | nat | `blocks.ext.empty` | shipped |
 | bento-box-panel | BentoBoxPanel | nat | `blocks.ext.bento-box-panel` | shipped |
 <!-- ux-blocks:registry:end -->
+
+**Highlights:** app shell and page header for product chrome; bento box panel for category landing; data-table chrome for list/detail layouts.
+
+Handbook: [docs/components.md](docs/components.md).
+
+## Prerequisites
+
+Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint to your project's `composer.json` (see [recipes README](https://github.com/symfinity/recipes/blob/main/README.md)) — recipes are not in Symfony's official recipe repository yet.
+
+## Installation
+
+Requires core (and form for field compounds). See [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles) for tier choices.
+
+```bash
+composer require symfinity/ux-blocks-extended
+```
+
+See [Installation](docs/installation.md).
+
+## Quick Start
+
+```twig
+<twig:PageHeader title="Settings" description="Manage your account." />
+<twig:Card>
+  <twig:Header>Notifications</twig:Header>
+  <twig:Actions>
+    <twig:Button variant="default">Save</twig:Button>
+  </twig:Actions>
+</twig:Card>
+```
+
+See [Quick start](docs/quickstart.md) for the full walkthrough.
+
+## Documentation
+
+- **[Quick start](docs/quickstart.md)** — minimal setup path
+- **[Installation](docs/installation.md)** — Flex, dependencies, verify
+- **[Configuration](docs/configuration.md)** — bundle and app options
+- **[Components](docs/components.md)** — role index and examples
+- **[Usage](docs/usage.md)** — day-to-day patterns
+- **[Upgrade](docs/upgrade.md)** — version migrations
+
+## Requirements
+
+- PHP 8.2 or higher
+- Symfony 7.4 or 8.x
+- `symfinity/ux-blocks-core` ^0.1 and `symfinity/ux-blocks-form` ^0.1
+
+## Support
+
+- [GitHub Issues](https://github.com/symfinity/ux-blocks-extended/issues)
+- [Security](.github/SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+
+## License
+
+[MIT](LICENSE)
