@@ -3,11 +3,9 @@
     data-ui-fragment="blocks.ext.accordion"
     data-ui-variant="{{ semantic_variant }}"
     data-ui-accordion-type="{{ accordion_type }}"
-    {% if accordion_is_single %}
-        data-controller="symfinity--ux-blocks-core--accordion"
-        data-symfinity--ux-blocks-core--accordion-type-value="single"
-        data-symfinity--ux-blocks-core--accordion-group-name-value="{{ accordion_group_name }}"
-    {% endif %}
+    data-controller="symfinity--ux-blocks-core--accordion"
+    data-symfinity--ux-blocks-core--accordion-type-value="{{ accordion_type }}"
+    data-symfinity--ux-blocks-core--accordion-group-name-value="{{ accordion_group_name }}"
     {{ attributes }}
 >
     {% block content %}{% endblock %}

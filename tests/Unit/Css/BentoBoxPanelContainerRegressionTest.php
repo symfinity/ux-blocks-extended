@@ -42,7 +42,7 @@ final class BentoBoxPanelContainerRegressionTest extends TestCase
         $css = self::bentoCss();
 
         preg_match(
-            '/\[data-ui-role="bento-box-panel"\]\[data-ui-panel-layout="bento-box"\]\s*\{[^}]+\}/s',
+            '/\[data-ui-role="bento-box-panel"\]\[data-ui-panel-layout=bento-box\]\s*\{[^}]+\}/s',
             $css,
             $matches,
         );

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* Bootstrap 5.3–aligned disclosure: native <details> + grid collapse (height .35s ease) */
+[data-ui-role=accordion] {
+  --ux-accordion-collapse-duration: 0.35s;
+  --ux-accordion-btn-transition-duration: var(--ui-physics-motion-duration-fast, 120ms);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+[data-ui-role=accordion] details {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows var(--ux-accordion-collapse-duration) ease;
+}
+
+[data-ui-role=accordion] details[open] {
+  grid-template-rows: auto 1fr;
+}
+
+[data-ui-role=accordion] details > :not(summary) {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0;
+}
+
+[data-ui-role=accordion] details > p,
+[data-ui-role=accordion] details > p[data-ui-role=typography] {
+  margin: 0;
+  padding: 1rem;
+}
+
+[data-ui-role=accordion] summary,
+[data-ui-role=accordion] summary[data-ui-role=typography] {
+  margin: 0;
+  transition: color var(--ux-accordion-btn-transition-duration) ease-in-out, background-color var(--ux-accordion-btn-transition-duration) ease-in-out;
+}
+
+[data-ui-role=accordion] summary[data-ui-role=typography],
+[data-ui-role=accordion] summary[data-ui-role=typography][data-ui-variant=h4] {
+  margin: 0;
+}
+
+/* Typography label is sizing only — chrome (color, bg, divider) lives on summary */
+[data-ui-role=accordion] summary .ux-accordion-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  color: inherit;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+
+[data-ui-role=accordion] summary .ux-accordion-label[data-ui-role=typography],
+[data-ui-role=accordion] summary .ux-accordion-label[data-ui-role=typography][data-ui-variant=h4] {
+  margin: 0;
+  color: inherit;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Bootstrap .accordion-button::after — 16px inline SVG in .ux-accordion-chevron */
+[data-ui-role=accordion] .ux-accordion-chevron {
+  display: inline-flex;
+  flex: 0 0 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  margin-inline-start: auto;
+  color: currentColor;
+  transition: transform var(--ux-accordion-collapse-duration) ease;
+}
+
+[data-ui-role=accordion] .ux-accordion-chevron svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+[data-ui-role=accordion] details[open] > summary .ux-accordion-chevron {
+  transform: rotate(180deg);
+}
+
+[data-ui-role=accordion] details:not([open]) > summary .ux-accordion-chevron {
+  transform: rotate(0deg);
+}
+
+[data-ui-role=accordion] details:not([open]) > summary,
+[data-ui-role=accordion] details:not([open]) > summary[data-ui-role=typography],
+[data-ui-role=accordion] details:not([open]) > summary[data-ui-role=typography][data-ui-variant=h4] {
+  color: var(--ui-color-text-muted);
+  background: var(--ux-accordion-bg);
+  box-shadow: none;
+}
+
+[data-ui-role=accordion] details[open] > summary,
+[data-ui-role=accordion] details[open] > summary[data-ui-role=typography],
+[data-ui-role=accordion] details[open] > summary[data-ui-role=typography][data-ui-variant=h4] {
+  color: var(--ux-accordion-accent);
+  background: color-mix(in srgb, var(--ux-accordion-accent) var(--ux-accordion-active-tint), var(--ui-color-surface));
+  box-shadow: inset 0 calc(-1 * var(--ux-accordion-border-width)) 0 var(--ux-accordion-border-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ui-role=accordion] details {
+    transition: none;
+  }
+  [data-ui-role=accordion] summary,
+  [data-ui-role=accordion] .ux-accordion-chevron {
+    transition: none;
+  }
+}

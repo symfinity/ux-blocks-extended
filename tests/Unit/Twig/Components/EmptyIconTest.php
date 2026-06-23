@@ -9,25 +9,14 @@ use PHPUnit\Framework\Attributes\Test;
 final class EmptyIconTest extends ComponentTestCase
 {
     #[Test]
-    public function mediaWellRendersCenterIconPart(): void
+    public function mediaRegionRendersCenterIconPart(): void
     {
         self::bootKernel();
-        $html = $this->renderComponent('Empty:Media', [
+        $html = $this->renderComponent('Media', [
             'icon' => 'lucide:inbox',
         ]);
 
-        self::assertStringContainsString('data-ui-role="empty-media"', $html);
-        self::assertStringContainsString('data-ui-part="icon"', $html);
-    }
-
-    #[Test]
-    public function headlessKernelRendersEmptyIconPartWithoutUxIcons(): void
-    {
-        self::bootKernel();
-        $html = $this->renderComponent('Empty:Media', [
-            'icon' => 'lucide:inbox',
-        ]);
-
+        self::assertStringContainsString('data-ui-part="media"', $html);
         self::assertStringContainsString('data-ui-part="icon"', $html);
     }
 }

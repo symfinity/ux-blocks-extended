@@ -39,4 +39,53 @@ final class AlertIconTest extends KernelTestCase
 
         self::assertStringContainsString('data-ui-part="icon"', $html);
     }
+
+    #[Test]
+    public function itEmitsGlassSurfaceAttributeWhenRequested(): void
+    {
+        self::bootKernel();
+        $html = (string) $this->renderTwigComponent('Alert', [
+            'variant' => 'success',
+            'surface' => 'glass',
+        ]);
+
+        self::assertStringContainsString('data-ui-surface="glass"', $html);
+        self::assertStringNotContainsString('data-ui-surface="solid"', $html);
+    }
+
+    #[Test]
+    public function itRendersDismissControlWhenDismissible(): void
+    {
+        self::bootKernel();
+        $html = (string) $this->renderTwigComponent('Alert', [
+            'variant' => 'info',
+            'dismissible' => true,
+        ]);
+
+        self::assertStringContainsString('data-ui-role="alert-dismiss"', $html);
+    }
+
+    #[Test]
+    public function itOmitsDismissControlWhenNotDismissible(): void
+    {
+        self::bootKernel();
+        $html = (string) $this->renderTwigComponent('Alert', [
+            'variant' => 'info',
+            'dismissible' => false,
+        ]);
+
+        self::assertStringNotContainsString('data-ui-role="alert-dismiss"', $html);
+    }
+
+    #[Test]
+    public function legacyDestructivePropNormalizesToDangerOnDom(): void
+    {
+        self::bootKernel();
+        $html = (string) $this->renderTwigComponent('Alert', [
+            'variant' => 'destructive',
+        ]);
+
+        self::assertStringContainsString('data-ui-variant="danger"', $html);
+        self::assertStringNotContainsString('data-ui-variant="destructive"', $html);
+    }
 }

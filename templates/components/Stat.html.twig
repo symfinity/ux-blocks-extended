@@ -1,7 +1,9 @@
 <div
     data-ui-role="stat"
     data-ui-fragment="blocks.ext.stat"
-    {{ attributes }}
+    data-ui-density="{{ density }}"
+    style="--ui-density: {{ density }};"
+    {{ attributes.without('style') }}
 >
     <div data-ui-part="stat-body">
         {% block content %}{% endblock %}

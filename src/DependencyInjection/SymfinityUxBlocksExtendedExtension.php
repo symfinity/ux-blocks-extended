@@ -34,4 +34,9 @@ final class SymfinityUxBlocksExtendedExtension extends Extension implements Prep
         $loader = new YamlFileLoader($container, new FileLocator(\dirname(__DIR__, 2) . '/config'));
         $loader->load('services.yaml');
     }
+
+    public function getAlias(): string
+    {
+        return 'symfinity_ux_blocks_extended';
+    }
 }

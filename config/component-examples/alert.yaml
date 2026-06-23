@@ -1,0 +1,36 @@
+schema: showcase-examples/1.0
+role: alert
+twig_name: Alert
+requires_stimulus: false
+sections:
+  - id: variants
+    title: Variants
+    items:
+      - variant: info
+        label: Info
+        props: { variant: info }
+      - variant: success
+        label: Success
+        props: { variant: success }
+      - variant: warning
+        label: Warning
+        props: { variant: warning }
+      - variant: danger
+        label: Danger
+        props: { variant: danger }
+  - id: watermarks
+    title: Icon watermarks
+    items:
+      - variant: top-start
+        label: Top start (default)
+        props:
+          variant: info
+          iconWatermark: lucide:sparkles
+        content: Review your settings before continuing.
+      - variant: bottom-end
+        label: Bottom end
+        props:
+          variant: warning
+          iconWatermark: lucide:sparkles
+          watermarkPosition: bottom-end
+        content: Scheduled maintenance tonight.

@@ -3,7 +3,7 @@
     data-ui-fragment="blocks.ext.data-table-chrome"
     {{ attributes }}
 >
-    <div data-ui-role="data-table-chrome-toolbar" data-ui-slot="toolbar">
+    <div data-ui-role="data-table-chrome-toolbar" data-ui-slot="toolbar"{{ surface_attr|raw }}>
         {% block toolbar %}{% endblock %}
     </div>
     <div data-ui-slot="table">

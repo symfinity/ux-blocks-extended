@@ -3,6 +3,7 @@
     data-ui-role="modal"
     data-ui-fragment="blocks.ext.dialog"
     class="ui-dialog"
+    {{ surface_attr|raw }}
     aria-modal="true"
     {% if label %}aria-label="{{ label }}"{% elseif labelledBy %}aria-labelledby="{{ labelledBy }}"{% else %}aria-labelledby="{{ dialog_title_id }}"{% endif %}
     {% if open %}open{% endif %}

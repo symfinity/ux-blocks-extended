@@ -4,7 +4,7 @@
 **Fragment id:** `blocks.accordion`  
 **Twig:** `Accordion`
 
-Multi-item disclosure stack — compose native `<details>` / `<summary>` items inside the slot (see chameleon showcase compound).
+Multi-item disclosure stack — compose native `<details>` / `<summary>` items inside the slot (see workshop compound compound).
 
 ## Open mode
 
@@ -25,4 +25,4 @@ Multi-item disclosure stack — compose native `<details>` / `<summary>` items i
 </twig:Accordion>
 ```
 
-Distinct from `collapsible` (one trigger + one panel). See [collapsible.md](./collapsible.md).
+Distinct from `collapsible` (one trigger + one panel) on the **interactive** tier — see `symfinity/ux-blocks-interactive`.

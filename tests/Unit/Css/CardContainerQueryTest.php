@@ -32,7 +32,8 @@ final class CardContainerQueryTest extends TestCase
     {
         $css = self::cardCss();
 
-        self::assertStringContainsString('[data-ui-part="card-layout"]', $css);
+        self::assertStringContainsString('[data-ui-role="card"]', $css);
+        self::assertStringContainsString('[data-ui-part="media"]', $css);
         self::assertStringContainsString('@container blocks-card (max-width: 22rem)', $css);
         self::assertStringContainsString('@container blocks-card (min-width: 22.01rem)', $css);
         self::assertStringContainsString('[data-ui-layout="horizontal"]', $css);

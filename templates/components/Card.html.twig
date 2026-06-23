@@ -4,9 +4,42 @@
     data-ui-fragment="blocks.ext.card"
     data-ui-variant="{{ size }}"
     data-ui-density="{{ density }}"
-    data-ui-theme-variant="{{ themeVariant }}"
-    style="{{ componentStyle.rootStyle(attributes, '--ui-density: ' ~ density ~ '; --ui-theme-variant: ' ~ themeVariant ~ ';') }}"
+    data-ui-theme-variant="{{ tone }}"
+    {{ surface_attr|raw }}
+    style="{{ componentStyle.rootStyle(attributes, '--ui-density: ' ~ density ~ '; --ui-theme-variant: ' ~ tone ~ ';') }}"
     {{ attributes.without('style') }}
 >
+    {% if resolved_icon_watermark %}
+        {% block iconWatermark %}
+            {% include '@UxBlocksCore/components/_shared/p_icon_watermark.html.twig' with {
+                iconWatermark: resolved_icon_watermark,
+                watermarkPosition: resolved_watermark_position,
+            } only %}
+        {% endblock %}
+    {% endif %}
+    {% if title or description %}
+        <header data-ui-part="header">
+            {% if title %}<strong>{{ title }}</strong>{% endif %}
+            {% if description %}<p>{{ description }}</p>{% endif %}
+        </header>
+    {% endif %}
+    {% set media_content -%}
+        {%- block media %}{%- endblock %}
+    {%- endset %}
+    {% if media_content|trim is not empty %}
+        <div data-ui-part="media">{{ media_content|raw }}</div>
+    {% endif %}
     {% block content %}{% endblock %}
+    {% set footer_content -%}
+        {%- block footer %}{%- endblock %}
+    {%- endset %}
+    {% if footer_content|trim is not empty %}
+        <footer data-ui-part="footer">{{ footer_content|raw }}</footer>
+    {% endif %}
+    {% set actions_content -%}
+        {%- block actions %}{%- endblock %}
+    {%- endset %}
+    {% if actions_content|trim is not empty %}
+        <div data-ui-part="actions">{{ actions_content|raw }}</div>
+    {% endif %}
 </div>

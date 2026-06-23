@@ -3,50 +3,37 @@ package_major: "0.x"
 handbook_family: ux-blocks
 
 sidebar:
-  - components
-  - configuration
+  - index
   - installation
   - quickstart
-  - reference
-  - troubleshooting
-  - upgrade
+  - configuration
   - usage
+  - components
+  - porting
+  - upgrade
+  - troubleshooting
+  - reference
 
 slices:
   - symfony: "7.4"
     sources:
-      - components.md
-      - components/alert-dialog-enhanced.md
-      - components/calendar.md
-      - components/carousel-interactive.md
-      - components/combobox.md
-      - components/command-palette.md
-      - components/context-menu.md
-      - components/data-table-chrome.md
-      - components/date-picker.md
-      - components/drawer.md
-      - components/dropdown-menu.md
-      - components/filter-chips.md
-      - components/hover-card.md
-      - components/input-otp.md
-      - components/menubar.md
-      - components/navigation-menu.md
-      - components/rating.md
-      - components/resizable.md
-      - components/sheet.md
-      - components/sidebar.md
-      - components/slider.md
-      - components/stacked-layout-interactive.md
-      - components/tabs.md
-      - components/toast.md
-      - components/toggle-group.md
-      - components/toggle.md
-      - configuration.md
       - index.md
       - installation.md
-      - porting.md
       - quickstart.md
-      - reference.md
-      - troubleshooting.md
-      - upgrade.md
+      - configuration.md
       - usage.md
+      - components.md
+      - components/accordion.md
+      - components/alert.md
+      - components/bento-box-panel.md
+      - components/card.md
+      - components/dialog.md
+      - components/empty.md
+      - components/field.md
+      - components/popover.md
+      - components/table.md
+      - components/tooltip.md
+      - porting.md
+      - upgrade.md
+      - troubleshooting.md
+      - reference.md

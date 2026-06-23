@@ -1,129 +1,129 @@
-/* 067 — base card surface (relocated from _bundle.css, 107 T025) */
-[data-ui-role="card"] {
-  background: var(--ui-color-surface-elevated);
+[data-ui-role=card] {
   color: var(--ui-color-text);
   border: 1px solid var(--ui-color-border);
   border-radius: var(--ui-radius-lg);
   padding: var(--ui-space-lg);
   font-family: var(--ui-font-family-sans);
-}
-
-/* 099 S2 — card container style queries + 100 A2 selected surface */
-[data-ui-role="card"] {
+  position: relative;
+  overflow: hidden;
   --ui-density: comfortable;
   --ui-theme-variant: default;
   container-type: inline-size;
   container-name: blocks-card;
   box-shadow: var(--ui-shadow-md);
-  transition:
-    box-shadow var(--ui-motion-duration-normal) var(--ui-motion-easing-standard),
-    transform var(--ui-motion-duration-normal) var(--ui-motion-easing-standard);
-}
-
-[data-ui-part="card-layout"] {
-  container-type: inline-size;
-  container-name: blocks-card;
   display: flex;
   flex-direction: column;
   gap: var(--ui-space-md);
   min-width: 0;
+  transition: box-shadow var(--ui-motion-duration-normal) var(--ui-motion-easing-standard), transform var(--ui-motion-duration-normal) var(--ui-motion-easing-standard);
+}
+[data-ui-role=card]:not([data-ui-surface=glass]) {
+  background: var(--ui-color-surface-elevated);
+}
+[data-ui-role=card] > *:not([data-ui-part=icon-watermark]) {
+  position: relative;
+  z-index: 1;
+}
+[data-ui-role=card]:has(input:checked):not([data-ui-surface=glass]), [data-ui-role=card]:has([aria-checked=true]):not([data-ui-surface=glass]) {
+  background: var(--ui-color-surface-elevated);
+  border-color: var(--ui-color-primary);
+}
+[data-ui-role=card] [data-ui-part=header] {
+  font-weight: var(--ui-font-weight-semibold);
+  line-height: var(--ui-line-height-tight);
+}
+[data-ui-role=card] [data-ui-part=footer] {
+  margin-block-start: var(--ui-space-sm);
+}
+[data-ui-role=card] [data-ui-part=media] {
+  min-width: 0;
+}
+[data-ui-role=card] [data-ui-part=actions] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ui-space-sm);
+  align-items: center;
 }
 
 @container blocks-card (max-width: 22rem) {
-  [data-ui-part="card-layout"] {
+  [data-ui-role=card] {
     flex-direction: column;
   }
-
-  [data-ui-part="card-layout"] [data-ui-part="actions"] {
+  [data-ui-role=card] [data-ui-part=actions] {
     width: 100%;
   }
 }
-
 @container blocks-card (min-width: 22.01rem) {
-  [data-ui-role="card"][data-ui-layout="horizontal"] [data-ui-part="card-layout"],
-  [data-ui-part="card-layout"][data-ui-layout="horizontal"] {
+  [data-ui-role=card][data-ui-layout=horizontal] {
     flex-direction: row;
     align-items: flex-start;
   }
-
-  [data-ui-role="card"][data-ui-layout="horizontal"] [data-ui-part="card-media"],
-  [data-ui-part="card-layout"][data-ui-layout="horizontal"] [data-ui-part="card-media"] {
+  [data-ui-role=card][data-ui-layout=horizontal] [data-ui-part=media] {
     flex: 0 0 auto;
     max-width: 40%;
   }
 }
-
 @media (hover: hover) {
-  [data-ui-role="card"]:hover {
+  [data-ui-role=card]:hover {
     box-shadow: var(--ui-shadow-lg);
   }
-}
-
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  [data-ui-role="card"]:hover {
-    transform: translateY(-1px);
-  }
-}
-
-[data-ui-role="card"]:has(input:checked),
-[data-ui-role="card"]:has([aria-checked="true"]) {
-  background: var(--ui-color-surface-elevated);
-  border-color: var(--ui-color-primary);
-}
-
-@media (hover: hover) {
-  [data-ui-role="card"]:not(:has(:focus-visible)) [data-ui-part="actions"] {
+  [data-ui-role=card]:not(:has(:focus-visible)) [data-ui-part=actions] {
     opacity: 0;
   }
-
-  [data-ui-role="card"]:hover [data-ui-part="actions"] {
+  [data-ui-role=card]:hover [data-ui-part=actions] {
     opacity: 1;
   }
 }
-
-[data-ui-role="card"]:has(:focus-visible) [data-ui-part="actions"] {
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  [data-ui-role=card]:hover {
+    transform: translateY(var(--ui-physics-hover-lift));
+  }
+}
+[data-ui-role=card]:has(:focus-visible) [data-ui-part=actions] {
   opacity: 1;
 }
 
 @container blocks-card style(--ui-density: compact) {
-  [data-ui-part="card-body"],
-  [data-ui-part="card-layout"] {
+  [data-ui-role=card] > :not([data-ui-part]),
+  [data-ui-role=card] {
     padding: var(--ui-space-3, var(--ui-space-sm));
     gap: var(--ui-space-sm);
     font-size: var(--ui-font-size-sm);
   }
-
-  [data-ui-part="card-header"],
-  [data-ui-part="card-footer"] {
+  [data-ui-part=header],
+  [data-ui-part=footer] {
     padding-block: var(--ui-space-xs);
   }
 }
-
 @container blocks-card style(--ui-density: spacious) {
-  [data-ui-part="card-body"],
-  [data-ui-part="card-layout"] {
+  [data-ui-role=card] {
     padding: var(--ui-space-xl);
     gap: var(--ui-space-lg);
   }
 }
-
 @container blocks-card style(--ui-theme-variant: emphasis) {
-  [data-ui-part="card-header"] {
+  [data-ui-part=header] {
     color: var(--ui-color-accent, var(--ui-color-primary));
     font-weight: var(--ui-font-weight-semibold);
   }
 }
-
 @container blocks-card style(--ui-theme-variant: muted) {
-  [data-ui-part="card-header"],
-  [data-ui-part="card-body"] {
+  [data-ui-part=header],
+  [data-ui-part=footer] {
     color: var(--ui-color-text-muted);
   }
 }
-
 @supports not (container-type: style) {
-  [data-ui-role="card"] {
-    --ui-density: comfortable;
-    --ui-theme-variant: default;
+  [data-ui-role=card][data-ui-density=compact] > :not([data-ui-part]),
+  [data-ui-role=card][data-ui-density=compact] {
+    padding: var(--ui-space-3, var(--ui-space-sm));
+    gap: var(--ui-space-sm);
+  }
+}
+@media (forced-colors: active) {
+  [data-ui-role=card] {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
   }
 }

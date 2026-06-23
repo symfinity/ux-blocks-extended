@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksExtended\Twig\Components;
 
+use Symfinity\UxBlocksCore\Twig\ResolvesSurfaceSubstrate;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsTwigComponent('Popover', template: '@UxBlocksExtended/components/Popover.html.twig')]
 final class Popover
 {
+    use ResolvesSurfaceSubstrate;
+
     public bool $open = false;
 
     public ?string $label = null;
@@ -19,6 +22,11 @@ final class Popover
     public ?string $anchorTarget = null;
 
     private string $generatedPopoverId = '';
+
+    public function mount(): void
+    {
+        $this->mountSurfaceSubstrate();
+    }
 
     #[ExposeInTemplate('popover_id')]
     public function popoverId(): string

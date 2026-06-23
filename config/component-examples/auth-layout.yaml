@@ -1,0 +1,13 @@
+schema: showcase-examples/1.0
+role: auth-layout
+twig_name: AuthLayout
+requires_stimulus: false
+sections:
+  - id: sign-in
+    title: Sign in
+    layout: stack
+    items:
+      - variant: primary
+        label: Primary
+        render_partial: showcase/_compounds/extended_auth_layout_demo.html.twig
+        props: { submitVariant: primary, title: Sign in }

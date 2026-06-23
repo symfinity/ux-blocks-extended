@@ -1,0 +1,21 @@
+schema: showcase-examples/1.0
+role: card
+twig_name: Card
+requires_stimulus: false
+sections:
+  - id: watermarks
+    title: Icon watermarks
+    items:
+      - variant: bottom-end
+        label: Bottom end (default)
+        props:
+          title: Workspace plan
+          description: Includes shared themes and blocks.
+          iconWatermark: lucide:sparkles
+      - variant: center
+        label: Center
+        props:
+          title: Featured release
+          iconWatermark: lucide:sparkles
+          watermarkPosition: center
+        content: New catalog roles ship this week.

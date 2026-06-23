@@ -1,0 +1,48 @@
+/* 067 W-ext-core — extended registry CSS from core/interactive */
+[data-ui-role='alert'] {
+  border-radius: var(--ui-radius-md);
+  padding: var(--ui-space-md);
+  font-family: var(--ui-font-family-sans);
+  font-size: var(--ui-font-size-sm);
+
+  &:has([data-ui-role='alert-dismiss']) {
+    position: relative;
+    padding-inline-end: calc(var(--ui-space-md) + 1.25rem);
+  }
+}
+
+[data-ui-role='alert-dismiss'] {
+  position: absolute;
+  inset-block-start: var(--ui-space-md);
+  inset-inline-end: var(--ui-space-md);
+  box-sizing: content-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: var(--ui-radius-sm);
+  background: transparent;
+  color: inherit;
+  opacity: 0.65;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    width: 0.75rem;
+    height: 2px;
+    background: currentColor;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

@@ -23,7 +23,7 @@ final class CardHasCheckedTest extends TestCase
         $css = self::roleCss();
 
         self::assertStringContainsString(':has(input:checked)', $css);
-        self::assertStringContainsString(':has([aria-checked="true"])', $css);
+        self::assertStringContainsString(':has([aria-checked=true])', $css);
     }
 
     #[Test]

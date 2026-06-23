@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Symfinity\UxBlocksExtended\Twig\Components;
 
 use Symfinity\UxBlocksCore\Twig\ExposesSemanticVariant;
+use Symfinity\UxBlocksCore\Twig\NormalizesSemanticColourVariant;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
@@ -12,6 +13,7 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 final class Accordion
 {
     use ExposesSemanticVariant;
+    use NormalizesSemanticColourVariant;
 
     public string $variant = 'primary';
 

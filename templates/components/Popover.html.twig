@@ -4,6 +4,7 @@
     data-ui-role="popover"
     data-ui-fragment="blocks.ext.popover"
     class="ui-popover"
+    {{ surface_attr|raw }}
     {% if anchorTarget %}anchor="{{ anchorTarget }}"{% endif %}
     {% if label %}aria-label="{{ label }}"{% endif %}
     {{ attributes }}

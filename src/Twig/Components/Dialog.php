@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Symfinity\UxBlocksExtended\Twig\Components;
 
+use Symfinity\UxBlocksCore\Twig\ResolvesSurfaceSubstrate;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 
 #[AsTwigComponent('Dialog', template: '@UxBlocksExtended/components/Dialog.html.twig')]
 final class Dialog
 {
+    use ResolvesSurfaceSubstrate;
+
     public bool $open = false;
 
     public ?string $label = null;
@@ -24,6 +27,8 @@ final class Dialog
 
     public function mount(): void
     {
+        $this->mountSurfaceSubstrate();
+
         if ($this->generatedTitleId === '') {
             $this->generatedTitleId = 'dialog-title-' . bin2hex(random_bytes(4));
         }

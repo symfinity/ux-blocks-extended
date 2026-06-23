@@ -1,0 +1,29 @@
+<div
+    data-ui-role="page-header"
+    data-ui-fragment="blocks.ext.page-header"
+    {{ attributes }}
+>
+    {% set breadcrumb_content -%}
+        {%- block breadcrumb %}{%- endblock %}
+    {%- endset %}
+    {% if breadcrumb_content|trim is not empty %}
+        <header data-ui-part="header">
+            <nav aria-label="Breadcrumb">
+                {{ breadcrumb_content|raw }}
+            </nav>
+        </header>
+    {% endif %}
+    {% if title %}
+        <h1 class="ui-page-header-title">{{ title }}</h1>
+    {% endif %}
+    {% if description %}
+        <p class="ui-page-header-description">{{ description }}</p>
+    {% endif %}
+    {% set actions_content -%}
+        {%- block actions %}{%- endblock %}
+    {%- endset %}
+    {% if actions_content|trim is not empty %}
+        <div data-ui-part="actions">{{ actions_content|raw }}</div>
+    {% endif %}
+    {% block content %}{% endblock %}
+</div>

@@ -1,22 +1,21 @@
-ux_role_registry: "1.3"
+ux_role_registry: "1.4"
 registry_prefix: blocks.ext
 roles:
-  - role: field
-    twig_component: Field
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Field
-    fragment_id: blocks.ext.field
-    fragment_pattern: "blocks.ext.field.{n}"
-    interaction: nat
-    stage: A
-    status: shipped
   - role: card
     twig_component: Card
     php_class: Symfinity\UxBlocksExtended\Twig\Components\Card
     fragment_id: blocks.ext.card
     fragment_pattern: "blocks.ext.card.{n}"
+    attributes: [size, density, tone, surface, watermarkPosition]
+    scalar_content: [title, description, iconWatermark]
+    styled_parts: [header, footer, media, actions]
+    composition_language: enforced
     interaction: nat
     stage: A
     status: shipped
+    icon_watermark:
+      allowed_positions: [top-start, top-end, bottom-start, bottom-end, center]
+      default_position: bottom-end
   - role: table
     twig_component: Table
     php_class: Symfinity\UxBlocksExtended\Twig\Components\Table
@@ -30,6 +29,10 @@ roles:
     php_class: Symfinity\UxBlocksExtended\Twig\Components\Alert
     fragment_id: blocks.ext.alert
     fragment_pattern: "blocks.ext.alert.{n}"
+    attributes: [variant, dismissible, surface, watermarkPosition]
+    scalar_content: [title, icon, iconWatermark]
+    styled_parts: [header, footer, actions]
+    composition_language: enforced
     interaction: nat
     stage: A
     status: shipped
@@ -41,6 +44,9 @@ roles:
         destructive: lucide:circle-x
         warning: lucide:triangle-alert
         info: lucide:info
+    icon_watermark:
+      allowed_positions: [top-start, top-end, bottom-start, bottom-end, center]
+      default_position: top-start
   - role: description-list
     twig_component: DescriptionList
     php_class: Symfinity\UxBlocksExtended\Twig\Components\DescriptionList
@@ -142,6 +148,28 @@ roles:
     interaction: nat, act
     stage: A
     status: shipped
+  - role: app-shell
+    twig_component: AppShell
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\AppShell
+    fragment_id: blocks.ext.app-shell
+    fragment_pattern: "blocks.ext.app-shell.{n}"
+    attributes: [variant, density, open]
+    styled_parts: [aside, header]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: page-header
+    twig_component: PageHeader
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\PageHeader
+    fragment_id: blocks.ext.page-header
+    fragment_pattern: "blocks.ext.page-header.{n}"
+    scalar_content: [title, description]
+    styled_parts: [header, actions]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
   - role: data-table-chrome
     twig_component: DataTableChrome
     php_class: Symfinity\UxBlocksExtended\Twig\Components\DataTableChrome
@@ -155,18 +183,16 @@ roles:
     php_class: Symfinity\UxBlocksExtended\Twig\Components\EmptyState
     fragment_id: blocks.ext.empty
     fragment_pattern: "blocks.ext.empty.{n}"
-    nested_components:
-      - Empty:Header
-      - Empty:Media
-      - Empty:Title
-      - Empty:Description
-      - Empty:Content
+    attributes: [appearance]
+    scalar_content: [title, description, icon]
+    styled_parts: [header, media, actions]
+    composition_language: enforced
     interaction: nat
     stage: A
     status: shipped
     icon_slot:
       position: locked-center
-      component: Empty:Media
+      component: Media
   - role: bento-box-panel
     twig_component: BentoBoxPanel
     php_class: Symfinity\UxBlocksExtended\Twig\Components\BentoBoxPanel
@@ -234,6 +260,9 @@ deprecated_fragment_aliases:
     sunset: next-minor
   - from: blocks.dashboard-shell
     to: blocks.ext.dashboard-shell
+    sunset: next-minor
+  - from: blocks.ext.dashboard-shell
+    to: blocks.ext.app-shell
     sunset: next-minor
   - from: blocks.data-table-chrome
     to: blocks.ext.data-table-chrome

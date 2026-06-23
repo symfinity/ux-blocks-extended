@@ -1,7 +1,14 @@
 <div
     data-ui-role="empty"
     data-ui-fragment="blocks.ext.empty"
+    {% if appearance != 'outline' %}data-ui-appearance="{{ appearance }}"{% endif %}
     {{ attributes }}
 >
+    {% if title or description %}
+        <header data-ui-part="header">
+            {% if title %}<strong>{{ title }}</strong>{% endif %}
+            {% if description %}<p>{{ description }}</p>{% endif %}
+        </header>
+    {% endif %}
     {% block content %}{% endblock %}
 </div>

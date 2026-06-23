@@ -69,7 +69,7 @@
 
 ## Component inventory (054 three-tier)
 
-**Application tier** — **19** compound `nat`/`act` roles in `config/ux_roles.yaml` (prefix `blocks.ext`). Eight layout/form atoms promoted to `symfinity/ux-blocks-core` in **094**; `empty` compound demoted here from core.
+**Application tier** — **19** compound `nat`/`act` roles in `config/ux_roles.yaml` (prefix `blocks.ext`, schema **1.4**). Eight layout/form atoms promoted to `symfinity/ux-blocks-core` in **094**; `empty` compound demoted here from core. Container roles (`card`, `alert`, `empty`, `field`) use the **108** composition language: scalar attrs + universal region components from core; per-concept `Card*` / `Alert*` sub-components removed.
 
 | Role | Twig | Interaction | Fragment |
 |------|------|-------------|----------|
@@ -101,3 +101,42 @@ make test
 # or package-scoped:
 ./sbin/php vendor/bin/phpunit packages/ux-blocks-extended/tests
 ```
+
+## Maintainer Sass pipeline (120)
+
+Author role CSS in `assets/scss/`; ship compiled CSS under `assets/styles/`. Shared partials copied from `ux-blocks-core` (`_shared/`). From product monorepo root:
+
+```bash
+cd src/symfinity
+bin/blocks-css-compile --package=ux-blocks-extended
+bin/blocks-css-compile --check --package=ux-blocks-extended
+bin/ux-blocks-scss-audit --package=ux-blocks-extended --check
+```
+
+**MUST NOT** hand-edit compiled `assets/styles/**/*.css` for migrated roles. See [ux-blocks maintainer Sass pipeline](../ux-blocks/README.md#maintainer--sass-author-pipeline-120).
+
+
+<!-- ux-blocks:registry:start -->
+| Role | Twig | Interaction | Fragment | Status |
+|------|------|-------------|----------|--------|
+| card | Card | nat | `blocks.ext.card` | shipped |
+| table | Table | nat | `blocks.ext.table` | shipped |
+| alert | Alert | nat | `blocks.ext.alert` | shipped |
+| description-list | DescriptionList | nat | `blocks.ext.description-list` | shipped |
+| stat | Stat | nat | `blocks.ext.stat` | shipped |
+| timeline | Timeline | nat | `blocks.ext.timeline` | shipped |
+| accordion | Accordion | nat | `blocks.ext.accordion` | shipped |
+| carousel | Carousel | nat | `blocks.ext.carousel` | shipped |
+| dialog | Dialog | nat | `blocks.ext.dialog` | shipped |
+| popover | Popover | nat | `blocks.ext.popover` | shipped |
+| tooltip | Tooltip | nat | `blocks.ext.tooltip` | shipped |
+| navbar | Navbar | nat | `blocks.ext.navbar` | shipped |
+| steps | Steps | nat | `blocks.ext.steps` | shipped |
+| auth-layout | AuthLayout | nat | `blocks.ext.auth-layout` | shipped |
+| dashboard-shell | DashboardShell | nat, act | `blocks.ext.dashboard-shell` | shipped |
+| app-shell | AppShell | nat | `blocks.ext.app-shell` | shipped |
+| page-header | PageHeader | nat | `blocks.ext.page-header` | shipped |
+| data-table-chrome | DataTableChrome | nat | `blocks.ext.data-table-chrome` | shipped |
+| empty | Empty | nat | `blocks.ext.empty` | shipped |
+| bento-box-panel | BentoBoxPanel | nat | `blocks.ext.bento-box-panel` | shipped |
+<!-- ux-blocks:registry:end -->

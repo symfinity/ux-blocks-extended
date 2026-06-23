@@ -15,16 +15,40 @@ final class EmptyTest extends ComponentTestCase
         $html = $this->renderComponent('Empty');
 
         $this->assertRootAttributes($html, 'empty', 'blocks.ext.empty');
-        self::assertStringNotContainsString('data-ui-media=', $html);
-        self::assertStringNotContainsString('data-action-url=', $html);
     }
 
     #[Test]
-    public function contentFragmentRendersRegistryAttributes(): void
+    public function scalarTitleAndDescriptionRenderInHeaderRegion(): void
     {
         self::bootKernel();
-        $html = $this->renderComponent('Empty:Content');
+        $html = $this->renderComponent('Empty', [
+            'title' => 'Nothing here',
+            'description' => 'Try another filter',
+        ]);
 
-        $this->assertRootAttributes($html, 'empty-content', 'blocks.ext.empty.content');
+        self::assertStringContainsString('data-ui-part="header"', $html);
+        self::assertStringContainsString('Nothing here', $html);
+        self::assertStringContainsString('Try another filter', $html);
+    }
+
+    #[Test]
+    public function softAppearanceEmitsDataUiAppearance(): void
+    {
+        self::bootKernel();
+        $html = $this->renderComponent('Empty', [
+            'appearance' => 'soft',
+            'title' => 'Nothing here',
+        ]);
+
+        self::assertStringContainsString('data-ui-appearance="soft"', $html);
+    }
+
+    #[Test]
+    public function outlineAppearanceOmitsDataUiAppearance(): void
+    {
+        self::bootKernel();
+        $html = $this->renderComponent('Empty', ['title' => 'Nothing here']);
+
+        self::assertStringNotContainsString('data-ui-appearance=', $html);
     }
 }
