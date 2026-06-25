@@ -148,7 +148,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         cookie_name?: scalar|Param|null, // The name of the cookie to use when using stateless protection. // Default: "csrf-token"
  *     },
  *     form?: bool|array{ // Form configuration
- *         enabled?: bool|Param, // Default: false
+ *         enabled?: bool|Param, // Default: true
  *         csrf_protection?: bool|array{
  *             enabled?: scalar|Param|null, // Default: null
  *             token_id?: scalar|Param|null, // Default: null
@@ -330,7 +330,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         }>,
  *     },
  *     validation?: bool|array{ // Validation configuration
- *         enabled?: bool|Param, // Default: false
+ *         enabled?: bool|Param, // Default: true
  *         cache?: scalar|Param|null, // Deprecated: Setting the "framework.validation.cache.cache" configuration option is deprecated. It will be removed in version 8.0.
  *         enable_attributes?: bool|Param, // Default: true
  *         static_method?: string|list<scalar|Param|null>,
@@ -728,7 +728,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     controllers_json?: scalar|Param|null, // Default: "%kernel.project_dir%/assets/controllers.json"
  * }
  * @psalm-type TwigComponentConfig = array{
- *     defaults?: array<string, string|array{ // Default: ["__deprecated__use_old_naming_behavior"]
+ *     defaults?: array<string, string|array{ // Default: []
  *         template_directory?: scalar|Param|null, // Default: "components"
  *         name_prefix?: scalar|Param|null, // Default: ""
  *     }>,
@@ -737,7 +737,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         enabled?: bool|Param, // Default: "%kernel.debug%"
  *         collect_components?: bool|Param, // Collect components instances // Default: true
  *     },
- *     controllers_json?: scalar|Param|null, // Deprecated: The "twig_component.controllers_json" config option is deprecated, and will be removed in 3.0. // Default: null
  * }
  * @psalm-type SymfinityUiKernelConfig = array{
  *     default_theme?: scalar|Param|null, // Default: "default"
