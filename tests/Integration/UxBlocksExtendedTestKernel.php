@@ -63,6 +63,14 @@ final class UxBlocksExtendedTestKernel extends Kernel
             'php_errors' => ['log' => false],
         ]);
 
+        $container->extension('twig_component', [
+            'anonymous_template_directory' => 'components',
+            'defaults' => [
+                'Symfinity\\UxBlocksCore\\Twig\\Components\\' => 'components',
+                'Symfinity\\UxBlocksExtended\\Twig\\Components\\' => 'components',
+            ],
+        ]);
+
         $container->extension('twig', [
             'form_themes' => [],
         ]);
