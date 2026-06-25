@@ -1,6 +1,6 @@
 {
     "name": "symfinity/ux-blocks-extended",
-    "description": "Compound UX Twig components with blocks.ext fragments and composition-language regions",
+    "description": "Compound UX Twig components with registry-aligned markup and role CSS",
     "license": "MIT",
     "type": "symfony-bundle",
     "homepage": "https://github.com/symfinity/ux-blocks-extended",
