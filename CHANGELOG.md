@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-06-25
+
+### Added
+
+- **`search-form`** compound role — `<twig:SearchForm>` with `data-ui-role="search-form"` and fragment id `blocks.ext.search-form`
+- **Role CSS** — `assets/styles/roles/search-form.css` for list/toolbar search UI shells
+- Registry `config/ux_roles.yaml` now lists **21** shipped extended roles (was 20 at `v0.1.0`)
+
+### Notes
+
+- Requires `symfinity/ux-blocks` `^0.1.3` for `ExtendedRoleCatalog` alignment in dev/tests
+- No breaking changes to existing `blocks.ext.*` fragment ids
+
 ## [0.1.0] - 2026-06-25
 
 ### Added

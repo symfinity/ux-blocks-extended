@@ -20,7 +20,7 @@
 > See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
 ## Features
-- **20 compound roles** — cards, alerts, layout shells, navigation, and data chrome
+- **21 compound roles** — cards, alerts, layout shells, navigation, data chrome, and search forms
 - **Native-first (`nat`)** — styled with ui-kernel tokens; optional `act` on dashboard shell
 - **Composition language** — scalar attrs plus universal region components from core
 - **Registry-aligned** — `blocks.ext.*` fragment ids in `config/ux_roles.yaml`
@@ -61,9 +61,10 @@
 | data-table-chrome | DataTableChrome | nat | `blocks.ext.data-table-chrome` | shipped |
 | empty | Empty | nat | `blocks.ext.empty` | shipped |
 | bento-box-panel | BentoBoxPanel | nat | `blocks.ext.bento-box-panel` | shipped |
+| search-form | SearchForm | nat | `blocks.ext.search-form` | shipped |
 <!-- ux-blocks:registry:end -->
 
-**Highlights:** app shell and page header for product chrome; bento box panel for category landing; data-table chrome for list/detail layouts.
+**Highlights:** app shell and page header for product chrome; bento box panel for category landing; search-form for toolbar filters; data-table chrome for list/detail layouts.
 Handbook: [docs/components.md](docs/components.md).
 
 ## Prerequisites
@@ -95,8 +96,9 @@ See [Quick start](docs/quickstart.md) for the full walkthrough.
 - **[Installation](docs/installation.md)** — Flex, dependencies, verify
 - **[Configuration](docs/configuration.md)** — bundle and app options
 - **[Components](docs/components.md)** — role index and examples
-- **[Usage](docs/usage.md)** — day-to-day patterns
+- **[Usage](docs/usage.md)** — layout shells, composition language, search UI
 - **[Upgrade](docs/upgrade.md)** — version migrations
+- **[Troubleshooting](docs/troubleshooting.md)** — common fixes
 
 ## Requirements
 - PHP 8.2 or higher

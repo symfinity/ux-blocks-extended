@@ -3,6 +3,27 @@
     "description": "Compound UX Twig components with blocks.ext fragments and composition-language regions",
     "license": "MIT",
     "type": "symfony-bundle",
+    "homepage": "https://github.com/symfinity/ux-blocks-extended",
+    "support": {
+        "issues": "https://github.com/symfinity/ux-blocks-extended/issues",
+        "source": "https://github.com/symfinity/ux-blocks-extended"
+    },
+    "authors": [
+        {
+            "name": "Symfinity",
+            "email": "dev@symfinity.net",
+            "homepage": "https://symfinity.net/"
+        }
+    ],
+    "keywords": [
+        "symfony",
+        "symfony-bundle",
+        "symfony-ux",
+        "twig-components",
+        "ux-blocks",
+        "design-system",
+        "ui-kernel"
+    ],
     "require": {
         "php": ">=8.2",
         "symfinity/ux-blocks-core": "^0.1",
@@ -42,10 +63,12 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "version": "0.1.0-dev",
     "extra": {
         "branch-alias": {
             "dev-main": "0.1.x-dev"
+        },
+        "symfony": {
+            "require": "^7.4||^8.0"
         }
     }
 }

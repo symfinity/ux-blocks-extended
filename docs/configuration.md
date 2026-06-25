@@ -1,21 +1,36 @@
 # Configuration
 
-## Configuration files
+UX Blocks Extended ships **zero required app YAML**. The bundle prepends AssetMapper paths, Twig template paths, and UX Twig Component defaults at compile time.
 
-`config/packages/symfinity_{slug}.yaml`
+## What the bundle configures
 
-## Options
+| Concern | Behavior |
+|---------|----------|
+| AssetMapper | Maps `assets/` to logical namespace `ux-blocks-extended` |
+| Twig templates | Namespace `UxBlocksExtended` → `templates/` |
+| UX Twig components | `Symfinity\UxBlocksExtended\Twig\Components\` → `components/` templates |
+| Role registry | `config/ux_roles.yaml` (revision **1.4**) — read-only reference inside the package |
+| Services | Autowired listeners — see bundle `config/services.yaml` |
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| | | | |
+Applications **do not** copy bundle `config/` into `config/packages/`.
 
-## Environment variables
+## Routes
 
-| Variable | Description |
-|----------|-------------|
-| | |
+This package ships **no HTTP routes** — only Twig components, registry YAML, and AssetMapper assets.
+
+## Themed apps (optional ui-kernel)
+
+Role CSS uses `var(--ui-*)` tokens. When **symfinity/ui-kernel** is installed, include theme CSS in your layout — see ui-kernel [theme-preference](https://github.com/symfinity/ui-kernel/blob/main/docs/theme-preference.md).
+
+## Optional integrations
+
+| Package | Purpose |
+|---------|---------|
+| `symfinity/ui-action` | Declarative `act` on `DashboardShell` |
+| `symfinity/ux-runtime` | JSON backend for command-palette demos (suggestion only) |
 
 ## See also
 
-[Usage](usage.md)
+- [Installation](installation.md)
+- [Components](components.md)
+- [ui-kernel configuration](https://github.com/symfinity/ui-kernel/blob/main/docs/configuration.md)

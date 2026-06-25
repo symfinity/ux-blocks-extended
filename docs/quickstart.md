@@ -1,55 +1,64 @@
-# Quickstart: symfinity/ux-blocks-extended
+# Quick start
 
-**Status:** shipped 2026-06-03 — 24 `stl` roles, `blocks.ext.*` fragments.
+Use UX Blocks Extended compounds in a Symfony app with ui-kernel theme CSS.
 
 ## Prerequisites
 
-- Product monorepo `src/symfinity/` with Docker (`docker compose`, `make test`)
-- **003** / **024** `DONE`: `symfinity/ux-blocks-core`, `symfinity/ux-blocks-demo`
-- Recommended: `symfinity/ui-kernel` for themed previews
+[Installation](installation.md) completed — `symfinity/ux-blocks-core`, `symfinity/ux-blocks-form`, and `symfinity/ux-blocks-extended` installed. Add `symfinity/ui-kernel` for themed apps.
 
-## Install
+## 1. Include ui-kernel CSS
 
-```bash
-cd src/symfinity
-./bin/composer require symfinity/ux-blocks-extended
-
-# Optional command palette backend:
-./bin/composer require symfinity/ux-runtime
-```
-
-Flex: `recipes/symfinity/ux-blocks-extended/0.1/`
-
-## Minimal Twig
+Compound roles rely on ui-kernel design tokens. In your base layout `<head>`:
 
 ```twig
-<twig:DropdownMenu>
-  <twig:DropdownMenu:Trigger>Open</twig:DropdownMenu:Trigger>
-  <twig:DropdownMenu:Content>
-    <twig:DropdownMenu:Item href="/settings">Settings</twig:DropdownMenu:Item>
-  </twig:DropdownMenu:Content>
-</twig:DropdownMenu>
-
-<twig:CommandPalette commandsUrl="/_ui/palette/commands" />
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My app{% endblock %}</title>
+    {{ ui_kernel_theme_boot_script() }}
+    {{ ui_kernel_css()|raw }}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>
 ```
 
-## Demo hub (`ux-blocks-demo`)
+## 2. Render compounds
 
-| Route | Category |
-|-------|----------|
-| `/extended` | Index |
-| `/extended/overlays` | Overlays |
-| `/extended/navigation` | Navigation |
-| `/extended/app-shell` | Sidebar, menubar, nav menu |
-| `/extended/forms` | Form micro-UX |
-| `/extended/data` | Table chrome, carousel, resizable, toast |
-| `/extended/command-palette` | With / without ux-runtime |
+Use UX Twig component tags. Composition-language roles accept universal region components from core:
 
-## Verification
+```twig
+<twig:PageHeader title="Settings" description="Manage your account." />
 
-| Check | Command |
-|-------|---------|
-| Package tests | `docker compose run php vendor/bin/phpunit -c packages/ux-blocks-extended/phpunit.xml.dist` |
-| Monorepo gate | `make test` |
+<twig:Card>
+    <twig:Header>Notifications</twig:Header>
+    <twig:Actions>
+        <twig:Button variant="default">Save</twig:Button>
+    </twig:Actions>
+</twig:Card>
 
-## Related
+<twig:SearchForm action="/search" method="get">
+    <twig:Input name="q" type="search" placeholder="Search…" />
+    <twig:Button type="submit" variant="default">Search</twig:Button>
+</twig:SearchForm>
+```
+
+Each root element exposes `data-ui-role`, `data-ui-fragment`, and UI Kernel variant hooks — see [Components](components.md).
+
+## Verify markup
+
+In a functional test or browser inspector, confirm:
+
+- `data-ui-role="page-header"` on the page header root
+- `data-ui-fragment="blocks.ext.card"` on the card root
+- `data-ui-fragment="blocks.ext.search-form"` on the search form shell
+
+## Next steps
+
+- [Components](components.md) — full role index
+- [Usage](usage.md) — layout shells and data chrome patterns
+- [CHANGELOG](../CHANGELOG.md) · [CONTRIBUTING](../CONTRIBUTING.md) · [GitHub Issues](https://github.com/symfinity/ux-blocks-extended/issues)
