@@ -2,7 +2,7 @@
 
 # UX Blocks Extended
 
-### Compound UX Twig components with with registry-aligned markup and role CSS
+### Compound UX Twig components with registry-aligned markup and role CSS
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat&logo=php&logoColor=white)](composer.json)
 [![Symfony](https://img.shields.io/badge/Symfony-7.4+-343434?style=flat&logo=symfony&logoColor=white)](composer.json)
