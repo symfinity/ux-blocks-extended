@@ -203,7 +203,18 @@ roles:
     interaction: nat
     stage: A
     status: shipped
+  - role: search-form
+    twig_component: SearchForm
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\SearchForm
+    fragment_id: blocks.ext.search-form
+    fragment_pattern: "blocks.ext.search-form.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
 deprecated_fragment_aliases:
+  - from: blocks.search-form
+    to: blocks.ext.search-form
+    sunset: next-minor
   - from: blocks.field
     to: blocks.ext.field
     sunset: next-minor
