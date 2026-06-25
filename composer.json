@@ -19,7 +19,8 @@
         "symfony/browser-kit": "^7.4||^8.0",
         "symfony/css-selector": "^7.4||^8.0",
         "symfony/http-client": "^7.4||^8.0",
-        "symfony/yaml": "^7.4||^8.0"
+        "symfony/yaml": "^7.4||^8.0",
+        "symfinity/ui-kernel": "^0.1"
     },
     "suggest": {
         "symfinity/ux-runtime": "Optional command palette JSON backend (blocks.ext.command-palette)"

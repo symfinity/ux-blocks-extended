@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "837330de899de2b92de6cd832d94dd83",
+    "content-hash": "d9057b695fe234c39a10eacc00255d7c",
     "packages": [
         {
             "name": "composer/semver",
@@ -5837,6 +5837,83 @@
                 }
             ],
             "time": "2024-10-20T05:08:20+00:00"
+        },
+        {
+            "name": "symfinity/ui-kernel",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfinity/ui-kernel.git",
+                "reference": "ed29a820d71bbe45bd8f3a0e48076ac7ed8044f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfinity/ui-kernel/zipball/ed29a820d71bbe45bd8f3a0e48076ac7ed8044f8",
+                "reference": "ed29a820d71bbe45bd8f3a0e48076ac7ed8044f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/config": "^6.4||^7.0||^8.0",
+                "symfony/dependency-injection": "^6.4||^7.0||^8.0",
+                "symfony/framework-bundle": "^6.4||^7.0||^8.0",
+                "symfony/http-foundation": "^6.4||^7.0||^8.0",
+                "symfony/http-kernel": "^6.4||^7.0||^8.0",
+                "symfony/twig-bundle": "^6.4||^7.0||^8.0",
+                "symfony/yaml": "^6.4||^7.0||^8.0",
+                "twig/twig": "^3.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-symfony": "^2.0",
+                "phpunit/phpunit": "^10.5 || ^11.0"
+            },
+            "suggest": {
+                "symfinity/font-manager": "Optional webfont loading — pair css_variables export with --ui-font-family-sans / --ui-font-family-mono (see docs/font-manager-pairing.md)",
+                "symfinity/ux-blocks-demo": "Browser theme galleries and kernel showcase routes (dev/test only)",
+                "symfony/web-profiler-bundle": "Dev-only Web Profiler toolbar and panel for theme/CSS observability (UiKernelDataCollector)"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "symfony": {
+                    "require": "^6.4||^7.0||^8.0"
+                },
+                "branch-alias": {
+                    "dev-main": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfinity\\UiKernel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfinity",
+                    "email": "dev@symfinity.net",
+                    "homepage": "https://symfinity.net/"
+                }
+            ],
+            "description": "Design tokens, themes, and generated CSS for Symfony",
+            "homepage": "https://github.com/symfinity/ui-kernel",
+            "keywords": [
+                "css",
+                "design-tokens",
+                "oklch",
+                "symfony",
+                "symfony-bundle",
+                "themes",
+                "ui-kernel"
+            ],
+            "support": {
+                "issues": "https://github.com/symfinity/ui-kernel/issues",
+                "source": "https://github.com/symfinity/ui-kernel"
+            },
+            "time": "2026-06-18T23:50:55+00:00"
         },
         {
             "name": "symfony/browser-kit",
