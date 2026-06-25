@@ -20,7 +20,6 @@
 > See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
 
 ## Features
-
 - **20 compound roles** — cards, alerts, layout shells, navigation, and data chrome
 - **Native-first (`nat`)** — styled with ui-kernel tokens; optional `act` on dashboard shell
 - **Composition language** — scalar attrs plus universal region components from core
@@ -30,7 +29,6 @@
 - **Flex recipe** — bundle and AssetMapper paths wired on install
 
 ## Interaction profile
-
 | Token | In this package |
 |-------|-----------------|
 | `nat` | Default for compounds — native HTML + ui-kernel / package CSS |
@@ -39,7 +37,6 @@
 | `live` | **Not included** — LiveComponents ship in `symfinity/ux-blocks-live` |
 
 ## Component inventory
-
 
 <!-- ux-blocks:registry:start -->
 | Role | Twig | Interaction | Fragment | Status |
@@ -67,17 +64,13 @@
 <!-- ux-blocks:registry:end -->
 
 **Highlights:** app shell and page header for product chrome; bento box panel for category landing; data-table chrome for list/detail layouts.
-
 Handbook: [docs/components.md](docs/components.md).
 
 ## Prerequisites
-
 Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint to your project's `composer.json` (see [recipes README](https://github.com/symfinity/recipes/blob/main/README.md)) — recipes are not in Symfony's official recipe repository yet.
 
 ## Installation
-
 Requires core (and form for field compounds). See [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles) for tier choices.
-
 ```bash
 composer require symfinity/ux-blocks-extended
 ```
@@ -85,7 +78,6 @@ composer require symfinity/ux-blocks-extended
 See [Installation](docs/installation.md).
 
 ## Quick Start
-
 ```twig
 <twig:PageHeader title="Settings" description="Manage your account." />
 <twig:Card>
@@ -99,7 +91,6 @@ See [Installation](docs/installation.md).
 See [Quick start](docs/quickstart.md) for the full walkthrough.
 
 ## Documentation
-
 - **[Quick start](docs/quickstart.md)** — minimal setup path
 - **[Installation](docs/installation.md)** — Flex, dependencies, verify
 - **[Configuration](docs/configuration.md)** — bundle and app options
@@ -108,17 +99,14 @@ See [Quick start](docs/quickstart.md) for the full walkthrough.
 - **[Upgrade](docs/upgrade.md)** — version migrations
 
 ## Requirements
-
 - PHP 8.2 or higher
 - Symfony 7.4 or 8.x
 - `symfinity/ux-blocks-core` ^0.1 and `symfinity/ux-blocks-form` ^0.1
 
 ## Support
-
 - [GitHub Issues](https://github.com/symfinity/ux-blocks-extended/issues)
 - [Security](.github/SECURITY.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License
-
 [MIT](LICENSE)

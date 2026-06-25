@@ -6,6 +6,7 @@ namespace Symfinity\UxBlocksExtended\Tests\Unit\Css;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Symfinity\UxBlocksExtended\Tests\Support\CssTestSupport;
 
 final class BentoBoxPanelContainerRegressionTest extends TestCase
 {
@@ -14,7 +15,7 @@ final class BentoBoxPanelContainerRegressionTest extends TestCase
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/bento-box-panel.css';
         self::assertFileExists($path);
 
-        return (string) file_get_contents($path);
+        return CssTestSupport::normalizeSelectors((string) file_get_contents($path));
     }
 
     #[Test]
@@ -42,7 +43,7 @@ final class BentoBoxPanelContainerRegressionTest extends TestCase
         $css = self::bentoCss();
 
         preg_match(
-            '/\[data-ui-role="bento-box-panel"\]\[data-ui-panel-layout=bento-box\]\s*\{[^}]+\}/s',
+            '/\[data-ui-role="bento-box-panel"\]\[data-ui-panel-layout="bento-box"\]\s*\{[^}]+\}/s',
             $css,
             $matches,
         );

@@ -1,6 +1,6 @@
 {
     "name": "symfinity/ux-blocks-extended",
-    "description": "Symfinity UX Blocks Extended — nat/act compound catalog with blocks.ext fragments",
+    "description": "Compound UX Twig components with blocks.ext fragments and composition-language regions",
     "license": "MIT",
     "type": "symfony-bundle",
     "require": {

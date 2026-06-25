@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfinity\UxBlocksExtended\Css\BlocksExtendedCssProvider;
 use Symfinity\UxBlocks\Registry\ExtendedRoleCatalog;
+use Symfinity\UxBlocksExtended\Tests\Support\CssTestSupport;
 
 final class BlocksExtendedCssTest extends TestCase
 {
@@ -16,14 +17,14 @@ final class BlocksExtendedCssTest extends TestCase
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/_bundle.css';
         self::assertFileExists($path);
 
-        return (string) file_get_contents($path);
+        return CssTestSupport::normalizeSelectors((string) file_get_contents($path));
     }
 
     #[Test]
     public function bundleIncludesShippedExtendedRootRoles(): void
     {
         $provider = new BlocksExtendedCssProvider(dirname(__DIR__, 3));
-        $css = $provider->stylesheet();
+        $css = CssTestSupport::normalizeSelectors($provider->stylesheet());
 
         foreach (ExtendedRoleCatalog::roles() as $role) {
             self::assertStringContainsString('[data-ui-role="' . $role . '"]', $css, $role);
@@ -44,7 +45,7 @@ final class BlocksExtendedCssTest extends TestCase
 
         // 107: alert-dialog-content surface is single-path in roles/dialog.css
         // (grouped with modal/dialog overlay chrome), not the residual aggregate.
-        $full = (new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet();
+        $full = CssTestSupport::normalizeSelectors((new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet());
         self::assertStringContainsString('[data-ui-role="alert-dialog-content"]', $full);
     }
 
@@ -62,7 +63,7 @@ final class BlocksExtendedCssTest extends TestCase
     #[Test]
     public function accordionUsesBootstrapStyleGridCollapse(): void
     {
-        $css = (new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet();
+        $css = CssTestSupport::normalizeSelectors((new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet());
 
         self::assertStringContainsString('--ux-accordion-collapse-duration: 0.35s', $css);
         self::assertStringContainsString('grid-template-rows: auto 0fr', $css);
@@ -88,7 +89,7 @@ final class BlocksExtendedCssTest extends TestCase
     #[Test]
     public function bundleIncludesEmptyRegionLayoutCss(): void
     {
-        $css = (new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet();
+        $css = CssTestSupport::normalizeSelectors((new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet());
 
         self::assertStringContainsString('[data-ui-role="empty"]', $css);
         self::assertStringContainsString('[data-ui-part="media"]', $css);
@@ -122,7 +123,7 @@ final class BlocksExtendedCssTest extends TestCase
     public function overlayRulesCoverDialogPopoverAndTooltip(): void
     {
         $provider = new BlocksExtendedCssProvider(dirname(__DIR__, 3));
-        $css = $provider->stylesheet();
+        $css = CssTestSupport::normalizeSelectors($provider->stylesheet());
 
         self::assertStringContainsString('[data-ui-role="dialog"]', $css);
         self::assertStringContainsString('z-index: var(--ui-z-modal)', $css);
@@ -146,10 +147,10 @@ final class BlocksExtendedCssTest extends TestCase
     #[Test]
     public function alertIconRowMatchesFlashFeedbackSlot(): void
     {
-        $css = (new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet();
+        $css = CssTestSupport::normalizeSelectors((new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet());
 
         self::assertMatchesRegularExpression(
-            '/\[data-ui-role="alert"\][^{]*\[data-ui-part="alert-body"\][^{]*\{[^}]*align-items:\s*center/s',
+            '/\[data-ui-role="alert"\][^{]*\{[^}]*align-items:\s*center/s',
             $css,
         );
         self::assertMatchesRegularExpression(

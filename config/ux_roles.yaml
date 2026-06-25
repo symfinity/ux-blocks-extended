@@ -148,28 +148,6 @@ roles:
     interaction: nat, act
     stage: A
     status: shipped
-  - role: app-shell
-    twig_component: AppShell
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\AppShell
-    fragment_id: blocks.ext.app-shell
-    fragment_pattern: "blocks.ext.app-shell.{n}"
-    attributes: [variant, density, open]
-    styled_parts: [aside, header]
-    composition_language: enforced
-    interaction: nat
-    stage: A
-    status: shipped
-  - role: page-header
-    twig_component: PageHeader
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\PageHeader
-    fragment_id: blocks.ext.page-header
-    fragment_pattern: "blocks.ext.page-header.{n}"
-    scalar_content: [title, description]
-    styled_parts: [header, actions]
-    composition_language: enforced
-    interaction: nat
-    stage: A
-    status: shipped
   - role: data-table-chrome
     twig_component: DataTableChrome
     php_class: Symfinity\UxBlocksExtended\Twig\Components\DataTableChrome
@@ -200,6 +178,28 @@ roles:
     fragment_pattern: "blocks.ext.bento-box-panel.{n}"
     nested_components:
       - BentoBoxPanel:Box
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: app-shell
+    twig_component: AppShell
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\AppShell
+    fragment_id: blocks.ext.app-shell
+    fragment_pattern: "blocks.ext.app-shell.{n}"
+    attributes: [variant, density, open]
+    styled_parts: [aside, header]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: page-header
+    twig_component: PageHeader
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\PageHeader
+    fragment_id: blocks.ext.page-header
+    fragment_pattern: "blocks.ext.page-header.{n}"
+    scalar_content: [title, description]
+    styled_parts: [header, actions]
+    composition_language: enforced
     interaction: nat
     stage: A
     status: shipped

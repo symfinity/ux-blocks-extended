@@ -6,6 +6,7 @@ namespace Symfinity\UxBlocksExtended\Tests\Unit\Css;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Symfinity\UxBlocksExtended\Tests\Support\CssTestSupport;
 
 final class ContainerRegionLayoutTest extends TestCase
 {
@@ -24,7 +25,7 @@ final class ContainerRegionLayoutTest extends TestCase
     #[Test]
     public function cardPositionsUniversalRegionParts(): void
     {
-        $css = (string) file_get_contents(self::roleCssMap()['card']);
+        $css = CssTestSupport::normalizeSelectors((string) file_get_contents(self::roleCssMap()['card']));
 
         foreach (['header', 'footer', 'media', 'actions'] as $part) {
             self::assertStringContainsString('[data-ui-part="' . $part . '"]', $css, $part);
@@ -37,7 +38,7 @@ final class ContainerRegionLayoutTest extends TestCase
     #[Test]
     public function emptyPositionsUniversalRegionParts(): void
     {
-        $css = (string) file_get_contents(self::roleCssMap()['empty']);
+        $css = CssTestSupport::normalizeSelectors((string) file_get_contents(self::roleCssMap()['empty']));
 
         foreach (['header', 'media', 'actions'] as $part) {
             self::assertStringContainsString('[data-ui-part="' . $part . '"]', $css, $part);
@@ -52,7 +53,7 @@ final class ContainerRegionLayoutTest extends TestCase
     #[Test]
     public function alertPositionsHeaderAndActionsParts(): void
     {
-        $css = (string) file_get_contents(self::roleCssMap()['alert']);
+        $css = CssTestSupport::normalizeSelectors((string) file_get_contents(self::roleCssMap()['alert']));
 
         self::assertStringContainsString('[data-ui-part="header"]', $css);
         self::assertStringContainsString('[data-ui-part="actions"]', $css);
@@ -61,7 +62,7 @@ final class ContainerRegionLayoutTest extends TestCase
     #[Test]
     public function alertClipsIconWatermarksToPaddingBox(): void
     {
-        $css = (string) file_get_contents(self::roleCssMap()['alert']);
+        $css = CssTestSupport::normalizeSelectors((string) file_get_contents(self::roleCssMap()['alert']));
 
         self::assertMatchesRegularExpression(
             '/\[data-ui-role="alert"\][^{]*\{[^}]*overflow:\s*hidden/s',

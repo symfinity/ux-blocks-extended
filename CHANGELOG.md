@@ -1,28 +1,28 @@
 # Changelog
 
-All changes to **symfinity/ux-blocks-extended** are currently on `main` (unreleased, untagged).
+All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2026-06-25
 
 ### Added
 
-- **046 R2:** `DateRangePicker`, `TagsInput`, and `TreeView` roles (`blocks.ext.*` fragments + Stimulus)
-- Opt-in **creatable** mode on `Combobox` (`creatable`, `preventDuplicates` props)
-- Kernel CSS role-rules for three new extended roles
+- Initial release of **symfinity/ux-blocks-extended** — compound UX Twig components for Symfony
+- **20 shipped roles** with `blocks.ext.*` fragment ids: card, table, alert, description-list, stat, timeline, accordion, carousel, dialog, popover, tooltip, navbar, steps, auth-layout, dashboard-shell, app-shell, page-header, data-table-chrome, empty, and bento-box-panel
+- **Composition language** on selected roles — scalar attributes plus universal region components (`Header`, `Actions`, `Media`, …) from core
+- **Native-first (`nat`) interaction** — ui-kernel token styling and tier-owned role CSS under `assets/styles/roles/`
+- **Symfony UX Twig components** — e.g. `<twig:Card>`, `<twig:PageHeader>`, `<twig:AppShell>`, `<twig:BentoBoxPanel>`
+- **UX role registry** — `config/ux_roles.yaml` aligned with `blocks.ext` prefix and handbook component pages
+- **Icon slots and watermarks** on alert, stat, navbar, empty, card, and related compounds where documented in the registry
+- **Optional dashboard actions** — `DashboardShell` supports ui-action (`act`) when `symfinity/ui-action` is present
+- **Flex recipe** `0.1` — bundle registration, AssetMapper paths, and default package config
+- **Consumer handbook** — installation, quick start, configuration, usage, components, upgrade, and troubleshooting under `docs/`
+- Symfony **7.4** and **8.0** compatibility; PHP **8.2+**
 
-### Changed
+### Notes
 
-- **098 compound elevation** — `card` role uses `var(--ui-shadow-md|lg)` on hover with reduced-motion transform gate
-- A11y hardening on `Combobox`, `DatePicker`, and core `Select` per 046 contract (`aria-controls`, `aria-activedescendant`, labeled select wrapper)
-
-### Added (025 baseline)
-
-- Symfony bundle `SymfinityUxBlocksExtendedBundle` for integration
-- Module `Controller`
-- Module `Twig`
-- Package configuration under `config/`
-- Twig templates for UI integration
-- Asset Mapper / Stimulus assets
-- UX role registry (`config/ux_roles.yaml`)
-- 25 component handbook pages under `docs/components/`
-- Packages added/updated
+- Requires `symfinity/ux-blocks-core` and `symfinity/ux-blocks-form` ^0.1 — see [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles)
+- Interactive overlays (`stl`) and LiveComponents (`live`) ship in separate packages (`symfinity/ux-blocks-interactive`, `symfinity/ux-blocks-live`)
+- Optional `symfinity/ux-runtime` suggestion for command-palette JSON backend only

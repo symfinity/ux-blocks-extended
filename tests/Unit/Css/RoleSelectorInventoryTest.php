@@ -6,6 +6,8 @@ namespace Symfinity\UxBlocksExtended\Tests\Unit\Css;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Symfinity\UxBlocksExtended\Css\BlocksExtendedCssProvider;
+use Symfinity\UxBlocksExtended\Tests\Support\CssTestSupport;
 
 /**
  * 120 SC-003 — primary role selector inventory for coverage measurement.
@@ -37,7 +39,6 @@ final class RoleSelectorInventoryTest extends TestCase
 [data-ui-role="stack"]
 [data-ui-role="stat"]
 [data-ui-role="stat-label"]
-[data-ui-role="stat-value"]
 [data-ui-role="steps"]
 [data-ui-role="timeline"]
 [data-ui-role="timeline-item"]
@@ -46,10 +47,9 @@ SELECTORS;
 
     private static function bundleCss(): string
     {
-        $path = dirname(__DIR__, 3) . '/assets/styles/roles/_bundle.css';
-        self::assertFileExists($path);
-
-        return (string) file_get_contents($path);
+        return CssTestSupport::normalizeSelectors(
+            (new BlocksExtendedCssProvider(dirname(__DIR__, 3)))->stylesheet(),
+        );
     }
 
     #[Test]

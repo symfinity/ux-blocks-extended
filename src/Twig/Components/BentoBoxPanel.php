@@ -41,7 +41,7 @@ final class BentoBoxPanel
     public function hasDrillItems(): bool
     {
         foreach ($this->boxes as $box) {
-            foreach ($box['items'] ?? [] as $item) {
+            foreach ($box['items'] as $item) {
                 if (!empty($item['children'])) {
                     return true;
                 }
@@ -63,7 +63,7 @@ final class BentoBoxPanel
         $grouped = [];
 
         foreach ($this->boxes as $box) {
-            $column = max(1, min(4, (int) ($box['column'] ?? 1)));
+            $column = max(1, min(4, (int) $box['column']));
             $grouped[$column][] = $box;
         }
 
