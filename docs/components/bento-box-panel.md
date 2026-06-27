@@ -1,50 +1,41 @@
-# bento-box-panel
+# BentoBoxPanel
 
-**Role:** `bento-box-panel`  
-**Fragment id:** `blocks.ext.bento-box-panel`  
-**Interaction:** `nat` (extended compound)
+Category link grid.
 
-Four-column **category box** grid: icon, heading, and vertical link list per box. Usable standalone in app shell, docs, or admin — no marketing package required.
+## When to use
 
-## Props
+Category link grid. Use **BentoBoxPanel** when this pattern fits the screen — variant previews are below.
 
-| Prop | Type | Default | Notes |
-|------|------|---------|-------|
-| `boxes` | list | `[]` | Category boxes; omitted root when empty |
+## Guidelines
 
-### CategoryBox
+**Do**
 
-| Field | Type | Default | Notes |
-|-------|------|---------|-------|
-| `heading` | string | — | required |
-| `items` | `{label, href, children?}[]` | — | required |
-| `icon` | string | — | optional (**088**) |
-| `column` | int 1–4 | — | required |
-| `size` | `small` \| `medium` \| `large` | `medium` | row span in column grid |
-| `layout` | `vertical` \| `horizontal` | `vertical` | `horizontal` only when `size: medium` |
-| `categoryHref` | string | — | whole-box category landing (icon + heading) |
+- Keep card titles concise; actions in the header/footer slots.
+- Use Empty when a list has zero rows — not a bare table.
 
-## Standalone
+**Don't**
+
+- Overload cards with more than one primary action.
+- Hide essential data only in hover-only tooltips.
+
+## Usage
 
 ```twig
-<twig:BentoBoxPanel :boxes="categoryBoxes" />
+<twig:BentoBoxPanel>…</twig:BentoBoxPanel>
 ```
 
-## Interactive (drill-down)
 
-Use `BentoBoxPanelInteractive` from `symfinity/ux-blocks-interactive` when items have `children[]`:
+## API Reference
 
-```twig
-<twig:BentoBoxPanelInteractive :boxes="navWithChildren" />
-```
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| — | — | — | See Twig component class and package registry. |
 
-Composer: `symfinity/ux-blocks-extended` + `symfinity/ux-blocks-interactive`.
+## Accessibility
 
-## Anti-patterns
+- Table headers must scope columns/rows correctly.
+- Accordion panels need expanded/collapsed state exposed.
 
-| MUST NOT | Reason |
-|----------|--------|
-| `DropdownMenu` mega-menu as catalog SSOT | Rejected 2026-06-17 — use in-page `BentoBoxPanelInteractive` |
-| `layout: horizontal` on `small` / `large` | Coerced to `vertical` in v0 |
-| Stimulus on extended package for drill-down | **057** four-tier boundary |
-| Wrap item list inside `categoryHref` anchor | Nested anchors — heading area only |
+## Related
+
+- [Card](card.md)

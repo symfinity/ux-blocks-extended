@@ -1,0 +1,8 @@
+role: popover
+twig_name: Popover
+examples:
+  - id: default
+    title: Anchored panel
+    section: Examples
+    props: {}
+    slot_text: ''

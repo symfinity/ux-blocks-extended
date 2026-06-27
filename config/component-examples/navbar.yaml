@@ -1,0 +1,11 @@
+role: navbar
+twig_name: Navbar
+examples:
+  - id: default
+    title: Top nav
+    section: Examples
+    props:
+      icon: tabler:brand-symfinity
+    slot_twig: |
+      <a href="/docs" data-ui-role="link">Docs</a>
+      <a href="/components" data-ui-role="link">Components</a>

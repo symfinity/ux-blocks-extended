@@ -1,36 +1,31 @@
-schema: showcase-examples/1.0
 role: alert
 twig_name: Alert
-requires_stimulus: false
-sections:
-  - id: variants
-    title: Variants
-    items:
-      - variant: info
-        label: Info
-        props: { variant: info }
-      - variant: success
-        label: Success
-        props: { variant: success }
-      - variant: warning
-        label: Warning
-        props: { variant: warning }
-      - variant: danger
-        label: Danger
-        props: { variant: danger }
-  - id: watermarks
-    title: Icon watermarks
-    items:
-      - variant: top-start
-        label: Top start (default)
-        props:
-          variant: info
-          iconWatermark: lucide:sparkles
-        content: Review your settings before continuing.
-      - variant: bottom-end
-        label: Bottom end
-        props:
-          variant: warning
-          iconWatermark: lucide:sparkles
-          watermarkPosition: bottom-end
-        content: Scheduled maintenance tonight.
+examples:
+  - id: info
+    title: Information
+    section: Variants
+    props:
+      variant: info
+      title: Heads up
+    slot_text: New themes are available in the catalog.
+  - id: success
+    title: Success
+    section: Variants
+    props:
+      variant: success
+      title: Saved
+    slot_text: Your changes were applied.
+  - id: warning-dismiss
+    title: Dismissible warning
+    section: Variants
+    props:
+      variant: warning
+      dismissible: true
+    slot_text: Scheduled maintenance tonight at 22:00 UTC.
+  - id: danger
+    title: Error
+    section: Variants
+    props:
+      variant: danger
+      title: Could not save
+    slot_text: Check the highlighted fields and try again.

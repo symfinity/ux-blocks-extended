@@ -1,0 +1,8 @@
+role: description-list
+twig_name: DescriptionList
+examples:
+  - id: default
+    title: Term list
+    section: Examples
+    props: {}
+    slot_text: ''

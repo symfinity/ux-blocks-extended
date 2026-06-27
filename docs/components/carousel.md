@@ -1,10 +1,10 @@
-# Table
+# Carousel
 
-Data table markup and styling.
+Sliding content panels.
 
 ## When to use
 
-Data table markup and styling. Use **Table** when this pattern fits the screen — variant previews are below.
+Sliding content panels. Use **Carousel** when this pattern fits the screen — variant previews are below.
 
 ## Guidelines
 
@@ -21,7 +21,7 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 ## Usage
 
 ```twig
-<twig:Table>…</twig:Table>
+<twig:Carousel>…</twig:Carousel>
 ```
 
 
@@ -38,4 +38,4 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 
 ## Related
 
-- [DataTableChrome](data-table-chrome.md)
+- [Card](card.md)

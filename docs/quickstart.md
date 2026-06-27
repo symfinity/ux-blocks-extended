@@ -34,31 +34,18 @@ Use UX Twig component tags. Composition-language roles accept universal region c
 ```twig
 <twig:PageHeader title="Settings" description="Manage your account." />
 
-<twig:Card>
-    <twig:Header>Notifications</twig:Header>
-    <twig:Actions>
-        <twig:Button variant="default">Save</twig:Button>
-    </twig:Actions>
+<twig:Card title="Notifications" description="Choose how we reach you.">
+    <twig:Button variant="primary">Save</twig:Button>
 </twig:Card>
 
-<twig:SearchForm action="/search" method="get">
-    <twig:Input name="q" type="search" placeholder="Search…" />
-    <twig:Button type="submit" variant="default">Search</twig:Button>
-</twig:SearchForm>
+<twig:Alert variant="info" title="Tip">
+    Changes apply immediately after you save.
+</twig:Alert>
 ```
-
-Each root element exposes `data-ui-role`, `data-ui-fragment`, and UI Kernel variant hooks — see [Components](components.md).
-
-## Verify markup
-
-In a functional test or browser inspector, confirm:
-
-- `data-ui-role="page-header"` on the page header root
-- `data-ui-fragment="blocks.ext.card"` on the card root
-- `data-ui-fragment="blocks.ext.search-form"` on the search form shell
 
 ## Next steps
 
-- [Components](components.md) — full role index
-- [Usage](usage.md) — layout shells and data chrome patterns
-- [CHANGELOG](../CHANGELOG.md) · [CONTRIBUTING](../CONTRIBUTING.md) · [GitHub Issues](https://github.com/symfinity/ux-blocks-extended/issues)
+- [Components](components.md) — handbook index
+- [Card](components/card.md) · [Alert](components/alert.md)
+- [Usage](usage.md) — layout and data patterns
+- [CHANGELOG](../CHANGELOG.md) · [Contributing](../CONTRIBUTING.md)

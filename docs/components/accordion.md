@@ -1,28 +1,52 @@
-# accordion
+# Accordion
 
-**Role:** `accordion`  
-**Fragment id:** `blocks.accordion`  
-**Twig:** `Accordion`
+Expand/collapse panels for FAQs, settings groups, and progressive disclosure.
 
-Multi-item disclosure stack — compose native `<details>` / `<summary>` items inside the slot (see workshop compound compound).
+## When to use
 
-## Open mode
+Stack related content that most users can skim collapsed. Prefer [Card](card.md) when all content should stay visible without interaction.
 
-| Prop | Default | Values | Behavior |
-|------|---------|--------|----------|
-| `type` | `single` | `single`, `multiple` | **single:** at most one panel open (Stimulus + `<details name>` grouping). **multiple:** independent panels. |
+## Guidelines
+
+**Do**
+
+- Use `type="single"` when only one panel should be open (FAQ pattern).
+- Use `type="multiple"` when users compare sections side by side.
+- Put panel titles in `<summary>` with the `ux-accordion-label` class for consistent typography.
+
+**Don't**
+
+- Hide essential instructions only inside collapsed panels.
+- Nest accordions more than one level deep without clear headings.
+
+## Usage
 
 ```twig
-{# Default — single open; flush stacked items (Bootstrap-style) #}
-<twig:Accordion>
-    <details><summary>One</summary><p>…</p></details>
-    <details><summary>Two</summary><p>…</p></details>
-</twig:Accordion>
-
-{# FAQ-style — several sections may stay open #}
-<twig:Accordion :type="'multiple'">
-    …
+<twig:Accordion type="single">
+    <details open name="billing-faq">
+        <summary><span class="ux-accordion-label">What is included?</span></summary>
+        <p>Plans include shared themes and component tiers.</p>
+    </details>
 </twig:Accordion>
 ```
 
-Distinct from `collapsible` (one trigger + one panel) on the **interactive** tier — see `symfinity/ux-blocks-interactive`.
+Markup follows [Bootstrap accordion](https://getbootstrap.com/docs/5.3/components/accordion/) semantics (`details` / `summary`) with kernel tokens.
+
+## API Reference
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `string` | `primary` | Semantic colour accent |
+| `type` | `string` | `single` | `single` (one open) or `multiple` |
+
+Content slot: one or more `<details>` elements sharing a `name` when `type="single"`.
+
+## Accessibility
+
+- Each `<summary>` must describe the panel content.
+- Expanded/collapsed state is exposed via native `details` semantics.
+- Do not remove keyboard focus styles from summaries.
+
+## Related
+
+- [Card](card.md) · [Dialog](dialog.md)

@@ -1,6 +1,6 @@
 # Overview
 
-Package handbook for **symfinity/ux-blocks-extended** — compound UX Twig components with `blocks.ext.*` fragment ids.
+Consumer handbook for **symfinity/ux-blocks-extended** — compound components and layout chrome (21 roles).
 
 ## Pages
 
@@ -8,10 +8,8 @@ Package handbook for **symfinity/ux-blocks-extended** — compound UX Twig compo
 - [Quick start](quickstart.md)
 - [Configuration](configuration.md)
 - [Usage](usage.md)
-- [Components](components.md)
+- [Components](components.md) — full handbook index
 - [Upgrade](upgrade.md)
 - [Troubleshooting](troubleshooting.md)
 
-## Component depth pages
-
-Per-role handbooks under [Components](components.md) — see the package README for the full inventory. Interactive overlays (`stl`) ship in `symfinity/ux-blocks-interactive`.
+Interactive overlays (tabs, menus, …) ship in **ux-blocks-interactive** — not in this public handbook yet.

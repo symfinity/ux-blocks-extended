@@ -1,7 +1,41 @@
-# popover
+# Popover
 
-**Role:** `popover`  
-**Fragment id:** `blocks.ext.popover`  
-**Twig:** `Popover`
+Anchored floating panel.
 
-Panel-only component using the [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API). Pair with a **sibling** trigger: `<button id="…" popovertarget="{popoverId}">` + `<twig:Popover popoverId="{popoverId}" anchorTarget="…">` body slot. Set `anchorTarget` to the trigger element id so the panel positions beside the control (Stimulus fallback when CSS anchor is unavailable). Optional `open` opens the panel for demos. Set `label` for `aria-label` when no visible title.
+## When to use
+
+Anchored floating panel. Use **Popover** when this pattern fits the screen — variant previews are below.
+
+## Guidelines
+
+**Do**
+
+- Trap focus inside modal dialogs while open.
+- Return focus to the trigger on close.
+
+**Don't**
+
+- Open dialogs without a user gesture unless necessary.
+- Stack multiple modal layers without clear dismissal.
+
+## Usage
+
+```twig
+<twig:Popover>…</twig:Popover>
+```
+
+
+## API Reference
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| — | — | — | See Twig component class and package registry. |
+
+## Accessibility
+
+- Dialogs need `aria-modal` and labelled titles.
+- Tooltips must not hold essential instructions only.
+
+## Related
+
+- [Tooltip](tooltip.md)

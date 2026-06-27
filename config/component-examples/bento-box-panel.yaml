@@ -1,0 +1,8 @@
+role: bento-box-panel
+twig_name: BentoBoxPanel
+examples:
+  - id: default
+    title: Category grid
+    section: Examples
+    props: {}
+    slot_text: ''

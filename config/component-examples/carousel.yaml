@@ -1,0 +1,8 @@
+role: carousel
+twig_name: Carousel
+examples:
+  - id: default
+    title: Slides
+    section: Examples
+    props: {}
+    slot_text: ''

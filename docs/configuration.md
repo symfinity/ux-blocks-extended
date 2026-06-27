@@ -26,8 +26,7 @@ Role CSS uses `var(--ui-*)` tokens. When **symfinity/ui-kernel** is installed, i
 
 | Package | Purpose |
 |---------|---------|
-| `symfinity/ui-action` | Declarative `act` on `DashboardShell` |
-| `symfinity/ux-runtime` | JSON backend for command-palette demos (suggestion only) |
+| [symfinity/ui-action](https://packagist.org/packages/symfinity/ui-action) | Declarative `act` on `DashboardShell` |
 
 ## See also
 

@@ -1,10 +1,10 @@
-# Table
+# Stat
 
-Data table markup and styling.
+Statistic with label and value.
 
 ## When to use
 
-Data table markup and styling. Use **Table** when this pattern fits the screen — variant previews are below.
+Statistic with label and value. Use **Stat** when this pattern fits the screen — variant previews are below.
 
 ## Guidelines
 
@@ -21,7 +21,7 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 ## Usage
 
 ```twig
-<twig:Table>…</twig:Table>
+<twig:Stat label="Users" value="1,204" />
 ```
 
 
@@ -29,7 +29,8 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| — | — | — | See Twig component class and package registry. |
+| `icon` | `string?` | — | Icon slot |
+| `iconPosition` | `string` | — | locked-end |
 
 ## Accessibility
 
@@ -38,4 +39,4 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 
 ## Related
 
-- [DataTableChrome](data-table-chrome.md)
+- [DescriptionList](description-list.md)

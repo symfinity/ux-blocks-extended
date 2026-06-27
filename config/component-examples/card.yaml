@@ -1,21 +1,17 @@
-schema: showcase-examples/1.0
 role: card
 twig_name: Card
-requires_stimulus: false
-sections:
-  - id: watermarks
-    title: Icon watermarks
-    items:
-      - variant: bottom-end
-        label: Bottom end (default)
-        props:
-          title: Workspace plan
-          description: Includes shared themes and blocks.
-          iconWatermark: lucide:sparkles
-      - variant: center
-        label: Center
-        props:
-          title: Featured release
-          iconWatermark: lucide:sparkles
-          watermarkPosition: center
-        content: New catalog roles ship this week.
+examples:
+  - id: basic
+    title: Basic card
+    section: Examples
+    props:
+      title: Workspace plan
+      description: Includes shared themes and component tiers.
+    slot_text: Renews on 1 July.
+  - id: compact
+    title: Compact density
+    section: Examples
+    props:
+      title: Invite team
+      density: compact
+    slot_text: Send invites from organization settings.

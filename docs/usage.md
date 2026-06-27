@@ -1,41 +1,37 @@
 # Usage
 
-## Layout chrome
+Patterns for **symfinity/ux-blocks-extended** compounds.
 
-Use **app-shell** and **page-header** for product chrome:
+## Featured components
+
+- **[Card](components/card.md)** — titled containers with live previews
+- **[Accordion](components/accordion.md)** — FAQ and settings panels
+- **[Alert](components/alert.md)** — inline success, warning, and error messages
+
+## Layout chrome
 
 ```twig
 <twig:AppShell>
-    <twig:Aside>{# sidebar nav #}</twig:Aside>
-    <twig:Header>
-        <twig:PageHeader title="Dashboard" />
-    </twig:Header>
+    <twig:PageHeader title="Dashboard" description="Overview for your workspace" />
     {# main content #}
 </twig:AppShell>
 ```
 
-## Composition language
+Install **ux-blocks-core** and **ux-blocks-form** first — extended compounds compose their primitives.
 
-Roles such as **card**, **alert**, and **empty** accept scalar attributes (`title`, `description`, `icon`) plus universal region components (`Header`, `Actions`, `Media`, …) from core. Prefer regions over ad-hoc wrapper markup.
+## Common combinations
 
-## Data surfaces
+| Need | Components |
+|------|------------|
+| Confirm destructive action | [Dialog](components/dialog.md) + core Button |
+| Empty search results | [Empty](components/empty.md) |
+| Data listing | [Table](components/table.md) |
+| Category hub | [Bento box panel](components/bento-box-panel.md) |
 
-- **table** + **data-table-chrome** for list/detail layouts
-- **stat** and **description-list** for summary panels
-- **bento-box-panel** for category landing grids
+## Theme CSS
 
-## Search UI
+Include UI Kernel theme CSS — see [ux-blocks-core usage](https://docs.symfinity.dev/ux-blocks-core/usage) for the boot snippet.
 
-Wrap filter fields in **search-form** for toolbar or list-header search:
+## See also
 
-```twig
-<twig:SearchForm>
-    <twig:Input name="q" type="search" placeholder="Filter items…" />
-</twig:SearchForm>
-```
-
-## Pitfalls
-
-- Require **core** and **form** before extended — compounds reference core region components and form field roles.
-- Overlay interactions (`stl`) and LiveComponents (`live`) ship in separate packages — do not expect Stimulus controllers in this tier.
-- Link to [Troubleshooting](troubleshooting.md) when AssetMapper or missing CSS tokens block rendering.
+- [Components](components.md) · [Quick start](quickstart.md) · [Troubleshooting](troubleshooting.md)

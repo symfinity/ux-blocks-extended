@@ -1,10 +1,10 @@
-# Table
+# DataTableChrome
 
-Data table markup and styling.
+Toolbar and filters around a table.
 
 ## When to use
 
-Data table markup and styling. Use **Table** when this pattern fits the screen — variant previews are below.
+Toolbar and filters around a table. Use **DataTableChrome** when this pattern fits the screen — variant previews are below.
 
 ## Guidelines
 
@@ -21,7 +21,7 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 ## Usage
 
 ```twig
-<twig:Table>…</twig:Table>
+<twig:DataTableChrome>…</twig:DataTableChrome>
 ```
 
 
@@ -38,4 +38,4 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 
 ## Related
 
-- [DataTableChrome](data-table-chrome.md)
+- [Table](table.md)

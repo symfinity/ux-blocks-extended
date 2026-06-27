@@ -1,0 +1,17 @@
+role: dialog
+twig_name: Dialog
+examples:
+  - id: closed
+    title: Closed
+    section: States
+    props:
+      open: false
+      label: "Confirm delete"
+    slot_text: ''
+  - id: open
+    title: Open
+    section: States
+    props:
+      open: true
+      label: "Confirm delete"
+    slot_text: "Are you sure?"

@@ -1,10 +1,10 @@
-# Table
+# Timeline
 
-Data table markup and styling.
+Chronological event list.
 
 ## When to use
 
-Data table markup and styling. Use **Table** when this pattern fits the screen — variant previews are below.
+Chronological event list. Use **Timeline** when this pattern fits the screen — variant previews are below.
 
 ## Guidelines
 
@@ -21,7 +21,7 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 ## Usage
 
 ```twig
-<twig:Table>…</twig:Table>
+<twig:Timeline>…</twig:Timeline>
 ```
 
 
@@ -38,4 +38,4 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 
 ## Related
 
-- [DataTableChrome](data-table-chrome.md)
+- [Card](card.md)

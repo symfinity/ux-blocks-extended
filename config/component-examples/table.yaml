@@ -1,0 +1,8 @@
+role: table
+twig_name: Table
+examples:
+  - id: default
+    title: Data table
+    section: Examples
+    props: {}
+    slot_text: ''

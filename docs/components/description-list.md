@@ -1,10 +1,10 @@
-# Table
+# DescriptionList
 
-Data table markup and styling.
+Term/description pairs.
 
 ## When to use
 
-Data table markup and styling. Use **Table** when this pattern fits the screen — variant previews are below.
+Term/description pairs. Use **DescriptionList** when this pattern fits the screen — variant previews are below.
 
 ## Guidelines
 
@@ -21,7 +21,7 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 ## Usage
 
 ```twig
-<twig:Table>…</twig:Table>
+<twig:DescriptionList>…</twig:DescriptionList>
 ```
 
 
@@ -38,4 +38,4 @@ Data table markup and styling. Use **Table** when this pattern fits the screen �
 
 ## Related
 
-- [DataTableChrome](data-table-chrome.md)
+- [Stat](stat.md)

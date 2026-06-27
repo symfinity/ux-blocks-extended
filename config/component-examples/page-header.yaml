@@ -1,0 +1,10 @@
+role: page-header
+twig_name: PageHeader
+examples:
+  - id: basic
+    title: Title and description
+    section: Examples
+    props:
+      title: "Settings"
+      description: "Manage your account."
+    slot_text: ''

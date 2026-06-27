@@ -71,7 +71,7 @@ Handbook: [docs/components.md](docs/components.md).
 Add the [symfinity/recipes](https://github.com/symfinity/recipes) Flex endpoint to your project's `composer.json` (see [recipes README](https://github.com/symfinity/recipes/blob/main/README.md)) — recipes are not in Symfony's official recipe repository yet.
 
 ## Installation
-Requires core (and form for field compounds). See [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles) for tier choices.
+Requires core (and form for field compounds). See [UX Blocks install profiles](https://github.com/symfinity/ux-blocks#install-profiles) for tier choices. For the **complete official catalog**, use [`symfinity/ux-blocks-full`](https://github.com/symfinity/ux-blocks-full).
 ```bash
 composer require symfinity/ux-blocks-extended
 ```
