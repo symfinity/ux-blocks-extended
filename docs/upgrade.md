@@ -41,6 +41,20 @@ After upgrade:
 2. Adopt `<twig:SearchForm>` where you previously inlined search markup.
 3. Clear Symfony cache and hard-refresh the browser if AssetMapper serves cached CSS in dev.
 
+## 0.1.2
+
+Patch release after [v0.1.1](https://github.com/symfinity/ux-blocks-extended/releases/tag/v0.1.1). Handbook depth, split-mirror CI, and sponsorship metadata — no component API changes.
+
+```bash
+composer update symfinity/ux-blocks-extended
+```
+
+After upgrade:
+
+1. Browse per-role guides on the [components index](components.md) for props and copy-paste examples.
+2. No config or registry migrations — existing `blocks.ext.*` fragment ids are unchanged.
+3. Clear Symfony cache only if you consume handbook routes via symfinity-docs in the same app.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-extended/blob/main/CHANGELOG.md) for version-to-version notes.
