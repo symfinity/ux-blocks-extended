@@ -1,8 +1,0 @@
-role: dashboard-shell
-twig_name: DashboardShell
-examples:
-  - id: default
-    title: Dashboard chrome
-    section: Examples
-    props: {}
-    slot_text: ''

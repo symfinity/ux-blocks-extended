@@ -1,8 +1,0 @@
-role: data-table-chrome
-twig_name: DataTableChrome
-examples:
-  - id: default
-    title: Table toolbar
-    section: Examples
-    props: {}
-    slot_text: ''

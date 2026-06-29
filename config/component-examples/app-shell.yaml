@@ -1,8 +1,0 @@
-role: app-shell
-twig_name: AppShell
-examples:
-  - id: default
-    title: App chrome
-    section: Examples
-    props: {}
-    slot_text: ''

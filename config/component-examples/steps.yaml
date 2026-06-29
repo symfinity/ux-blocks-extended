@@ -1,8 +1,0 @@
-role: steps
-twig_name: Steps
-examples:
-  - id: default
-    title: Wizard steps
-    section: Examples
-    props: {}
-    slot_text: ''

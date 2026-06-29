@@ -1,8 +1,0 @@
-role: auth-layout
-twig_name: AuthLayout
-examples:
-  - id: sign-in
-    title: Sign in
-    section: Examples
-    props: {}
-    slot_text: ''

@@ -1,8 +1,0 @@
-role: timeline
-twig_name: Timeline
-examples:
-  - id: default
-    title: Events
-    section: Examples
-    props: {}
-    slot_text: ''
