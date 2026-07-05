@@ -1,26 +1,34 @@
 role: empty
 twig_name: Empty
-examples:
-  - id: outline
-    title: No results
+groups:
+  - id: appearances
     section: Appearances
-    props:
-      title: No projects yet
-      description: Create your first project to see it here.
-      appearance: outline
-    slot_text: ''
-  - id: soft
-    title: Soft panel
-    section: Appearances
-    props:
-      title: No messages
-      description: Your inbox is empty.
-      appearance: soft
-    slot_text: ''
-  - id: with-action
-    title: With action
+    layout: stack
+    items:
+      - id: outline
+        label: "No results"
+        props: {}
+        slot_twig: |
+          <twig:Empty title="No projects yet" description="{{ lorem_sentence() }}">
+              <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:Empty>
+      - id: soft
+        label: "Soft panel"
+        props: {}
+        slot_twig: |
+          <twig:Empty title="No messages" description="{{ lorem_sentence() }}">
+              <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:Empty>
+  - id: examples
     section: Examples
-    props:
-      title: No teams
-      description: Invite colleagues to collaborate.
-    slot_text: Create team
+    layout: stack
+    items:
+      - id: with-action
+        label: "With action"
+        props: {}
+        slot_twig: |
+          <twig:Empty title="{{ lorem_title() }}" description="{{ lorem_sentence() }}">
+              {% block content %}
+                  <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+              {% endblock %}
+          </twig:Empty>

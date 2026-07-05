@@ -1,8 +1,14 @@
 role: app-shell
 twig_name: AppShell
-examples:
-  - id: default
-    title: App chrome
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "App chrome"
+        props: {}
+        slot_twig: |
+          <twig:AppShell title="{{ lorem_title() }}">
+              <p>{{ lorem_sentence() }}</p>
+          </twig:AppShell>

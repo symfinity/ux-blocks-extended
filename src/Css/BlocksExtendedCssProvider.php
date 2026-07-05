@@ -20,12 +20,12 @@ final class BlocksExtendedCssProvider
     {
         $entry = $this->packageDir . '/assets/styles/blocks-extended.css';
         if (!is_readable($entry)) {
-            return $this->readRoleFile('roles/_bundle.css');
+            return $this->wrapTierCss($this->readRoleFile('roles/_bundle.css'));
         }
 
         $content = (string) file_get_contents($entry);
         if (!preg_match_all("/@import\\s+url\\('([^']+)'\\)\\s*;/", $content, $matches)) {
-            return $this->readRoleFile('roles/_bundle.css');
+            return $this->wrapTierCss($this->readRoleFile('roles/_bundle.css'));
         }
 
         $css = '';
@@ -36,7 +36,12 @@ final class BlocksExtendedCssProvider
             }
         }
 
-        return $css;
+        return $this->wrapTierCss($css);
+    }
+
+    private function wrapTierCss(string $css): string
+    {
+        return TierCascadeLayerWrap::wrap(TierCascadeLayerWrap::BLOCKS_EXTENDED, $css);
     }
 
     private function readRoleFile(string $relativeToStylesDir): string

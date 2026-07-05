@@ -55,6 +55,20 @@ After upgrade:
 2. No config or registry migrations — existing `blocks.ext.*` fragment ids are unchanged.
 3. Clear Symfony cache only if you consume handbook routes via symfinity-docs in the same app.
 
+## 0.1.3
+
+OOTB handbook and CSS cascade hygiene after [v0.1.2](https://github.com/symfinity/ux-blocks-extended/releases/tag/v0.1.2). Grouped component example manifests, `@layer blocks.extended` tier CSS, verification page, and PHPUnit bootstrap cleanup — no component props or registry ids changed.
+
+```bash
+composer update symfinity/ux-blocks-extended symfinity/ux-blocks-core
+```
+
+After upgrade:
+
+1. Clear Symfony cache and hard-refresh the browser if AssetMapper serves cached CSS in dev.
+2. Pair with `symfinity/ux-blocks-core` **^0.1.6** so extended fragments get auto-injected inline tier CSS (`id="ux-blocks-extended-css"`).
+3. Optional: run the [verification](verification.md) clean-app smoke if you embed extended components without ui-kernel.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-extended/blob/main/CHANGELOG.md) for version-to-version notes.

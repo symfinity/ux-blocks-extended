@@ -1,10 +1,14 @@
 role: page-header
 twig_name: PageHeader
-examples:
-  - id: basic
-    title: Title and description
+groups:
+  - id: examples
     section: Examples
-    props:
-      title: "Settings"
-      description: "Manage your account."
-    slot_text: ''
+    layout: stack
+    items:
+      - id: basic
+        label: "Title and description"
+        props: {}
+        slot_twig: |
+          <twig:PageHeader title="{{ lorem_title() }}" description="{{ lorem_sentence() }}">
+              <twig:Button variant="primary">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:PageHeader>

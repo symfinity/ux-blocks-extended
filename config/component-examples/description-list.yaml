@@ -1,8 +1,15 @@
 role: description-list
 twig_name: DescriptionList
-examples:
-  - id: default
-    title: Term list
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "Term list"
+        props: {}
+        slot_twig: |
+          <twig:DescriptionList>
+              <twig:DescriptionList:Item term="{{ lorem_words(1)|capitalize }}">{{ lorem_sentence() }}</twig:DescriptionList:Item>
+              <twig:DescriptionList:Item term="{{ lorem_words(1)|capitalize }}">{{ lorem_sentence() }}</twig:DescriptionList:Item>
+          </twig:DescriptionList>

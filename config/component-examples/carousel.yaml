@@ -1,8 +1,15 @@
 role: carousel
 twig_name: Carousel
-examples:
-  - id: default
-    title: Slides
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: Slides
+        props: {}
+        slot_twig: |
+          <twig:Carousel>
+              <twig:Carousel:Item>{{ lorem_sentence() }}</twig:Carousel:Item>
+              <twig:Carousel:Item>{{ lorem_sentence() }}</twig:Carousel:Item>
+          </twig:Carousel>

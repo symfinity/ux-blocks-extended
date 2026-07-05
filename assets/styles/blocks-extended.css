@@ -1,3 +1,4 @@
+@layer blocks.extended {
 /* symfinity/ux-blocks-extended — role CSS (065 W2) */
 @import url('roles/_bundle.css');
 @import url('roles/accordion.css');
@@ -11,3 +12,4 @@
 @import url('roles/stat.css');
 @import url('roles/icon-slot.css');
 @import url('roles/search-form.css');
+}

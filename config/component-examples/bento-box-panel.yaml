@@ -1,8 +1,14 @@
 role: bento-box-panel
 twig_name: BentoBoxPanel
-examples:
-  - id: default
-    title: Category grid
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "Category grid"
+        props: {}
+        slot_twig: |
+          <twig:BentoBoxPanel title="{{ lorem_title() }}">
+              {{ lorem_sentence() }}
+          </twig:BentoBoxPanel>

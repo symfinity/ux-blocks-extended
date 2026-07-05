@@ -1,31 +1,42 @@
 role: alert
 twig_name: Alert
-examples:
-  - id: info
-    title: Information
+groups:
+  - id: variants
     section: Variants
-    props:
-      variant: info
-      title: Heads up
-    slot_text: New themes are available in the catalog.
-  - id: success
-    title: Success
-    section: Variants
-    props:
-      variant: success
-      title: Saved
-    slot_text: Your changes were applied.
-  - id: warning-dismiss
-    title: Dismissible warning
-    section: Variants
-    props:
-      variant: warning
-      dismissible: true
-    slot_text: Scheduled maintenance tonight at 22:00 UTC.
-  - id: danger
-    title: Error
-    section: Variants
-    props:
-      variant: danger
-      title: Could not save
-    slot_text: Check the highlighted fields and try again.
+    layout: stack
+    items:
+      - id: info
+        label: Info
+        props:
+          title: "Heads up"
+          variant: info
+        slot_text: "New themes are available in the catalog."
+      - id: success
+        label: Success
+        props:
+          title: Saved
+          variant: success
+        slot_text: "Your changes were applied."
+      - id: warning
+        label: Warning
+        props:
+          title: Maintenance
+          variant: warning
+        slot_text: "Scheduled maintenance tonight at 22:00 UTC."
+      - id: danger
+        label: Error
+        props:
+          title: "Could not save"
+          variant: danger
+        slot_text: "Check the highlighted fields and try again."
+  - id: dismissible
+    section: Dismissible
+    layout: stack
+    items:
+      - id: warning-dismiss
+        label: "Dismissible warning"
+        props:
+          dismissible: true
+          title: Notice
+          variant: warning
+        slot_text: "This alert can be dismissed."

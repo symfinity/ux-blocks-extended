@@ -1,3 +1,7 @@
+---
+integration_profile: P2
+---
+
 # Overview
 
 Consumer handbook for **symfinity/ux-blocks-extended** — compound components and layout chrome (21 roles).
@@ -9,6 +13,7 @@ Consumer handbook for **symfinity/ux-blocks-extended** — compound components a
 - [Configuration](configuration.md)
 - [Usage](usage.md)
 - [Components](components.md) — full handbook index
+- [Verification](verification.md) — P2 integration profile smoke
 - [Upgrade](upgrade.md)
 - [Troubleshooting](troubleshooting.md)
 

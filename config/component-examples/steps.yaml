@@ -1,8 +1,16 @@
 role: steps
 twig_name: Steps
-examples:
-  - id: default
-    title: Wizard steps
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "Wizard steps"
+        props: {}
+        slot_twig: |
+          <twig:Steps>
+              <li><span data-ui-role="badge" data-ui-variant="success">1</span> {{ lorem_words(1)|capitalize }}</li>
+              <li><span data-ui-role="badge" data-ui-variant="secondary">2</span> {{ lorem_words(1)|capitalize }}</li>
+              <li><span data-ui-role="badge" data-ui-variant="neutral">3</span> {{ lorem_words(1)|capitalize }}</li>
+          </twig:Steps>

@@ -1,8 +1,14 @@
 role: dashboard-shell
 twig_name: DashboardShell
-examples:
-  - id: default
-    title: Dashboard chrome
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "Dashboard chrome"
+        props: {}
+        slot_twig: |
+          <twig:DashboardShell title="{{ lorem_title() }}">
+              <p>{{ lorem_sentence() }}</p>
+          </twig:DashboardShell>

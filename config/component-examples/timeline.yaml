@@ -1,8 +1,15 @@
 role: timeline
 twig_name: Timeline
-examples:
-  - id: default
-    title: Events
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: Events
+        props: {}
+        slot_twig: |
+          <twig:Timeline>
+              <twig:Timeline:Item title="{{ lorem_title() }}">{{ lorem_sentence() }}</twig:Timeline:Item>
+              <twig:Timeline:Item title="{{ lorem_title() }}">{{ lorem_sentence() }}</twig:Timeline:Item>
+          </twig:Timeline>

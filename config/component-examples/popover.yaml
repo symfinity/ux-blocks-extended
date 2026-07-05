@@ -1,8 +1,15 @@
 role: popover
 twig_name: Popover
-examples:
-  - id: default
-    title: Anchored panel
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "Anchored panel"
+        props: {}
+        slot_twig: |
+          <twig:Popover>
+              <twig:Popover:Trigger>{{ lorem_words(1)|capitalize }}</twig:Popover:Trigger>
+              <twig:Popover:Content>{{ lorem_sentence() }}</twig:Popover:Content>
+          </twig:Popover>

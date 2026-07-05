@@ -1,8 +1,14 @@
 role: data-table-chrome
 twig_name: DataTableChrome
-examples:
-  - id: default
-    title: Table toolbar
+groups:
+  - id: examples
     section: Examples
-    props: {}
-    slot_text: ''
+    layout: stack
+    items:
+      - id: default
+        label: "Table toolbar"
+        props: {}
+        slot_twig: |
+          <twig:DataTableChrome title="{{ lorem_title() }}" description="{{ lorem_sentence() }}">
+              <twig:Button variant="outline" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:DataTableChrome>
