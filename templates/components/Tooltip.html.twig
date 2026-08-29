@@ -1,0 +1,26 @@
+<span
+    data-ui-role="tooltip"
+    data-ui-fragment="blocks.ext.tooltip"
+    data-controller="symfinity--ux-blocks-core--tooltip"
+    {{ attributes }}
+>
+    {% set tooltip_anchor = '--' ~ tooltip_id %}
+    <span
+        class="ui-tooltip-trigger"
+        tabindex="0"
+        style="anchor-name: {{ tooltip_anchor }}"
+        aria-describedby="{{ tooltip_text ? tooltip_id : '' }}"
+        data-symfinity--ux-blocks-core--tooltip-target="trigger"
+    >
+        {% block content %}{% endblock %}
+    </span>
+    {% if tooltip_text %}
+        <span
+            id="{{ tooltip_id }}"
+            role="tooltip"
+            class="ui-tooltip-content"
+            style="position-anchor: {{ tooltip_anchor }}"
+            data-symfinity--ux-blocks-core--tooltip-target="content"
+        >{{ tooltip_text }}</span>
+    {% endif %}
+</span>

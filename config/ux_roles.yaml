@@ -1,0 +1,272 @@
+ux_role_registry: "1.4"
+registry_prefix: blocks.ext
+roles:
+  - role: card
+    twig_component: Card
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Card
+    fragment_id: blocks.ext.card
+    fragment_pattern: "blocks.ext.card.{n}"
+    attributes: [size, density, tone, surface, watermarkPosition]
+    scalar_content: [title, description, iconWatermark]
+    styled_parts: [header, footer, media, actions]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
+    icon_watermark:
+      allowed_positions: [top-start, top-end, bottom-start, bottom-end, center]
+      default_position: bottom-end
+  - role: table
+    twig_component: Table
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Table
+    fragment_id: blocks.ext.table
+    fragment_pattern: "blocks.ext.table.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: alert
+    twig_component: Alert
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Alert
+    fragment_id: blocks.ext.alert
+    fragment_pattern: "blocks.ext.alert.{n}"
+    attributes: [variant, dismissible, surface, watermarkPosition]
+    scalar_content: [title, icon, iconWatermark]
+    styled_parts: [header, footer, actions]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
+    icon_slot:
+      position: locked-start
+      default_by_variant:
+        success: lucide:circle-check
+        error: lucide:circle-x
+        destructive: lucide:circle-x
+        warning: lucide:triangle-alert
+        info: lucide:info
+    icon_watermark:
+      allowed_positions: [top-start, top-end, bottom-start, bottom-end, center]
+      default_position: top-start
+  - role: description-list
+    twig_component: DescriptionList
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\DescriptionList
+    fragment_id: blocks.ext.description-list
+    fragment_pattern: "blocks.ext.description-list.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: stat
+    twig_component: Stat
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Stat
+    fragment_id: blocks.ext.stat
+    fragment_pattern: "blocks.ext.stat.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+    icon_slot:
+      position: locked-end
+  - role: timeline
+    twig_component: Timeline
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Timeline
+    fragment_id: blocks.ext.timeline
+    fragment_pattern: "blocks.ext.timeline.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: accordion
+    twig_component: Accordion
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Accordion
+    fragment_id: blocks.ext.accordion
+    fragment_pattern: "blocks.ext.accordion.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: carousel
+    twig_component: Carousel
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Carousel
+    fragment_id: blocks.ext.carousel
+    fragment_pattern: "blocks.ext.carousel.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: dialog
+    twig_component: Dialog
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Dialog
+    fragment_id: blocks.ext.dialog
+    fragment_pattern: "blocks.ext.dialog.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: popover
+    twig_component: Popover
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Popover
+    fragment_id: blocks.ext.popover
+    fragment_pattern: "blocks.ext.popover.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: tooltip
+    twig_component: Tooltip
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Tooltip
+    fragment_id: blocks.ext.tooltip
+    fragment_pattern: "blocks.ext.tooltip.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: navbar
+    twig_component: Navbar
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Navbar
+    fragment_id: blocks.ext.navbar
+    fragment_pattern: "blocks.ext.navbar.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+    icon_slot:
+      position: locked-start
+      part: navbar-brand
+  - role: steps
+    twig_component: Steps
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\Steps
+    fragment_id: blocks.ext.steps
+    fragment_pattern: "blocks.ext.steps.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: auth-layout
+    twig_component: AuthLayout
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\AuthLayout
+    fragment_id: blocks.ext.auth-layout
+    fragment_pattern: "blocks.ext.auth-layout.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: dashboard-shell
+    twig_component: DashboardShell
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\DashboardShell
+    fragment_id: blocks.ext.dashboard-shell
+    fragment_pattern: "blocks.ext.dashboard-shell.{n}"
+    interaction: nat, act
+    stage: A
+    status: shipped
+  - role: data-table-chrome
+    twig_component: DataTableChrome
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\DataTableChrome
+    fragment_id: blocks.ext.data-table-chrome
+    fragment_pattern: "blocks.ext.data-table-chrome.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: empty
+    twig_component: Empty
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\EmptyState
+    fragment_id: blocks.ext.empty
+    fragment_pattern: "blocks.ext.empty.{n}"
+    attributes: [appearance]
+    scalar_content: [title, description, icon]
+    styled_parts: [header, media, actions]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
+    icon_slot:
+      position: locked-center
+      component: Media
+  - role: bento-box-panel
+    twig_component: BentoBoxPanel
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\BentoBoxPanel
+    fragment_id: blocks.ext.bento-box-panel
+    fragment_pattern: "blocks.ext.bento-box-panel.{n}"
+    nested_components:
+      - BentoBoxPanel:Box
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: app-shell
+    twig_component: AppShell
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\AppShell
+    fragment_id: blocks.ext.app-shell
+    fragment_pattern: "blocks.ext.app-shell.{n}"
+    attributes: [variant, density, open]
+    styled_parts: [aside, header]
+    composition_language: enforced
+    interaction: nat
+    stage: A
+    status: shipped
+  - role: search-form
+    twig_component: SearchForm
+    php_class: Symfinity\UxBlocksExtended\Twig\Components\SearchForm
+    fragment_id: blocks.ext.search-form
+    fragment_pattern: "blocks.ext.search-form.{n}"
+    interaction: nat
+    stage: A
+    status: shipped
+deprecated_fragment_aliases:
+  - from: blocks.search-form
+    to: blocks.ext.search-form
+    sunset: next-minor
+  - from: blocks.field
+    to: blocks.ext.field
+    sunset: next-minor
+  - from: blocks.card
+    to: blocks.ext.card
+    sunset: next-minor
+  - from: blocks.table
+    to: blocks.ext.table
+    sunset: next-minor
+  - from: blocks.alert
+    to: blocks.ext.alert
+    sunset: next-minor
+  - from: blocks.description-list
+    to: blocks.ext.description-list
+    sunset: next-minor
+  - from: blocks.stat
+    to: blocks.ext.stat
+    sunset: next-minor
+  - from: blocks.timeline
+    to: blocks.ext.timeline
+    sunset: next-minor
+  - from: blocks.accordion
+    to: blocks.ext.accordion
+    sunset: next-minor
+  - from: blocks.carousel
+    to: blocks.ext.carousel
+    sunset: next-minor
+  - from: blocks.dialog
+    to: blocks.ext.dialog
+    sunset: next-minor
+  - from: blocks.popover
+    to: blocks.ext.popover
+    sunset: next-minor
+  - from: blocks.tooltip
+    to: blocks.ext.tooltip
+    sunset: next-minor
+  - from: blocks.navbar
+    to: blocks.ext.navbar
+    sunset: next-minor
+  - from: blocks.steps
+    to: blocks.ext.steps
+    sunset: next-minor
+  - from: blocks.empty
+    to: blocks.ext.empty
+    sunset: next-minor
+  - from: blocks.ext.page-heading
+    to: blocks.section-heading
+    sunset: next-minor
+  - from: blocks.ext.page-header
+    to: blocks.section-heading
+    sunset: next-minor
+  - from: blocks.ext.section-heading
+    to: blocks.section-heading
+    sunset: next-minor
+  - from: blocks.auth-layout
+    to: blocks.ext.auth-layout
+    sunset: next-minor
+  - from: blocks.dashboard-shell
+    to: blocks.ext.dashboard-shell
+    sunset: next-minor
+  - from: blocks.ext.dashboard-shell
+    to: blocks.ext.app-shell
+    sunset: next-minor
+  - from: blocks.data-table-chrome
+    to: blocks.ext.data-table-chrome
+    sunset: next-minor

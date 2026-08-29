@@ -1,0 +1,35 @@
+<div
+    data-ui-role="alert"
+    data-ui-fragment="blocks.ext.alert"
+    data-ui-variant="{{ semantic_variant }}"
+    {{ surface_attr|raw }}
+    role="alert"
+    data-controller="symfinity--ux-blocks-core--alert"
+    {{ attributes }}
+>
+    {% if resolved_icon_watermark %}
+        {% block iconWatermark %}
+            {% include '@UxBlocksCore/components/_shared/p_icon_watermark.html.twig' with {
+                iconWatermark: resolved_icon_watermark,
+                watermarkPosition: resolved_watermark_position,
+            } only %}
+        {% endblock %}
+    {% endif %}
+    {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+        iconName: resolved_alert_icon,
+        iconDecorative: iconDecorative,
+    } only %}
+    {% if title %}
+        <header data-ui-part="header">{{ title }}</header>
+    {% endif %}
+    {% block content %}{% endblock %}
+    {% if dismissible %}
+        <button
+            type="button"
+            data-ui-role="alert-dismiss"
+            data-alert-dismiss
+            data-action="click->symfinity--ux-blocks-core--alert#dismiss"
+            aria-label="Close"
+        ></button>
+    {% endif %}
+</div>

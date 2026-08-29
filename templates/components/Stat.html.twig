@@ -1,0 +1,17 @@
+<div
+    data-ui-role="stat"
+    data-ui-fragment="blocks.ext.stat"
+    data-ui-density="{{ density }}"
+    style="--ui-density: {{ density }};"
+    {{ attributes.without('style') }}
+>
+    <div data-ui-part="stat-body">
+        {% block content %}{% endblock %}
+    </div>
+    {% if resolved_stat_icon %}
+        {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+            iconName: resolved_stat_icon,
+            iconDecorative: iconDecorative,
+        } only %}
+    {% endif %}
+</div>

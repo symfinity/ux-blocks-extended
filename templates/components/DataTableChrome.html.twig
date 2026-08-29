@@ -1,0 +1,15 @@
+<div
+    data-ui-role="data-table-chrome"
+    data-ui-fragment="blocks.ext.data-table-chrome"
+    {{ attributes }}
+>
+    <div data-ui-role="data-table-chrome-toolbar" data-ui-slot="toolbar"{{ surface_attr|raw }}>
+        {% block toolbar %}{% endblock %}
+    </div>
+    <div data-ui-slot="table">
+        {% block content %}{% endblock %}
+    </div>
+    <div data-ui-role="pagination" data-ui-slot="pagination">
+        {% block pagination %}{% endblock %}
+    </div>
+</div>

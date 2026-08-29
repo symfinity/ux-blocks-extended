@@ -1,0 +1,23 @@
+role: dialog
+twig_name: Dialog
+groups:
+  - id: states
+    section: States
+    layout: stack
+    items:
+      - id: closed
+        label: Closed
+        props: {}
+        slot_twig: |
+          <twig:Dialog :open="false" label="Confirm delete">
+              <p>{{ lorem_sentence() }}</p>
+              <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:Dialog>
+      - id: open
+        label: Open
+        props: {}
+        slot_twig: |
+          <twig:Dialog :open="true" label="{{ lorem_title() }}">
+              <p>{{ lorem_sentence() }}</p>
+              <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:Dialog>

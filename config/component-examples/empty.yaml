@@ -1,0 +1,34 @@
+role: empty
+twig_name: Empty
+groups:
+  - id: appearances
+    section: Appearances
+    layout: stack
+    items:
+      - id: outline
+        label: "No results"
+        props: {}
+        slot_twig: |
+          <twig:Empty title="No projects yet" description="{{ lorem_sentence() }}">
+              <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:Empty>
+      - id: soft
+        label: "Soft panel"
+        props: {}
+        slot_twig: |
+          <twig:Empty title="No messages" description="{{ lorem_sentence() }}">
+              <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:Empty>
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: with-action
+        label: "With action"
+        props: {}
+        slot_twig: |
+          <twig:Empty title="{{ lorem_title() }}" description="{{ lorem_sentence() }}">
+              {% block content %}
+                  <twig:Button variant="primary" size="sm">{{ lorem_words(1)|capitalize }}</twig:Button>
+              {% endblock %}
+          </twig:Empty>

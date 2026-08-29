@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Symfinity\UxBlocksExtended\:
+    resource: '../src/'
+    exclude:
+      - '../src/SymfinityUxBlocksExtendedBundle.php'
+      - '../src/DependencyInjection/'
+
+  Symfinity\UxBlocksExtended\Css\BlocksExtendedCssProvider:
+    arguments:
+      $packageDir: '%ux_blocks_extended.package_dir%'

@@ -1,0 +1,55 @@
+<div
+    data-ui-role="bento-box-panel-box"
+    data-ui-column="{{ column }}"
+    data-ui-row="{{ row }}"
+    data-ui-box-size="{{ resolved_size }}"
+    data-ui-box-layout="{{ resolved_layout }}"
+    style="--ux-bento-grid-column: {{ column }}; --ux-bento-grid-row: {{ row }}"
+    {% if has_category_link %}data-ui-has-category-link{% endif %}
+    {{ attributes }}
+>
+    {% if has_category_link %}
+        <a data-ui-part="category-landing" href="{{ categoryHref }}">
+            {% if resolved_box_icon %}
+                {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+                    iconName: resolved_box_icon,
+                    iconDecorative: iconDecorative,
+                } only %}
+            {% endif %}
+            <h3 data-ui-part="bento-box-panel-heading">
+                {{ heading }}
+                <span data-ui-part="category-disclosure" aria-hidden="true">›</span>
+            </h3>
+        </a>
+    {% else %}
+        {% if resolved_box_icon %}
+            {% include '@UxBlocksCore/components/_shared/p_icon_slot.html.twig' with {
+                iconName: resolved_box_icon,
+                iconDecorative: iconDecorative,
+            } only %}
+        {% endif %}
+        <h3 data-ui-part="bento-box-panel-heading">{{ heading }}</h3>
+    {% endif %}
+    <ul
+        data-ui-part="bento-box-panel-links"
+        {% if resolved_layout == 'horizontal' %}data-ui-links-layout="horizontal"{% endif %}
+    >
+        {% for item in items %}
+            <li {% if item.children is defined and item.children|length > 0 %}data-ui-has-children{% endif %}>
+                {% if item.children is defined and item.children|length > 0 %}
+                    <button
+                        type="button"
+                        data-ui-action="bento-drill-open"
+                        data-ui-drill-label="{{ item.label }}"
+                        data-ui-drill-children="{{ item.children|json_encode|e('html_attr') }}"
+                    >
+                        {{ item.label }}
+                        <span data-ui-part="item-disclosure" aria-hidden="true">›</span>
+                    </button>
+                {% else %}
+                    <a href="{{ item.href }}">{{ item.label }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

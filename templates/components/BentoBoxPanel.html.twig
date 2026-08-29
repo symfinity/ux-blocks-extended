@@ -1,0 +1,43 @@
+{% if boxes is not empty %}
+<div
+    data-ui-part="bento-box-panel-viewport"
+    data-ui-density="{{ density }}"
+    style="--ui-density: {{ density }};"
+>
+{% import '@UxBlocksCore/components/_component_style.html.twig' as componentStyle %}
+<div
+    data-ui-role="bento-box-panel"
+    data-ui-fragment="blocks.ext.bento-box-panel"
+    data-ui-panel-layout="bento-box"
+    style="{{ componentStyle.rootStyle(attributes, '--ux-bento-panel-rows: ' ~ panel_row_count ~ ';') }}"
+    {{ attributes.without('style') }}
+>
+    {% for column, columnBoxes in boxes_by_column %}
+        <div
+            data-ui-part="bento-box-panel-column"
+            data-ui-column="{{ column }}"
+            style="--ux-bento-row-span: {{ columnBoxes|length }}"
+        >
+            {% for box in columnBoxes %}
+                {% component 'BentoBoxPanel:Box' with {
+                    heading: box.heading,
+                    items: box.items,
+                    icon: box.icon|default(null),
+                    column: column,
+                    row: loop.index,
+                    size: box.size|default('medium'),
+                    layout: box.layout|default('vertical'),
+                    categoryHref: box.categoryHref|default(null),
+                } only %}{% endcomponent %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+    {% if panel_has_drill_items %}
+        <template data-ui-part="drill-stack-shell">
+            {% include '@UxBlocksExtended/components/BentoBoxPanel/_drill_stack_shell.html.twig' %}
+        </template>
+    {% endif %}
+    {% block content %}{% endblock %}
+</div>
+</div>
+{% endif %}

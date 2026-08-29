@@ -1,0 +1,12 @@
+role: bento-box-panel
+twig_name: BentoBoxPanel
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: default
+        label: "Category grid"
+        props: {}
+        slot_twig: |
+          <twig:BentoBoxPanel :boxes="electronics_six_box_fixture()"></twig:BentoBoxPanel>

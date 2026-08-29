@@ -1,0 +1,15 @@
+role: auth-layout
+twig_name: AuthLayout
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: sign-in
+        label: "Sign in"
+        props: {}
+        slot_twig: |
+          <twig:AuthLayout title="{{ lorem_title() }}" description="{{ lorem_sentence() }}">
+              <twig:Input name="email" type="email" placeholder="you@example.com" />
+              <twig:Button variant="primary" type="submit">{{ lorem_words(1)|capitalize }}</twig:Button>
+          </twig:AuthLayout>

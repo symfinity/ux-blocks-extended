@@ -1,0 +1,23 @@
+role: timeline
+twig_name: Timeline
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: default
+        label: Events
+        props: {}
+        slot_twig: |
+          <twig:Timeline>
+              {% block content %}
+                  <div data-ui-role="timeline-item">
+                      <span data-ui-role="typography" data-ui-variant="h4">{{ lorem_title() }}</span>
+                      <span data-ui-role="typography" data-ui-variant="muted">{{ lorem_sentence() }}</span>
+                  </div>
+                  <div data-ui-role="timeline-item">
+                      <span data-ui-role="typography" data-ui-variant="h4">{{ lorem_title() }}</span>
+                      <span data-ui-role="typography" data-ui-variant="muted">{{ lorem_sentence() }}</span>
+                  </div>
+              {% endblock %}
+          </twig:Timeline>

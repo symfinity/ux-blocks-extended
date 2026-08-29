@@ -1,0 +1,11 @@
+role: tooltip
+twig_name: Tooltip
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: default
+        label: Hint
+        props: {}
+        slot_text: "Hover target"

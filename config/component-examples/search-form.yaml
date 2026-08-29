@@ -1,0 +1,12 @@
+role: search-form
+twig_name: SearchForm
+groups:
+  - id: examples
+    section: Examples
+    layout: stack
+    items:
+      - id: get
+        label: "GET search"
+        props: {}
+        slot_twig: |
+          <twig:SearchForm action="/search" method="get" placeholder="{{ lorem_words(2) }}" />

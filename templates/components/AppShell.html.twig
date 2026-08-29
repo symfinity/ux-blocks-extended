@@ -1,0 +1,20 @@
+<div
+    data-ui-role="app-shell"
+    data-ui-fragment="blocks.ext.app-shell"
+    data-ui-variant="{{ variant }}"
+    data-ui-density="{{ density }}"
+    {% if not open %}data-ui-sidebar-collapsed="true"{% endif %}
+    {{ attributes }}
+>
+    <aside data-ui-part="aside">
+        {% block aside %}{% endblock %}
+    </aside>
+    <div class="ui-app-shell-chrome">
+        <header data-ui-part="header">
+            {% block header %}{% endblock %}
+        </header>
+        <main class="ui-app-shell-main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</div>
