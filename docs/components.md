@@ -18,7 +18,6 @@ Compound components and layout chrome.
 | [DescriptionList](components/description-list.md) | Term/description pairs |
 | [Dialog](components/dialog.md) | Modal overlay for focused tasks |
 | [Empty](components/empty.md) | Zero-state placeholder |
-| [Navbar](components/navbar.md) | Top navigation bar |
 | [Popover](components/popover.md) | Anchored floating panel |
 | [SearchForm](components/search-form.md) | Search field in a form shell |
 | [Stat](components/stat.md) | Statistic with label and value |

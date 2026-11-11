@@ -113,17 +113,6 @@ roles:
     interaction: nat
     stage: A
     status: shipped
-  - role: navbar
-    twig_component: Navbar
-    php_class: Symfinity\UxBlocksExtended\Twig\Components\Navbar
-    fragment_id: blocks.ext.navbar
-    fragment_pattern: "blocks.ext.navbar.{n}"
-    interaction: nat
-    stage: A
-    status: shipped
-    icon_slot:
-      position: locked-start
-      part: navbar-brand
   - role: steps
     twig_component: Steps
     php_class: Symfinity\UxBlocksExtended\Twig\Components\Steps
@@ -239,9 +228,6 @@ deprecated_fragment_aliases:
     sunset: next-minor
   - from: blocks.tooltip
     to: blocks.ext.tooltip
-    sunset: next-minor
-  - from: blocks.navbar
-    to: blocks.ext.navbar
     sunset: next-minor
   - from: blocks.steps
     to: blocks.ext.steps

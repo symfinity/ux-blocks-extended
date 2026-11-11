@@ -52,7 +52,6 @@
 | dialog | Dialog | nat | `blocks.ext.dialog` | shipped |
 | popover | Popover | nat | `blocks.ext.popover` | shipped |
 | tooltip | Tooltip | nat | `blocks.ext.tooltip` | shipped |
-| navbar | Navbar | nat | `blocks.ext.navbar` | shipped |
 | steps | Steps | nat | `blocks.ext.steps` | shipped |
 | auth-layout | AuthLayout | nat | `blocks.ext.auth-layout` | shipped |
 | dashboard-shell | DashboardShell | nat, act | `blocks.ext.dashboard-shell` | shipped |
