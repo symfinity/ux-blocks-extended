@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 099 E2 — popover overlay enter (@starting-style + allow-discrete) */
 [popover].ui-popover,
-[data-ui-role=popover] {
+[data-ui-role="popover"] {
   background: var(--ui-overlay-surface);
   color: var(--ui-color-text);
   border: 1px solid var(--ui-overlay-border);
@@ -21,13 +21,13 @@
 }
 
 [popover].ui-popover[anchor],
-[data-ui-role=popover][anchor] {
+[data-ui-role="popover"][anchor] {
   position: fixed;
   inset: auto;
 }
 
 [popover].ui-popover[anchor]:popover-open,
-[data-ui-role=popover][anchor]:popover-open {
+[data-ui-role="popover"][anchor]:popover-open {
   top: anchor(bottom);
   left: anchor(center);
   translate: -50% 0;
@@ -35,20 +35,20 @@
 }
 
 :popover-open.ui-popover,
-:popover-open[data-ui-role=popover] {
+:popover-open[data-ui-role="popover"] {
   border-color: var(--ui-color-primary);
 }
 
 @starting-style {
   :popover-open.ui-popover,
-  :popover-open[data-ui-role=popover] {
+  :popover-open[data-ui-role="popover"] {
     opacity: 0;
     translate: 0 -8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   [popover].ui-popover,
-  [data-ui-role=popover] {
+  [data-ui-role="popover"] {
     transition: none;
   }
 }

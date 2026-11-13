@@ -22,7 +22,7 @@ final class CardGlassDeferCssTest extends TestCase
     {
         $css = self::roleCss();
 
-        self::assertStringContainsString(':not([data-ui-surface=glass])', $css);
+        self::assertStringContainsString(':not([data-ui-surface="glass"])', $css);
         self::assertStringContainsString('background: var(--ui-color-surface-elevated)', $css);
     }
 

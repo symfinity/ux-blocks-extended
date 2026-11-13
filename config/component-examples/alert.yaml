@@ -1,5 +1,6 @@
 role: alert
 twig_name: Alert
+requires_stimulus: true
 groups:
   - id: variants
     section: Variants

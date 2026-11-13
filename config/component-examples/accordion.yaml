@@ -1,5 +1,6 @@
 role: accordion
 twig_name: Accordion
+requires_stimulus: true
 groups:
   - id: examples
     section: Examples
