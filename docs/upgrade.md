@@ -93,6 +93,16 @@ composer update symfinity/ux-blocks-extended
 
 After upgrade, hard-refresh the browser in dev if AssetMapper serves cached dialog or table CSS.
 
+## 0.1.6
+
+A dialog whose content is a stack, and which has no text field, keeps the same width cap as a dialog that contains a field. A short sentence with no stack stays only as wide as its text.
+
+```bash
+composer update symfinity/ux-blocks-extended
+```
+
+After upgrade, hard-refresh the browser in dev if AssetMapper serves cached dialog CSS. An app rule that set an explicit width on a stack-only dialog can be removed.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-extended/blob/main/CHANGELOG.md) for version-to-version notes.

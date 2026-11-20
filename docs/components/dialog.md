@@ -38,7 +38,7 @@ Patterns align with [shadcn Dialog](https://ui.shadcn.com/docs/components/dialog
 | `labelledBy` | `string?` | — | Id of an external title element |
 | `dialogId` | `string?` | — | Stable id. Kept when set. Generated when omitted or empty |
 
-Default slot: dialog body content. A dialog that contains a field grows toward the width cap. A dialog with only a short sentence stays as wide as its text.
+Default slot: dialog body content. A dialog that contains a field grows toward the width cap. A dialog whose content is a stack, and which has no field, uses that same cap. A short sentence with no stack stays as wide as its text.
 
 ## Accessibility
 

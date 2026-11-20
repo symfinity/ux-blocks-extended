@@ -32,6 +32,10 @@ final class DialogWidthTest extends TestCase
         self::assertStringContainsString(':has(input, textarea, select)', $css);
         self::assertMatchesRegularExpression('/:has\(input, textarea, select\)\s*\{[^}]*width:\s*' . preg_quote($cap, '/') . '/s', $css);
         self::assertStringContainsString('width: max-content', $css);
+        self::assertMatchesRegularExpression(
+            '/:not\(:has\(input, textarea, select\)\):has\(\[data-ui-role="stack"\]\)\s*\{[^}]*box-sizing:\s*border-box[^}]*width:\s*' . preg_quote($cap, '/') . '/s',
+            $css,
+        );
         self::assertMatchesRegularExpression('/input,\s*textarea,\s*select[\s\S]*width:\s*100%/', $css);
         self::assertMatchesRegularExpression('/input,\s*textarea,\s*select[\s\S]*box-sizing:\s*border-box/', $css);
     }
