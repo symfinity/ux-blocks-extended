@@ -69,6 +69,18 @@ After upgrade:
 2. Pair with `symfinity/ux-blocks-core` **^0.1.6** so extended fragments get auto-injected inline tier CSS (`id="ux-blocks-extended-css"`).
 3. Optional: run the [verification](verification.md) clean-app smoke if you embed extended components without ui-kernel.
 
+## 0.1.4
+
+`<twig:Navbar>` and `blocks.ext.navbar` are no longer in this package. Use `<twig:Navbar>` from `symfinity/ux-blocks-core` (`blocks.navbar`), which needs core **0.1.7**.
+
+Accordion attaches its Stimulus controller only when `type` is `single`. `type="multiple"` does not receive that controller.
+
+```bash
+composer update symfinity/ux-blocks-extended symfinity/ux-blocks-core
+```
+
+After upgrade, clear the Symfony cache. Replace any `<twig:Navbar>` that resolved from this package with the core component.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-extended/blob/main/CHANGELOG.md) for version-to-version notes.

@@ -23,9 +23,22 @@ Dashboard tiles, settings sections, and list item summaries. Prefer a plain [Sta
 
 ```twig
 <twig:Card title="Workspace plan" description="Includes shared themes and blocks.">
-    Renews on 1 July.
+    {% block media %}
+        <twig:Image src="/images/plan.svg" alt="" />
+    {% endblock %}
+    {% block content %}
+        Renews on 1 July.
+    {% endblock %}
+    {% block footer %}
+        <twig:Button variant="primary">Renew</twig:Button>
+    {% endblock %}
+    {% block actions %}
+        <twig:Button variant="primary" appearance="ghost">Compare</twig:Button>
+    {% endblock %}
 </twig:Card>
 ```
+
+`header` is rendered from `title` and `description`. `media`, the default content block, `footer`, and `actions` are slots. Empty slots are omitted.
 
 Layout follows [shadcn Card](https://ui.shadcn.com/docs/components/card) (header + body + footer) via props and composition regions.
 

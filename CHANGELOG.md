@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-11-20
+
+### Changed
+
+- Navbar is no longer part of this package. Use `<twig:Navbar>` from `symfinity/ux-blocks-core` (`blocks.navbar`). This package no longer registers `blocks.ext.navbar`
+- Component docs ship in the Composer archive. The card page shows the header, media, footer, and actions regions. The empty page shows its media and actions regions
+
+### Fixed
+
+- Accordion attaches its Stimulus controller only when `type` is `single`. `type="multiple"` no longer receives that controller
+- PHPUnit bootstrap registers this package's PSR-4 prefixes from `composer.json` after loading the monorepo or package autoload, and narrows the decoded autoload sections before reading `psr-4`
+
 ## [0.1.3] - 2026-07-05
 
 ### Added

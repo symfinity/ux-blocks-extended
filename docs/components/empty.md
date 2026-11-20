@@ -23,9 +23,19 @@ Replace a bare table or grid with **Empty** when filters return zero results or 
 
 ```twig
 <twig:Empty title="No projects yet" description="Create one to get started.">
-    <twig:Button variant="primary">New project</twig:Button>
+    {% block media %}
+        <twig:Image src="/images/empty.svg" alt="" />
+    {% endblock %}
+    {% block content %}
+        <twig:Button variant="primary">New project</twig:Button>
+    {% endblock %}
+    {% block actions %}
+        <twig:Link href="/import">Import</twig:Link>
+    {% endblock %}
 </twig:Empty>
 ```
+
+`header` comes from `title` and `description`. `media` and `actions` are the other regions. The default content block holds the recovery action.
 
 Comparable patterns: [shadcn empty states](https://ui.shadcn.com/docs/components) in data tables.
 
