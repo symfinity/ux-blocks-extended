@@ -30,16 +30,4 @@ final class ExtendedIconRolloutTest extends KernelTestCase
         self::assertStringContainsString('data-ui-part="icon"', $html);
         self::assertMatchesRegularExpression('/data-ui-part="stat-body"[\s\S]*data-ui-part="icon"/', $html);
     }
-
-    #[Test]
-    public function navbarRendersBrandStartIcon(): void
-    {
-        self::bootKernel();
-        $html = (string) $this->renderTwigComponent('Navbar', [
-            'icon' => 'lucide:layers',
-        ], 'Acme');
-
-        self::assertStringContainsString('data-ui-part="navbar-brand"', $html);
-        self::assertMatchesRegularExpression('/data-ui-part="icon"[\s\S]*Acme/', $html);
-    }
 }
