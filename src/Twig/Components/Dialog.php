@@ -25,17 +25,18 @@ final class Dialog
 
     private string $generatedDialogId = '';
 
-    public function mount(): void
+    public function mount(?string $dialogId = null): void
     {
         $this->mountSurfaceSubstrate();
+        $this->dialogId = $dialogId;
 
         if ($this->generatedTitleId === '') {
             $this->generatedTitleId = 'dialog-title-' . bin2hex(random_bytes(4));
         }
 
         if ($this->generatedDialogId === '') {
-            $this->generatedDialogId = null !== $this->dialogId && '' !== $this->dialogId
-                ? $this->dialogId
+            $this->generatedDialogId = null !== $dialogId && '' !== $dialogId
+                ? $dialogId
                 : 'dialog-' . bin2hex(random_bytes(4));
         }
     }

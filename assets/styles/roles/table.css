@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /* 067 — base table chrome (relocated from _bundle.css, 107 T025) */
+[data-ui-part="scroll-frame"] {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
 [data-ui-role="table"] {
   container-type: inline-size;
   container-name: blocks-table;

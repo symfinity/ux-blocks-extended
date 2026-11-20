@@ -21,4 +21,35 @@ final class DialogNativeTest extends ComponentTestCase
         self::assertStringContainsString('id="dialog-', $html);
         self::assertDoesNotMatchRegularExpression('/data-controller="/', $html);
     }
+
+    #[Test]
+    public function namedDialogIdIsKept(): void
+    {
+        self::bootKernel();
+        $html = $this->renderComponent('Dialog', ['dialogId' => 'my-dialog']);
+
+        self::assertStringContainsString('id="my-dialog"', $html);
+    }
+
+    #[Test]
+    public function emptyDialogIdIsGenerated(): void
+    {
+        self::bootKernel();
+        $html = $this->renderComponent('Dialog', ['dialogId' => '']);
+
+        self::assertMatchesRegularExpression('/id="dialog-[0-9a-f]{8}"/', $html);
+    }
+
+    #[Test]
+    public function twoUnnamedDialogsGetDifferentIds(): void
+    {
+        self::bootKernel();
+        $first = $this->renderComponent('Dialog');
+        $second = $this->renderComponent('Dialog');
+
+        preg_match('/id="([^"]+)"/', $first, $firstId);
+        preg_match('/id="([^"]+)"/', $second, $secondId);
+
+        self::assertNotSame($firstId[1] ?? '', $secondId[1] ?? '');
+    }
 }

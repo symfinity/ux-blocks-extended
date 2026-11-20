@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2026-11-20
+
+### Changed
+
+- The Sass build keeps quoted attribute selectors (`extra.symfinity.sass.quote_attributes`)
+
+### Fixed
+
+- `<twig:PageHeader>` renders again until the next minor version, as a level 1 section heading. The replacement and the four parts (title, description, breadcrumb, and actions) are in `docs/upgrade.md`
+- A dialog keeps the id the template set. A dialog without an id still gets its own
+- A dialog that contains a field grows toward the existing width cap. A dialog with only a short sentence stays as wide as its text
+- A wide table scrolls inside a frame on the page instead of widening the page
+
 ## [0.1.4] - 2026-11-20
 
 ### Changed

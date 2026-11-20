@@ -24,6 +24,7 @@ Data table markup and styling. Use **Table** when this pattern fits the screen â
 <twig:Table>â€¦</twig:Table>
 ```
 
+A wide table scrolls inside its frame. The page stays at the viewport width.
 
 ## API Reference
 

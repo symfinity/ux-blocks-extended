@@ -58,6 +58,25 @@ dialog.ui-dialog::backdrop,
   }
 }
 
+dialog.ui-dialog:has(input, textarea, select),
+[data-ui-role="modal"]:has(input, textarea, select),
+[data-ui-role="dialog"]:has(input, textarea, select) {
+  width: min(32rem, calc(100vw - 2 * var(--ui-space-lg)));
+}
+
+dialog.ui-dialog:not(:has(input, textarea, select)),
+[data-ui-role="modal"]:not(:has(input, textarea, select)),
+[data-ui-role="dialog"]:not(:has(input, textarea, select)) {
+  width: max-content;
+}
+
+dialog.ui-dialog :is(input, textarea, select),
+[data-ui-role="modal"] :is(input, textarea, select),
+[data-ui-role="dialog"] :is(input, textarea, select) {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @media (prefers-reduced-motion: reduce) {
   dialog.ui-dialog,
   dialog.ui-dialog::backdrop,

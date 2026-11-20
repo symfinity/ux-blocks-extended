@@ -81,6 +81,18 @@ composer update symfinity/ux-blocks-extended symfinity/ux-blocks-core
 
 After upgrade, clear the Symfony cache. Replace any `<twig:Navbar>` that resolved from this package with the core component.
 
+## 0.1.5
+
+`<twig:PageHeader>` still renders until the next minor version. It is a level 1 section heading. When you replace it, use `<twig:SectionHeading level="1">` and move the four parts across: title, description, breadcrumb, and actions.
+
+A dialog keeps the `dialogId` you set. A dialog without an id still gets its own. A dialog that contains a field grows toward the existing width cap. A dialog with only a short sentence stays as wide as its text. A wide table scrolls inside its frame.
+
+```bash
+composer update symfinity/ux-blocks-extended
+```
+
+After upgrade, hard-refresh the browser in dev if AssetMapper serves cached dialog or table CSS.
+
 ## Future releases
 
 See [CHANGELOG](https://github.com/symfinity/ux-blocks-extended/blob/main/CHANGELOG.md) for version-to-version notes.
