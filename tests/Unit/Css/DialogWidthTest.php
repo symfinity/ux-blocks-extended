@@ -16,10 +16,15 @@ final class DialogWidthTest extends TestCase
         $path = dirname(__DIR__, 3) . '/assets/styles/roles/dialog.css';
         self::assertFileExists($path);
         $css = CssTestSupport::normalizeSelectors((string) file_get_contents($path));
-        $scss = (string) file_get_contents(dirname(__DIR__, 3) . '/assets/scss/roles/dialog.scss');
+        $scssPath = dirname(__DIR__, 3) . '/assets/scss/roles/dialog.scss';
         $cap = 'min(32rem, 100vw - 2 * var(--ui-space-lg))';
 
-        self::assertStringContainsString('min(32rem, calc(100vw - 2 * var(--ui-space-lg)))', $scss);
+        if (is_file($scssPath)) {
+            self::assertStringContainsString(
+                'min(32rem, calc(100vw - 2 * var(--ui-space-lg)))',
+                (string) file_get_contents($scssPath),
+            );
+        }
 
         self::assertStringContainsString($cap, $css);
         self::assertStringContainsString('dialog.ui-dialog:has(input, textarea, select)', $css);

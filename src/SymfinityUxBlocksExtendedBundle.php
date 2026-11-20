@@ -26,7 +26,6 @@ final class SymfinityUxBlocksExtendedBundle extends Bundle
     {
         parent::build($container);
         $container->setParameter('ux_blocks_extended.package_dir', $this->getPath());
-        $container->addCompilerPass(new DependencyInjection\Compiler\PageHeaderRoleAliasPass());
     }
 
     public function configureRoutes(RoutingConfigurator $routes): void
